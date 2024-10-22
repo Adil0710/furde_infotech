@@ -129,8 +129,12 @@ body {
   }
 }
 
-
-.navbar{
-  background: rgba(255, 255, 255, 0.281);
+.glass-effect{
+  background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(5px);
+}
+
+.glass-effectw{
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(30px);
 }
