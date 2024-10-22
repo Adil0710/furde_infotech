@@ -19,7 +19,7 @@ export default function Homepage() {
           quality={100}
           className="-z-[10]" // Ensure the image is behind other content
         />
-        <div className="absolute top-[25%] px-5 pl-10 w-[44%]">
+        <div className="absolute top-[25%] px-5 pl-10 w-[44.5%]">
           <h1 className="text-[#9CA3AF] text-6xl font-semibold leading-tight">
             Welcome to <span className="text-white">FURDE INFOTECH</span>
           </h1>
@@ -73,7 +73,7 @@ export default function Homepage() {
           quality={100}
           className="-z-[10]" // Ensure the image is behind other content
         />
-        <div className=" px-5 pl-10 w-[44%]">
+        <div className=" px-5 pl-10 w-[44.5%]">
           <h1 className="text-white text-4xl font-semibold leading-tight">
             Who We Are
           </h1>
