@@ -92,7 +92,7 @@ export default function Homepage() {
           </p>
         </div>
 
-        <div className="grid text-white md:pl-20 px-5 md:pr-20 grid-cols-1 sm:grid-cols-4 gap-5 mt-10">
+        <div className="grid text-white md:pl-20 px-5 md:pr-20 grid-cols-1 sm:grid-cols-4 gap-5 mt-12">
           <div className="group relative border border-r-white bg-neutral-900 rounded-xl min-h-[350px] max-h-[350px] overflow-hidden">
             {/* Image with reduced height on hover */}
             <Image
@@ -109,8 +109,8 @@ export default function Homepage() {
             </div>
 
             {/* Text that appears below the image with fade-in effect on hover */}
-            <div className="absolute w-full left-0 py-3 px-5 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
-              <p className="absolute top-5 left-5 text-xs">
+            <div className="absolute w-full left-0 py-3 px-3 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
+              <p className="mt-5 text-sm">
                 We prioritize understanding and addressing the unique needs of
                 every client, ensuring tailored solutions and lasting
                 partnerships.
@@ -135,8 +135,8 @@ export default function Homepage() {
             </div>
 
             {/* Text that appears below the image with fade-in effect on hover */}
-            <div className="absolute w-full left-0 py-3 px-5 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
-              <p className="absolute top-5 left-5 text-xs">
+            <div className="absolute w-full left-0 py-3 px-3 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
+              <p className="mt-5 text-sm">
                 Focused on optimizing workflows and processes, we drive
                 efficiency and growth for your business with seamless execution.
               </p>
@@ -156,8 +156,8 @@ export default function Homepage() {
             </div>
 
             {/* Text that appears below the image with fade-in effect on hover */}
-            <div className="absolute w-full left-0 py-3 px-5 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
-              <p className="absolute top-5 left-5 text-xs">
+            <div className="absolute w-full left-0 py-3 px-3 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
+              <p className="mt-5 text-sm">
                 We uphold the highest standards in service delivery, ensuring
                 precision, reliability, and satisfaction in every project.
               </p>
@@ -179,8 +179,8 @@ export default function Homepage() {
             </div>
 
             {/* Text that appears below the image with fade-in effect on hover */}
-            <div className="absolute w-full left-0 py-3 px-5 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
-              <p className="absolute top-5 left-5 text-xs">
+            <div className="absolute w-full left-0 py-3 px-3 bg-neutral-900 transition-opacity duration-1000 ease-in-out opacity-0 group-hover:opacity-100 z-10">
+              <p className="mt-5 text-sm">
                 Adhering to industry regulations, we provide compliant and
                 dependable solutions you can trust for long-term success.
               </p>
@@ -188,7 +188,7 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className=" md:pl-20 px-5 mt-10">
+        <div className=" md:pl-20 px-5 mt-12  ">
           <p className=" text-[#9CA3AF] text-md">
             Discover our story and explore what sets us apart.
           </p>

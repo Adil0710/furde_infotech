@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { FaFacebook, FaSquareXTwitter } from 'react-icons/fa6'
+import {FaSquareXTwitter } from 'react-icons/fa6'
 import { AiFillInstagram } from "react-icons/ai";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
