@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Services() {
@@ -18,7 +19,12 @@ function Services() {
             <p>Empowering businesses with innovative technology services that enhance efficiency,security and scalability.</p>
           </div>
           <div> 
-            <button type="button" className="text-white bg-gray-800 hover:bg-[#1D4ED8] focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Explore</button>
+          <Link
+              href=""
+              className=" border border-white rounded text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
+            >
+              Explore
+            </Link>
           </div>
         </div>
         <div className="border border-r-white bg-neutral-800 overflow-hidden min-h-[350px] rounded-lg">
@@ -28,7 +34,12 @@ function Services() {
             <p>Delivering specialized knowledge and analytical insights to help companies make informed decisions and drive growth.</p>
           </div>
           <div> 
-            <button type="button" className="text-white bg-gray-800 hover:bg-[#1D4ED8] focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Explore</button>
+          <Link
+              href=""
+              className=" border border-white rounded text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
+            >
+              Explore
+            </Link>
           </div>
           </div>
         <div className="border border-r-white bg-neutral-800 overflow-hidden min-h-[350px] rounded-lg">
@@ -38,7 +49,12 @@ function Services() {
             <p>Optimizing operational workflows with reliable outsourcing , ensuring cost efficiency and improved performance.</p>
           </div>
           <div> 
-            <button type="button" className="text-white bg-gray-800 hover:bg-[#1D4ED8] focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Explore</button>
+          <Link
+              href=""
+              className=" border border-white rounded text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
+            >
+              Explore
+            </Link>
           </div>
         </div>
       </div>
