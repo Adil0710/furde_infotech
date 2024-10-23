@@ -2,7 +2,7 @@ import React from "react";
 
 function Services() {
   return (
-    <div className="bg-black text-white pl-10 pr-20 py-10">
+    <div className="bg-black text-white md:pl-20 px-5 md:pr-20 py-10">
       <h1 className=" text-4xl font-semibold leading-tight">Services</h1>
       <p className="mt-5 text-md">
         We offer a comprehensive range of services tailored to meet the diverse
