@@ -10,112 +10,45 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function HowItWorks() {
   const [options, setOptions] = useState<string>("Initial Consultation");
+
   return (
     <div className="bg-white md:pl-20 md:pr-20 px-5 py-10">
       <div>
-        <h1 className=" text-4xl font-bold leading-tight  text-black">
-          HOW IT WORKS:OUR STREAMLINED WORKFLOW
+        <h1 className=" text-4xl font-bold leading-tight text-black">
+          HOW IT WORKS: OUR STREAMLINED WORKFLOW
         </h1>
-        <p className="mt-5 text-md text-[#9CA3AF] ">
-          Explore our streamlined workflow,where we combine clear
-          planning,efficient execution and continuous feedback to deliver
-          tailored solutions that drive results.
+        <p className="mt-5 text-md text-[#9CA3AF]">
+          Explore our streamlined workflow, where we combine clear planning,
+          efficient execution, and continuous feedback to deliver tailored
+          solutions that drive results.
         </p>
 
         <div className="mt-10 flex flex-row">
           {/* Left side */}
-
           <ul className="flex flex-col w-1/2 justify-evenly">
-            <li
-              onClick={() => setOptions("Initial Consultation")}
-              className={`${
-                options === "Initial Consultation" ? "font-bold" : ""
-              } group cursor-pointer flex flex-row justify-between items-center w-[90%]`}
-            >
-              Initial Consultation
-              <FaArrowRightLong
-                className={`${
-                  options === "Initial Consultation"
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-5 opacity-0"
-                } transition-all duration-500`}
-              />
-            </li>
-
-            <div className="h-[1px] bg-black/50 w-[90%]"></div>
-
-            <li
-              onClick={() => setOptions("Planning and Strategy")}
-              className={`${
-                options === "Planning and Strategy" ? "font-bold" : ""
-              } group cursor-pointer flex flex-row justify-between items-center w-[90%]`}
-            >
-              Planning and Strategy
-              <FaArrowRightLong
-                className={`${
-                  options === "Planning and Strategy"
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-5 opacity-0"
-                } transition-all duration-500`}
-              />
-            </li>
-
-            <div className="h-[1px] bg-black/50 w-[90%]"></div>
-
-            <li
-              onClick={() => setOptions("Design and Development")}
-              className={`${
-                options === "Design and Development" ? "font-bold" : ""
-              } group cursor-pointer flex flex-row justify-between items-center w-[90%]`}
-            >
-              Design and Development
-              <FaArrowRightLong
-                className={`${
-                  options === "Design and Development"
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-5 opacity-0"
-                } transition-all duration-500`}
-              />
-            </li>
-
-            <div className="h-[1px] bg-black/50 w-[90%]"></div>
-
-            <li
-              onClick={() => setOptions("Testing and Assurance")}
-              className={`${
-                options === "Testing and Assurance" ? "font-bold" : ""
-              } group cursor-pointer flex flex-row justify-between items-center w-[90%]`}
-            >
-              Testing and Assurance
-              <FaArrowRightLong
-                className={`${
-                  options === "Testing and Assurance"
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-5 opacity-0"
-                } transition-all duration-500`}
-              />
-            </li>
-
-            <div className="h-[1px] bg-black/50 w-[90%]"></div>
-
-            <li
-              onClick={() => setOptions("Client Feedback")}
-              className={`${
-                options === "Client Feedback" ? "font-bold" : ""
-              } group cursor-pointer flex flex-row justify-between items-center w-[90%]`}
-            >
-              Client Feedback
-              <FaArrowRightLong
-                className={`${
-                  options === "Client Feedback"
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-5 opacity-0"
-                } transition-all duration-500`}
-              />
-            </li>
+            {["Initial Consultation", "Planning and Strategy", "Design and Development", "Testing and Assurance", "Client Feedback"].map((step, index) => (
+              <React.Fragment key={index}>
+                <li
+                  onClick={() => setOptions(step)}
+                  className={`${
+                    options === step ? "font-bold" : ""
+                  } group cursor-pointer flex flex-row justify-between items-center w-[90%] hover:font-bold duration-200`}
+                >
+                  {step}
+                  <FaArrowRightLong
+                    className={`${
+                      options === step
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-5 opacity-0"
+                    } transition-all duration-500`}
+                  />
+                </li>
+                <div className="h-[1px] bg-black/50 w-[90%]"></div>
+              </React.Fragment>
+            ))}
           </ul>
 
-          {/* Right side  */}
+          {/* Right side */}
           <div className="w-1/2">
             <div
               key={options} // Key to re-render with animation
@@ -128,6 +61,8 @@ export default function HowItWorks() {
                   <Image
                     src={how1}
                     alt="How it works"
+                   
+                    quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
@@ -141,11 +76,12 @@ export default function HowItWorks() {
                   <Image
                     src={how2}
                     alt="How it works"
+                   
+                    quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Outlining a clear plan and defining strategies for project
-                    success.
+                    Defining the project roadmap, timelines, and resource allocation.
                   </p>
                 </>
               )}
@@ -155,11 +91,12 @@ export default function HowItWorks() {
                   <Image
                     src={how3}
                     alt="How it works"
+                   
+                    quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Creating the visual design and developing the necessary
-                    features.
+                    Creating wireframes, user interface (UI), and writing code for the solution.
                   </p>
                 </>
               )}
@@ -169,11 +106,12 @@ export default function HowItWorks() {
                   <Image
                     src={how4}
                     alt="How it works"
+                   
+                    quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Ensuring the project works flawlessly and meets quality
-                    standards.
+                    Ensuring the product is functional, secure, and bug-free through rigorous testing.
                   </p>
                 </>
               )}
@@ -183,10 +121,12 @@ export default function HowItWorks() {
                   <Image
                     src={how5}
                     alt="How it works"
+                   
+                    quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Gathering feedback and implementing improvements as needed.
+                    Gathering client input and making necessary adjustments or improvements.
                   </p>
                 </>
               )}
