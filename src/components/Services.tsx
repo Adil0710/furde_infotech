@@ -47,7 +47,7 @@ const services = [
 function Services() {
   return (
     <div className="bg-black text-white md:pl-20 px-5 md:pr-20 py-10">
-      <h1 className="text-4xl font-semibold leading-tight">Services</h1>
+      <h1 className="text-4xl font-semibold leading-tight uppercase">Services</h1>
       <p className="mt-5 text-md">
         We offer a comprehensive range of services tailored to meet the diverse needs of our clients across various industries.
       </p>

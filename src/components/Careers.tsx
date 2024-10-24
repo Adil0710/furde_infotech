@@ -70,7 +70,7 @@ export default function Careers() {
         ref={contentRef}
         className="opacity-0 md:opacity-100 w-full md:w-[27%] flex flex-col justify-center items-start md:ml-10"
       >
-        <h1 className="text-4xl font-bold leading-tight">Careers</h1>
+        <h1 className="text-4xl font-bold leading-tight uppercase">Careers</h1>
         <p className="mt-5">
           Unlock your potential in a dynamic environment where growth and innovation thrive.
         </p>
