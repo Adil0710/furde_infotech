@@ -53,7 +53,7 @@ export default function Careers() {
   }, []);
 
   return (
-    <div className="bg-black w-full text-white md:pl-20 md:pr-20 px-5 py-20 overflow-x-hidden">
+    <div className="bg-black w-full text-white md:pl-20 md:pr-20 px-5 py-10 overflow-x-hidden">
     <div className=" flex flex-col md:flex-row gap-5 items-center">
       {/* Image Section */}
       <div ref={imageRef} className="w-full md:w-[100%] md:shrink-0">
@@ -83,9 +83,9 @@ export default function Careers() {
       </div>
       
     </div>
-    <p className=" text-blue-500 text-4xl mt-5 nothing-font leading-relaxed">Ready to unlock your potential? <br />
+    <p className=" text-blue-500 text-5xl mt-5 nothing-font leading-relaxed tracking-widest">Ready to unlock your potential? <br />
         
-    <span className=" text-rose-500">Join us today!</span></p>
+    <span className=" text-rose-500 tracking-widest">Join us today!</span></p>
     </div>
   );
 }

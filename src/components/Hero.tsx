@@ -17,14 +17,14 @@ export default function Hero() {
           className="-z-[10]" // Ensure the image is behind other content
         />
         <div className="absolute top-[25%] md:pl-20 px-5 w-full">
-          <h1 className="text-[#9CA3AF] md:text-6xl text-2xl font-bold leading-tight">
+          <h1 className="text-[#9CA3AF] md:text-7xl text-2xl font-bold ">
             Welcome to{" "}
             <span className="text-white">
               FURDE <br /> INFOTECH
             </span>
           </h1>
 
-          <h2 className=" text-[#9CA3AF] font-semibold md:text-2xl text-base mt-5 flex sm:flex-row flex-col sm:items-center sm:gap-2">
+          <h2 className=" text-[#9CA3AF] font-semibold md:text-2xl text-base mt-10 flex sm:flex-row flex-col sm:items-center sm:gap-2">
             Empowering businesses with{" "}
             <span className=" text-white">
               {" "}
@@ -39,7 +39,7 @@ export default function Hero() {
             </span>
           </h2>
 
-          <p className=" text-white mt-7 text-md">
+          <p className=" text-white mt-12 text-md">
             Furde Infotech Pvt. Ltd. is dedicated to delivering cutting-edge IT,
             KPO, and BPO <br />
             solutions tailored to meet the unique needs of each client. Our
@@ -47,7 +47,7 @@ export default function Hero() {
             businesses to streamline workflows <br /> and enhance productivity.{" "}
           </p>
 
-          <div className=" flex flex-row gap-5 mt-7 w-full">
+          <div className=" flex flex-row gap-5 mt-10 w-full">
             <Link
               href=""
               className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"

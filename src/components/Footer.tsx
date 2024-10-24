@@ -1,63 +1,51 @@
-import Link from 'next/link'
-import React from 'react'
-import {FaSquareXTwitter } from 'react-icons/fa6'
-import { AiFillInstagram } from "react-icons/ai";
-import { RiFacebookCircleFill } from "react-icons/ri";
-import { FaLinkedin } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import React from "react";
+import bgfooter from "@/assets/footerbg.jpg";
+import Image from "next/image";
+import Link from "next/link";
+import logomain from "@/assets/fitlogo.png";
+import { FaLocationDot } from "react-icons/fa6";
 
-
-function Footer() {
+export default function Footer() {
   return (
-    <div className='md:pl-20 md:pr-20 px-5 py-10'>
-      <h1 className='" text-4xl font-bold leading-tight"'>SOCIAL</h1>
-      <p  className="mt-5 text-md">Follow us for the latest updates.</p>
+    <div className="relative min-h-screen">
+      <Image
+        src={bgfooter}
+        alt="Background Image"
+        fill
+        quality={100}
+        className="-z-[10] object-cover"
+        priority // Optimizes the background image loading
+      />
 
-      <div className='flex flex-row gap-10 items-center mt-10'>
+      <div className=" flex md:flex-row flex-col md:pl-20 md:pr-20 px-5 py-10 z-10 text-white">
+        {/* Leftside */}
+        <div className=" w-1/2">
+          <Link href="/">
+            <Image src={logomain} alt="FIT logo" height={50} width={150} />
+          </Link>
 
-        <Link href="" className=' flex gap-2 items-center justify-center'>
-        <div><RiFacebookCircleFill className='text-4xl'/></div>
-        <div className='flex flex-col'>
-          <p className='font-semibold'>Facebook</p>
-          <p className='text-xs'>Furde Infotech</p>
+          <Link href="" className=" mt-10 flex flex-col">
+            <p className=" flex flex-row text-3xl gap-2">
+              <FaLocationDot /> Solapur{" "}
+            </p>
+            <p className=" text-[#9CA3AF] mt-2">
+              Furde complex, Damaninagar , Solapur-413001, Maharashtra, India
+            </p>
+          </Link>
+
+          <Link href="" className=" mt-10 flex flex-col">
+            <p className=" flex flex-row text-3xl gap-2">
+              <FaLocationDot /> Pune{" "}
+            </p>
+            <p className=" text-[#9CA3AF] mt-2">
+            SNO -151/5A, FL No-B1101, Sukhwani Emerald, Magarpatta Road Hadapsar, Pune -411028 Maharashtra, India
+            </p>
+          </Link>
         </div>
-        </Link>
-        
-        <Link href="" className=' flex gap-2 items-center justify-center'>
-        <div><AiFillInstagram className='text-4xl'/></div>
-        <div className='flex flex-col'>
-          <p className='font-semibold'>Instagram</p>
-          <p className='text-xs'>Furde Infotech</p>
-        </div>
-        </Link>
 
-        <Link href="" className=' flex gap-2 items-center justify-center'>
-        <div><FaSquareXTwitter className=' text-3xl' /></div>
-        <div className='flex flex-col'>
-          <p className='font-semibold'>X</p>
-          <p className='text-xs'>Furde Infotech</p>
-        </div>
-        </Link>
-
-        <Link href="" className=' flex gap-2 items-center justify-center'>
-        <div><FaLinkedin className='text-3xl' /></div>
-        <div className='flex flex-col'>
-          <p className='font-semibold'>LinkedIn</p>
-          <p className='text-xs'>Furde Infotech</p>
-        </div>
-        </Link>
-
-        <Link href="" className=' flex gap-2 items-center justify-center'>
-        <div><FaYoutube className='text-3xl'/></div>
-        <div className='flex flex-col'>
-          <p className='font-semibold'>YouTube</p>
-          <p className='text-xs'>Furde Infotech</p>
-        </div>
-        </Link>
-
+        {/* Rightside */}
+        <div className=" w-1/2"></div>
       </div>
     </div>
-  )
+  );
 }
-
-export default Footer
