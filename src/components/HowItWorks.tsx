@@ -43,7 +43,7 @@ export default function HowItWorks() {
                     } transition-all duration-500`}
                   />
                 </li>
-                <div className="h-[1px] bg-black/50 w-[90%]"></div>
+                <div className="h-[0.6px] bg-[#9CA3AF] w-[90%] rounded-full"></div>
               </React.Fragment>
             ))}
           </ul>
