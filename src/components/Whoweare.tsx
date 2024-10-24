@@ -1,12 +1,26 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import bgin from "@/assets/staticbginverted.jpg";
 import who1 from "@/assets/who1.png";
 import who2 from "@/assets/who2.png";
 import who3 from "@/assets/who3.png";
 import who4 from "@/assets/who4.png";
 
-const features = [
+// Define the structure of each feature
+interface Feature {
+  img: StaticImageData; // Specify the type for image imports
+  title: string;
+  description: string;
+}
+
+// Define the props for FeatureCard component
+interface FeatureCardProps {
+  img: StaticImageData; // Specify the type for image imports
+  title: string;
+  description: string;
+}
+
+const features: Feature[] = [
   {
     img: who1,
     title: "Client Centered Approach",
@@ -33,7 +47,7 @@ const features = [
   },
 ];
 
-const FeatureCard = ({ img, title, description }: any) => (
+const FeatureCard = ({ img, title, description }: FeatureCardProps) => (
   <div className="group relative border border-white bg-neutral-900 rounded-xl min-h-[350px] overflow-hidden">
     <Image
       src={img}
