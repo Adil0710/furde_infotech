@@ -13,6 +13,15 @@ export default function HowItWorks() {
 
   return (
     <div className="bg-white md:pl-20 md:pr-20 px-5 py-10">
+      {/* Hidden preloaded images */}
+      <div style={{ display: "none" }}>
+        <Image src={how1} alt="Preload Initial Consultation" priority />
+        <Image src={how2} alt="Preload Planning and Strategy" priority />
+        <Image src={how3} alt="Preload Design and Development" priority />
+        <Image src={how4} alt="Preload Testing and Assurance" priority />
+        <Image src={how5} alt="Preload Client Feedback" priority />
+      </div>
+
       <div>
         <h1 className=" text-4xl font-bold leading-tight text-black">
           HOW IT WORKS: OUR STREAMLINED WORKFLOW
@@ -57,7 +66,7 @@ export default function HowItWorks() {
           {/* Right side */}
           <div className="w-1/2">
             <div
-              key={options} // Key to re-render with animation
+              key={options}
               className={`transition-opacity duration-500 ${
                 options ? "opacity-100" : "opacity-0"
               }`}
@@ -67,74 +76,70 @@ export default function HowItWorks() {
                   <Image
                     src={how1}
                     alt="Initial Consultation"
-                    priority
                     quality={90}
+                    priority
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
-                  <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
+                  <p className="ml-5 text-sm text-[#6B7280]">
                     Understanding client needs, goals, and project scope.
                   </p>
                 </>
               )}
-
               {options === "Planning and Strategy" && (
                 <>
                   <Image
                     src={how2}
                     alt="Planning and Strategy"
-                    priority
                     quality={90}
+                    priority
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
-                  <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
+                  <p className="ml-5 text-sm text-[#6B7280]">
                     Defining the project roadmap, timelines, and resource
                     allocation.
                   </p>
                 </>
               )}
-
               {options === "Design and Development" && (
                 <>
                   <Image
                     src={how3}
                     alt="Design and Development"
-                    priority
                     quality={90}
+                    priority
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
-                  <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
+                  <p className="ml-5 text-sm text-[#6B7280]">
                     Creating wireframes, user interface (UI), and writing code
                     for the solution.
                   </p>
                 </>
               )}
-
               {options === "Testing and Assurance" && (
                 <>
                   <Image
                     src={how4}
                     alt="Testing and Assurance"
-                    priority
                     quality={90}
+                    priority
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
-                  <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
+                  <p className="ml-5 text-sm text-[#6B7280]">
                     Ensuring the product is functional, secure, and bug-free
                     through rigorous testing.
                   </p>
                 </>
               )}
-
               {options === "Client Feedback" && (
                 <>
                   <Image
                     src={how5}
                     alt="Client Feedback"
-                    priority
                     quality={90}
+                    priority
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
-                  <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
+                  <p className="ml-5 text-sm text-[#6B7280]">
                     Gathering client input and making necessary adjustments or
                     improvements.
                   </p>
