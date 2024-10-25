@@ -24,7 +24,7 @@ export default function Footer() {
             <Image src={logomain} alt="FIT logo" height={50} width={150} />
           </Link>
 
-          <Link href="" className=" mt-10 flex flex-col">
+          <Link href="https://maps.app.goo.gl/wG4EunDXihBcfHFH9" target="_blank" className=" mt-10 flex flex-col">
             <p className=" flex flex-row text-3xl gap-2">
               <FaLocationDot /> Solapur{" "}
             </p>
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
           </Link>
 
-          <Link href="" className=" mt-10 flex flex-col">
+          <Link href="https://maps.app.goo.gl/JwVtKnUuiWMD3gtx6" target="_blank" className=" mt-10 flex flex-col">
             <p className=" flex flex-row text-3xl gap-2">
               <FaLocationDot /> Pune{" "}
             </p>

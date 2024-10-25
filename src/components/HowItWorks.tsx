@@ -26,7 +26,13 @@ export default function HowItWorks() {
         <div className="mt-10 flex flex-row">
           {/* Left side */}
           <ul className="flex flex-col w-1/2 justify-evenly">
-            {["Initial Consultation", "Planning and Strategy", "Design and Development", "Testing and Assurance", "Client Feedback"].map((step, index) => (
+            {[
+              "Initial Consultation",
+              "Planning and Strategy",
+              "Design and Development",
+              "Testing and Assurance",
+              "Client Feedback",
+            ].map((step, index) => (
               <React.Fragment key={index}>
                 <li
                   onClick={() => setOptions(step)}
@@ -60,8 +66,8 @@ export default function HowItWorks() {
                 <>
                   <Image
                     src={how1}
-                    alt="How it works"
-                   
+                    alt="Initial Consultation"
+                    priority
                     quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
@@ -75,13 +81,14 @@ export default function HowItWorks() {
                 <>
                   <Image
                     src={how2}
-                    alt="How it works"
-                   
+                    alt="Planning and Strategy"
+                    priority
                     quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Defining the project roadmap, timelines, and resource allocation.
+                    Defining the project roadmap, timelines, and resource
+                    allocation.
                   </p>
                 </>
               )}
@@ -90,13 +97,14 @@ export default function HowItWorks() {
                 <>
                   <Image
                     src={how3}
-                    alt="How it works"
-                   
+                    alt="Design and Development"
+                    priority
                     quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Creating wireframes, user interface (UI), and writing code for the solution.
+                    Creating wireframes, user interface (UI), and writing code
+                    for the solution.
                   </p>
                 </>
               )}
@@ -105,13 +113,14 @@ export default function HowItWorks() {
                 <>
                   <Image
                     src={how4}
-                    alt="How it works"
-                   
+                    alt="Testing and Assurance"
+                    priority
                     quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Ensuring the product is functional, secure, and bug-free through rigorous testing.
+                    Ensuring the product is functional, secure, and bug-free
+                    through rigorous testing.
                   </p>
                 </>
               )}
@@ -120,13 +129,14 @@ export default function HowItWorks() {
                 <>
                   <Image
                     src={how5}
-                    alt="How it works"
-                   
+                    alt="Client Feedback"
+                    priority
                     quality={90}
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280] transition-opacity duration-500 ease-in-out opacity-100">
-                    Gathering client input and making necessary adjustments or improvements.
+                    Gathering client input and making necessary adjustments or
+                    improvements.
                   </p>
                 </>
               )}
