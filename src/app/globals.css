@@ -142,3 +142,22 @@ body {
   background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(50px);
 }
+
+.blur-effect{
+  background: rgba(90, 90, 90, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

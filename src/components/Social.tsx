@@ -14,18 +14,18 @@ function Social() {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-40 mt-10'> {/* Adjusted grid classes */}
 
-        <Link href="" className='flex gap-2 items-cente max-w-40'>
-          <div><RiFacebookCircleFill className='text-4xl' /></div>
+        <Link href="" className='group flex gap-2 items-cente max-w-40'>
+          <div><RiFacebookCircleFill className=' group-hover:text-blue-500 duration-200 text-4xl' /></div>
           <div className='flex flex-col'>
-            <p className='font-semibold'>Facebook</p>
+            <p className='font-semibold group-hover:text-blue-500 duration-200'>Facebook</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
         </Link>
         
-        <Link href="" className='flex gap-2 items-center max-w-40'>
-          <div><AiFillInstagram className='text-4xl' /></div>
+        <Link href="" className='group flex gap-2 items-center max-w-40'>
+          <div><AiFillInstagram className='text-4xl group-hover:text-rose-600 duration-200' /></div>
           <div className='flex flex-col'>
-            <p className='font-semibold'>Instagram</p>
+            <p className='font-semibold group-hover:text-rose-600 duration-200'>Instagram</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
         </Link>
@@ -38,18 +38,18 @@ function Social() {
           </div>
         </Link>
 
-        <Link href="" className='flex gap-2 items-center max-w-40'>
-          <div><FaLinkedin className='text-3xl' /></div>
+        <Link href="" className='group flex gap-2 items-center max-w-40'>
+          <div><FaLinkedin className='text-3xl group-hover:text-blue-600 duration-200' /></div>
           <div className='flex flex-col'>
-            <p className='font-semibold'>LinkedIn</p>
+            <p className='font-semibold group-hover:text-blue-600 duration-200'>LinkedIn</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
         </Link>
 
-        <Link href="" className='flex gap-2 items-center max-w-40'>
-          <div><FaYoutube className='text-3xl' /></div>
+        <Link href="" className=' group flex gap-2 items-center max-w-40'>
+          <div><FaYoutube className='text-3xl group-hover:text-red-600 duration-200' /></div>
           <div className='flex flex-col'>
-            <p className='font-semibold'>YouTube</p>
+            <p className='font-semibold group-hover:text-red-600 duration-200'>YouTube</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
         </Link>
