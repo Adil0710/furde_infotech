@@ -63,7 +63,7 @@ const FeatureCard = ({ img, title, description }: FeatureCardProps) => (
   </div>
 );
 
-export default function Whoweare() {
+export default function WhyChooseUS() {
   return (
     <div className="relative min-h-screen">
       <Image
@@ -75,7 +75,7 @@ export default function Whoweare() {
         priority // Optimizes the background image loading
       />
       <div className="md:pl-20 px-5 w-[44.5%]">
-        <h1 className="text-white text-4xl font-bold leading-tight">Who We Are</h1>
+        <h1 className="text-white text-4xl font-bold leading-tight">WHY CHOOSE US?</h1>
         <h2 className="text-white font-semibold text-3xl mt-10 flex items-center gap-2">
           Our Foundation of Success
         </h2>
