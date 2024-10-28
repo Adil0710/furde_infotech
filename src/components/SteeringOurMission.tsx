@@ -15,7 +15,7 @@ export default function SteeringOurMission() {
           <p className=" mt-5">
             Mr. Sunil Furde, Chairman and Managing Director of Furde
             Constructions Pvt. Ltd and Proprietor of Amar Constructions, is a
-            distinguished civil engineer with a Master's in Management Studies
+            distinguished civil engineer with a Master&apos;s in Management Studies
             and a Diploma in Business Management from Shivaji University.
             Starting as a lecturer, he rose to Head of the Civil Engineering
             Department and later became Principal of a Polytechnic College.

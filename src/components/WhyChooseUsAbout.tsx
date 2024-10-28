@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import React from "react";
 import bgin from "@/assets/staticbginverted.jpg";
 import who1 from "@/assets/who1.png";
