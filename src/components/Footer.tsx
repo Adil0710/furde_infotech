@@ -17,7 +17,28 @@ import { AiFillInstagram } from "react-icons/ai";
 import ContactForm from "./ContactForm";
 
 
-const Links = ["Home", "Services", "Careers", "About Us", "Contact Us"];
+const Links = [
+  {
+    title: "Home",
+    link: "/"
+  },
+  {
+    title: "Services",
+    link: "/services"
+  },
+  {
+    title: "Careers",
+    link: "/careers"
+  },
+  {
+    title: "About Us",
+    link: "/about-us"
+  },
+  {
+    title: "Contact US",
+    link: "/contact-us"
+  },
+];
 
 export default function Footer() {
   return (
@@ -71,9 +92,7 @@ export default function Footer() {
               <ul className=" mt-8 flex flex-col text-[#9CA3AF] justify-center gap-5">
                 {Links.map((link, index) => {
                   return (
-                    <li key={index} className=" font-semibold">
-                      {link}
-                    </li>
+                    <Link href={link.link} key={index}><li className=' cursor-pointer hover:text-white duration-200'>{link.title}</li></Link>
                   );
                 })}
               </ul>

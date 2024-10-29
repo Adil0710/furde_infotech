@@ -100,7 +100,7 @@ export default function WhyChooseUS() {
           Discover our story and explore what sets us apart.
         </p>
         <Link
-          href="/about"
+          href="/about-us"
           className="border mt-5 border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black transition duration-500"
         >
           About Us
