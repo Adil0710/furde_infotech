@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image, {StaticImageData} from "next/image";
+import Image, { StaticImageData } from "next/image";
 import bgin from "@/assets/staticbginverted.jpg";
 import who1 from "@/assets/who1.png";
 import who2 from "@/assets/who2.png";
@@ -75,7 +75,9 @@ export default function WhyChooseUS() {
         priority // Optimizes the background image loading
       />
       <div className="md:pl-20 px-5 w-[44.5%]">
-        <h1 className="text-white text-4xl font-bold leading-tight">WHY CHOOSE US?</h1>
+        <h1 className="text-white text-4xl font-bold leading-tight">
+          WHY CHOOSE US?
+        </h1>
         <h2 className="text-white font-semibold text-3xl mt-10 flex items-center gap-2">
           Our Foundation of Success
         </h2>

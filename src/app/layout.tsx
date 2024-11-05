@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 
+
 export const metadata: Metadata = {
   title: "Furde Infotech",
   description: "Innovative Ideas, Dynamic Results!",

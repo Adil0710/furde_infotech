@@ -50,13 +50,13 @@ export default function Hero() {
 
           <div className=" flex flex-row gap-5 mt-10 w-full">
             <Link
-              href=""
+              href="/services"
               className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
             >
               Explore Services
             </Link>
             <Link
-              href=""
+              href="/contact-us"
               className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
             >
               Contact Us

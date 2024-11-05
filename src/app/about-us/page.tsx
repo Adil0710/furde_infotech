@@ -4,7 +4,7 @@ import bg from "@/assets/staticbg.jpg";
 import Link from "next/link";
 import WhyChooseUsAbout from "@/components/WhyChooseUsAbout";
 import SteeringOurMission from "@/components/SteeringOurMission";
-
+import OurStory from "@/components/OurStory";
 export default function AboutUs() {
   return (
     <>
@@ -52,6 +52,8 @@ export default function AboutUs() {
       </div>
       <WhyChooseUsAbout/>
       <SteeringOurMission/>
+      <OurStory/>
+
     </>
   );
 }

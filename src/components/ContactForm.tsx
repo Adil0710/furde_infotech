@@ -49,7 +49,7 @@ export default function ContactForm() {
     <div className="w-1/2 pl-40">
       <h1 className="text-3xl mt-24 font-semibold leading-tight">Contact Us</h1>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-10 mt-10 flex flex-col">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 mt-10 flex flex-col">
           <FormField
             control={form.control}
             name="name"

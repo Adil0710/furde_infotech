@@ -5,6 +5,7 @@ import Industries from "@/components/Industries";
 import Social from "@/components/Social";
 import WhyChooseUs from "@/components/WhyChooseUS";
 import Careers from "@/components/Careers";
+import Footer from "@/components/Footer";
 
 
 
@@ -18,6 +19,7 @@ export default function Home() {
    <Services/>
    <Careers/> 
    <Social/>
+   <Footer/>
    </div>
   );
 }
