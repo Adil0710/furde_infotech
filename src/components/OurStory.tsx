@@ -163,7 +163,7 @@ function OurStory() {
         </div>
         <Link
           href="/careers"
-          className="border mt-10 border-black rounded font-semibold text-black text-sm w-52 flex items-center justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] hover:text-white transition duration-500"
+          className=" mt-10  rounded font-semibold  text-sm w-52 flex items-center justify-center py-2 hover:bg-[#1E3A8A] bg-[#1d4ed8]  text-white transition duration-500"
         >
           Explore Careers
         </Link>

@@ -92,6 +92,7 @@ export default function HowItWorks() {
                     alt="Planning and Strategy"
                     quality={90}
                     priority
+                    placeholder="blur"
                     className="transition-opacity duration-500 ease-in-out opacity-100"
                   />
                   <p className="ml-5 text-sm text-[#6B7280]">

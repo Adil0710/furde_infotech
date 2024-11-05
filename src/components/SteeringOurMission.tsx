@@ -1,6 +1,8 @@
 import React from "react";
 import RohanFurde from "@/assets/rohanfurde.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 
 export default function SteeringOurMission() {
   return (
@@ -15,7 +17,7 @@ export default function SteeringOurMission() {
             Rohan Furde, a graduate in Software Engineering from Walchand Institute of Technology, Solapur, is a dynamic entrepreneur and technology enthusiast. Currently serving as Director at Furde Constructions, he has embarked on a new journey as the Founder & Director of Furde Infotech Pvt Ltd. Here, he focuses on developing advanced applications designed to foster business growth and enhance monitoring capabilities. Rohan brings a blend of technical expertise and strategic vision to drive innovation and deliver impactful solutions in the tech industry.
           </p>
         </div>
-        <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg bg-red-200">
+        <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg ">
           <Image src={RohanFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-16 "/>
         </div>
       </div>
