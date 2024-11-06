@@ -1,7 +1,7 @@
 import React from "react";
 import RohanFurde from "@/assets/rohanfurde.jpg";
 import Image from "next/image";
-import { motion } from "framer-motion";
+
 
 
 export default function SteeringOurMission() {

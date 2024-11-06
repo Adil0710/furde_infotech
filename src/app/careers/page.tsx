@@ -4,7 +4,7 @@ import React from "react";
 import bg from "@/assets/staticbg.jpg";
 import CareersCard from "@/components/CareersCard";
 
-export default function page() {
+export default function Careers() {
   return (
     <section>
       <div className="relative min-h-screen">
@@ -19,7 +19,7 @@ export default function page() {
         />
         <div className="absolute top-[25%] md:pl-20 px-5 w-1/2">
           <h1 className=" text-4xl font-bold leading-tight text-white">
-            About Us
+            CAREERS
           </h1>
           <h2 className=" mt-8 text-2xl font-bold leading-tight text-white">
           Shape the future with us!
@@ -34,7 +34,7 @@ export default function page() {
           </p>
           <div className=" flex flex-row gap-5 mt-16 w-full">
             <Link
-              href=""
+              href="/open-roles"
               className=" border border-white rounded font-semibold text-white text-sm w-40 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
             >
               Search Open Roles

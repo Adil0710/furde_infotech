@@ -101,15 +101,15 @@ const CareerCard = ({
 export default function CareersCard() {
   return (
     <div className="bg-white md:pl-20 md:pr-20 px-5 py-10 text-black">
-      <div className=" flex justify-between items-center">
         <h1 className=" text-4xl font-bold leading-tight">
           ENTRY LEVEL INTERNSHIPS
         </h1>
-        <Link href="" className=" text-[#1D4ED8]">
+      <div className="mt-10 flex justify-between items-center">
+      <p className=" text-[#4B5563] ">Kickstart Your Career Journey.</p>
+        <Link href="/entry-level-roles" className=" text-[#1D4ED8]">
           View More
         </Link>
       </div>
-      <p className=" text-[#4B5563] mt-10">Kickstart Your Career Journey.</p>
 
       <div className="grid mt-12 grid-cols-1 sm:grid-cols-3 gap-10">
         {jobs.map((job, index) => {
@@ -125,16 +125,16 @@ export default function CareersCard() {
           );
         })}
       </div>
-
-      <div className=" mt-28 flex justify-between items-center">
-        <h1 className=" text-4xl font-bold leading-tight uppercase">
+      <h1 className="mt-28 text-4xl font-bold leading-tight uppercase">
           Experienced Opportunities
         </h1>
-        <Link href="" className=" text-[#1D4ED8]">
+      <div className=" mt-10 flex justify-between items-center">
+      <p className=" text-[#4B5563] ">Bring Your Expertise to Our Team.</p>
+        
+        <Link href="/experienced-level-roles" className=" text-[#1D4ED8]">
           View More
         </Link>
       </div>
-      <p className=" text-[#4B5563] mt-10">Bring Your Expertise to Our Team.</p>
 
       <div className="grid mt-12 grid-cols-1 sm:grid-cols-3 gap-10">
         {experiencedJobs.map((experiencedjob, index) => {

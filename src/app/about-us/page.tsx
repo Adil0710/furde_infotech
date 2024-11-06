@@ -7,7 +7,7 @@ import SteeringOurMission from "@/components/SteeringOurMission";
 import OurStory from "@/components/OurStory";
 export default function AboutUs() {
   return (
-    <>
+    <section>
       <div className="relative min-h-screen">
         <Image
           src={bg}
@@ -54,6 +54,6 @@ export default function AboutUs() {
       <SteeringOurMission/>
       <OurStory/>
 
-    </>
+    </section>
   );
 }
