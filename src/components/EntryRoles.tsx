@@ -151,7 +151,7 @@ export default function EntryRoles() {
             <div className=" h-[350px] w-full flex flex-col justify-between items-center">
                 <Image src={NoResultIcon} alt="No Results Found" width={300}/>
               <p className="text-center text-lg text-gray-500">
-                No results found for "{searchTerm}"
+                No results found for &quot;{searchTerm}&quot;
               </p>
             </div>
   

@@ -155,7 +155,7 @@ export default function CurrentOpenRoles() {
           <div className=" h-[350px] w-full flex flex-col justify-between items-center">
               <Image src={NoResultIcon} alt="No Results Found" width={300}/>
             <p className="text-center text-lg text-gray-500">
-              No experienced jobs found for "{searchTerm}"
+              No experienced jobs found for &quot;{searchTerm}&quot;
             </p>
           </div>
 
@@ -187,7 +187,7 @@ export default function CurrentOpenRoles() {
           <div className=" h-[350px] w-full flex-col flex justify-between items-center">
                <Image src={NoResultIcon} alt="No Results Found" width={300}/>
             <p className="text-center text-lg text-gray-500">
-              No experienced jobs found for "{searchTerm}"
+              No experienced jobs found for &quot;{searchTerm}&quot;
             </p>
           </div>
         )}
