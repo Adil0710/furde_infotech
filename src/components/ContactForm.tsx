@@ -18,21 +18,15 @@ import {
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {  FaUserFriends } from "react-icons/fa"
 import { FaArrowRightLong} from "react-icons/fa6"
+import { contactFormSchema } from "@/schemas/contactFormSchema"
 
-// Define the schema
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  phone: z.string().min(10, { message: "Phone must be at least 10 digits." }),
-  email: z.string().email({ message: "Invalid email address." }),
-  service: z.string().min(1, { message: "Please select a service." }),
-})
 
 // Infer the schema type
-type FormData = z.infer<typeof formSchema>
+type FormData = z.infer<typeof contactFormSchema>
 
 export default function ContactForm() {
   const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
       phone: "",
