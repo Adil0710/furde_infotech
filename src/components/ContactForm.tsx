@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import React from "react"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
+import React from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Form,
   FormControl,
@@ -14,15 +14,22 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {  FaUserFriends } from "react-icons/fa"
-import { FaArrowRightLong} from "react-icons/fa6"
-import { contactFormSchema } from "@/schemas/contactFormSchema"
-
+} from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { FaUserFriends } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { contactFormSchema } from "@/schemas/contactFormSchema";
 
 // Infer the schema type
-type FormData = z.infer<typeof contactFormSchema>
+type FormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
   const form = useForm<FormData>({
@@ -33,17 +40,20 @@ export default function ContactForm() {
       email: "",
       service: "",
     },
-  })
+  });
 
   const onSubmit = (data: FormData) => {
-    console.log("Form data:", data)
-  }
+    console.log("Form data:", data);
+  };
 
   return (
     <div className="w-1/2 pl-40">
       <h1 className="text-3xl mt-24 font-semibold leading-tight">Contact Us</h1>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-7 mt-10 flex flex-col">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-7 mt-10 flex flex-col"
+        >
           <FormField
             control={form.control}
             name="name"
@@ -51,7 +61,11 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Your Name" {...field}  className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"/>
+                  <Input
+                    placeholder="Enter Your Name"
+                    {...field}
+                    className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -65,7 +79,19 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Phone</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Phone Number" {...field} maxLength={10}  className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"/>
+                  <Input
+                    placeholder="Enter Phone Number"
+                    {...field}
+                    maxLength={10}
+                    className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"
+                    onInput={(e) => {
+                      const input = e.target as HTMLInputElement;
+                      input.value = input.value.replace(/\D/g, ""); // Remove non-numeric characters
+                      if (input.value.length > 10) {
+                        input.value = input.value.slice(0, 10); // Enforce 10 digits max
+                      }
+                    }}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,7 +105,11 @@ export default function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter Your Email" {...field}  className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"/>
+                  <Input
+                    placeholder="Enter Your Email"
+                    {...field}
+                    className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -94,10 +124,10 @@ export default function ContactForm() {
                 <FormLabel>Services</FormLabel>
                 <FormControl>
                   <Select onValueChange={field.onChange} defaultValue="">
-                    <SelectTrigger  className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30 w-full" >
+                    <SelectTrigger className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30 w-full">
                       <SelectValue placeholder="Select Type of Service" />
                     </SelectTrigger>
-                    <SelectContent  className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30">
+                    <SelectContent className=" text-sm py-2 pl-2 blur-effect text-white rounded-sm border border-white/30">
                       <SelectGroup>
                         <SelectLabel>Services</SelectLabel>
                         <SelectItem value="IT">IT</SelectItem>
@@ -129,5 +159,5 @@ export default function ContactForm() {
         </form>
       </Form>
     </div>
-  )
+  );
 }

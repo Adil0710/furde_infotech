@@ -107,7 +107,7 @@ export default function CurrentOpenRoles() {
       </div>
       <div className={`${filteredJobs.length > 0 ? "grid" : "block"} mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}>
         {filteredJobs.length > 0 ? (
-          filteredJobs.map((job, index) => (
+          filteredJobs.map((job) => (
             <CareerCard
               key={job.id}
               designation={job.designation}
@@ -139,7 +139,7 @@ export default function CurrentOpenRoles() {
       </div>
       <div className={`${filteredExperiencedJobs.length > 0 ? "grid" : "block"} mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}>
         {filteredExperiencedJobs.length > 0 ? (
-          filteredExperiencedJobs.map((job, index) => (
+          filteredExperiencedJobs.map((job) => (
             <CareerCard
               key={job.id}
               designation={job.designation}

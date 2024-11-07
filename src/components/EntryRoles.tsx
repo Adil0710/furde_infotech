@@ -65,13 +65,6 @@ const jobs = [
   },
 ];
 
-type cardProps = {
-  designation: string;
-  department: string;
-  description: string;
-  location: string;
-  type: string;
-};
 
 
 export default function EntryRoles() {
@@ -113,7 +106,7 @@ export default function EntryRoles() {
         } mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}
       >
         {filteredJobs.length > 0 ? (
-          filteredJobs.map((job, index) => (
+          filteredJobs.map((job) => (
             <CareerCard
               key={job.id}
               designation={job.designation}

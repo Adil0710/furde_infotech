@@ -79,7 +79,7 @@ export default function CareersCard() {
       </div>
 
       <div className="grid mt-12 grid-cols-1 sm:grid-cols-3 gap-10">
-        {jobs.map((job, index) => {
+        {jobs.map((job) => {
           return (
             <CareerCard
               key={job.id}

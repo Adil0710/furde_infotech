@@ -100,7 +100,7 @@ export default function ExperiencedRoles() {
         } mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}
       >
         {filteredJobs.length > 0 ? (
-          filteredJobs.map((job, index) => (
+          filteredJobs.map((job) => (
             <CareerCard
               key={job.id}
               designation={job.designation}
