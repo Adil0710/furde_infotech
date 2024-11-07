@@ -29,24 +29,24 @@ export default function ApplyForm({ params, searchParams }: ApplyFormProps) {
 
 
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    const emailContent = {
-      applicantName,
-      applicantEmail,
-      message,
-      jobDetails: { designation, department, description, location, type },
-    };
+  //   const emailContent = {
+  //     applicantName,
+  //     applicantEmail,
+  //     message,
+  //     jobDetails: { designation, department, description, location, type },
+  //   };
 
-    // Send the emailContent to your email API endpoint here
-    console.log("Email content:", emailContent);
+  //   // Send the emailContent to your email API endpoint here
+  //   console.log("Email content:", emailContent);
 
-    // Clear form after submission
-    setApplicantName("");
-    setApplicantEmail("");
-    setMessage("");
-  };
+  //   // Clear form after submission
+  //   setApplicantName("");
+  //   setApplicantEmail("");
+  //   setMessage("");
+  // };
 
 
 
