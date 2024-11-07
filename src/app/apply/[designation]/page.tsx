@@ -1,6 +1,6 @@
 "use client";
 import ApplicationForm from "@/components/ApplicationForm";
-import { useState } from "react";
+// import { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa6";
 
 
@@ -20,12 +20,12 @@ type ApplyFormProps = {
 
 export default function ApplyForm({ params, searchParams }: ApplyFormProps) {
   const { designation } = params;
-  const { department, description, location, type } = searchParams;
+  // const { department, description, location, type } = searchParams;
 
-  // State to manage form input
-  const [applicantName, setApplicantName] = useState("");
-  const [applicantEmail, setApplicantEmail] = useState("");
-  const [message, setMessage] = useState("");
+  // // State to manage form input
+  // const [applicantName, setApplicantName] = useState("");
+  // const [applicantEmail, setApplicantEmail] = useState("");
+  // const [message, setMessage] = useState("");
 
 
 
