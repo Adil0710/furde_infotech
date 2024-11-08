@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
+import { Paperclip } from "lucide-react"; // Example icon from
 import {
   Form,
   FormControl,
@@ -28,6 +29,8 @@ import {
   SelectValue,
 } from "./ui/select";
 import { Textarea } from "./ui/textarea";
+import { MultipleSelector } from "./multiselector";
+import { Checkbox } from "./ui/checkbox";
 
 // Infer the schema type
 type FormData = z.infer<typeof applicationFormSchema>;
@@ -47,6 +50,27 @@ export default function ApplicationForm() {
       address: "",
       caste: "",
       maritalStatus: undefined,
+      schoolname: "",
+      sscyear: "",
+      sscmarks: "",
+      hscdiplomaname: "",
+      hscdiplomadepartment: "",
+      hscdiplomayear: "",
+      hscdiplomamarks: "",
+      graduationname: undefined,
+      graduationdepartment: undefined,
+      graduationyear: undefined,
+      graduationmarks: undefined,
+      pgraduationname: undefined,
+      pgraduationdepartment: undefined,
+      pgraduationyear: undefined,
+      pgraduationmarks: undefined,
+      experience: "",
+      courses: "",
+      languages: [],
+      vehicle: undefined,
+      resume: undefined,
+      confirm: false,
     },
   });
 
@@ -66,7 +90,6 @@ export default function ApplicationForm() {
       >
         <div className="grid grid-cols-2 gap-12">
           {/* First Name */}
-
           <FormField
             control={form.control}
             name="firstname"
@@ -84,9 +107,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Last Name */}
-
           <FormField
             control={form.control}
             name="lastname"
@@ -104,9 +125,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* D.O.B. */}
-
           <FormField
             control={form.control}
             name="dob"
@@ -199,9 +218,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Gender */}
-
           <FormField
             control={form.control}
             name="gender"
@@ -227,9 +244,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Phone */}
-
           <FormField
             control={form.control}
             name="phone"
@@ -256,9 +271,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Email */}
-
           <FormField
             control={form.control}
             name="email"
@@ -276,9 +289,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Address */}
-
           <FormField
             control={form.control}
             name="address"
@@ -302,9 +313,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Caste */}
-
           <FormField
             control={form.control}
             name="caste"
@@ -322,9 +331,7 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
-
           {/* Gender */}
-
           <FormField
             control={form.control}
             name="maritalStatus"
@@ -351,7 +358,576 @@ export default function ApplicationForm() {
               </FormItem>
             )}
           />
+          {/* Educational Qualifications */}
+          <FormLabel className=" col-span-2 mt-5">
+            Educational Qualification*
+          </FormLabel>
+          <div className="col-span-2 grid grid-cols-4 gap-12">
+            {/* SSC */}
+            <div className="col-span-4 grid grid-cols-4 gap-x-12">
+              <FormField
+                control={form.control}
+                name="schoolname"
+                render={({ field }) => (
+                  <FormItem className="col-span-2">
+                    <FormLabel className=" text-gray-500">1. SSC*</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter School Name"
+                        {...field}
+                        className="inputstyle"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="sscyear"
+                render={({ field }) => (
+                  <FormItem className=" col-span-1">
+                    <FormLabel className="text-gray-500">
+                      Passing Year*
+                    </FormLabel>
+                    <FormControl>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <SelectTrigger className="inputstyle">
+                          <SelectValue placeholder="Select Year" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Array.from(
+                            { length: 60 },
+                            (_, i) => new Date().getFullYear() - i
+                          ).map((year) => (
+                            <SelectItem key={year} value={year.toString()}>
+                              {year}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="sscmarks"
+                render={({ field }) => (
+                  <FormItem className=" col-span-1">
+                    <FormLabel className=" text-gray-500">
+                      Percentage / CGPA*
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g. 90% | CGPA 9.50"
+                        {...field}
+                        className="inputstyle"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    {!form.formState.errors.address && (
+                      <div className="mt-1 text-right text-xs text-gray-500">
+                        Enter your Percentage or CGPA
+                      </div>
+                    )}
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* HSC */}
+            <div className="-mt-4 col-span-4 grid grid-cols-4 gap-x-12">
+              <FormField
+                control={form.control}
+                name="hscdiplomaname"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      2. HSC / Diploma*
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter College Name"
+                        {...field}
+                        className="inputstyle"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="hscdiplomadepartment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Department*
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter Department"
+                        {...field}
+                        className="inputstyle"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    {!form.formState.errors.address && (
+                      <div className="mt-1 text-right text-xs text-gray-500">
+                        HSC passed out kindly enter N/A
+                      </div>
+                    )}
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="hscdiplomayear"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500">
+                      Passing Year*
+                    </FormLabel>
+                    <FormControl>
+                      <Select
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                      >
+                        <SelectTrigger className="inputstyle">
+                          <SelectValue placeholder="Select Year" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Array.from(
+                            { length: 60 },
+                            (_, i) => new Date().getFullYear() - i
+                          ).map((year) => (
+                            <SelectItem key={year} value={year.toString()}>
+                              {year}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="hscdiplomamarks"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Percentage / CGPA*
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g. 90% | CGPA 9.50"
+                        {...field}
+                        className="inputstyle"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    {!form.formState.errors.address && (
+                      <div className="mt-1 text-right text-xs text-gray-500">
+                        Enter your Percentage or CGPA
+                      </div>
+                    )}
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* Gradution */}
+
+            <div className="-mt-4 col-span-4 grid grid-cols-4 gap-x-12">
+              <FormField
+                control={form.control}
+                name="graduationname"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      3. Graduation
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter College Name"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="graduationdepartment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Department / Specialization
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter Department"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="graduationyear"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500">
+                      Passing Year
+                    </FormLabel>
+                    <FormControl>
+                      <Select
+                        onValueChange={(value) =>
+                          field.onChange(value || undefined)
+                        } // Set undefined when no value is selected
+                        defaultValue={field.value ?? ""} // Default to empty string if undefined
+                      >
+                        <SelectTrigger className="inputstyle">
+                          <SelectValue placeholder="Select Year" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Array.from(
+                            { length: 60 },
+                            (_, i) => new Date().getFullYear() - i
+                          ).map((year) => (
+                            <SelectItem key={year} value={year.toString()}>
+                              {year}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="graduationmarks"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Percentage / CGPA
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g. 90% | CGPA 9.50"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    {!form.formState.errors.address && (
+                      <div className="mt-1 text-right text-xs text-gray-500">
+                        Enter your Percentage or CGPA
+                      </div>
+                    )}
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            {/* Post Graduation */}
+
+            <div className="-mt-4 col-span-4 grid grid-cols-4 gap-x-12">
+              <FormField
+                control={form.control}
+                name="pgraduationname"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      4. Post Graduation
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter College Name"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="pgraduationdepartment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Department / Specialization
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter Department"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="pgraduationyear"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500">
+                      Passing Year
+                    </FormLabel>
+                    <FormControl>
+                      <Select
+                        onValueChange={(value) =>
+                          field.onChange(value || undefined)
+                        } // Set undefined when no value is selected
+                        defaultValue={field.value ?? ""} // Default to empty string if undefined
+                      >
+                        <SelectTrigger className="inputstyle">
+                          <SelectValue placeholder="Select Year" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Array.from(
+                            { length: 60 },
+                            (_, i) => new Date().getFullYear() - i
+                          ).map((year) => (
+                            <SelectItem key={year} value={year.toString()}>
+                              {year}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="pgraduationmarks"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className=" text-gray-500">
+                      Percentage / CGPA
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="e.g. 90% | CGPA 9.50"
+                        {...field}
+                        className="inputstyle"
+                        value={field.value ?? undefined}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                    {!form.formState.errors.address && (
+                      <div className="mt-1 text-right text-xs text-gray-500">
+                        Enter your Percentage or CGPA
+                      </div>
+                    )}
+                  </FormItem>
+                )}
+              />
+            </div>
+          </div>
+          {/* Experience */}
+          <FormField
+            control={form.control}
+            name="experience"
+            render={({ field }) => (
+              <FormItem className=" col-span-2">
+                <FormLabel>Experience*</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Enter Your Prior Experience"
+                    {...field}
+                    className="inputstyle resize-none"
+                    maxLength={200}
+                  />
+                </FormControl>
+                <FormMessage />
+                {!form.formState.errors.address && (
+                  <div className="mt-1 text-right text-xs text-gray-500">
+                    Max 200 characters
+                  </div>
+                )}
+              </FormItem>
+            )}
+          />
+          {/* Experience */}
+          <FormField
+            control={form.control}
+            name="courses"
+            render={({ field }) => (
+              <FormItem className=" col-span-2">
+                <FormLabel>Courses Done</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Enter Courses Done"
+                    {...field}
+                    className="inputstyle resize-none"
+                    maxLength={200}
+                  />
+                </FormControl>
+                <FormMessage />
+                {!form.formState.errors.address && (
+                  <div className="mt-1 text-right text-xs text-gray-500">
+                    Enter courses separated with commas | e.g. MS-CIT, Java
+                  </div>
+                )}
+              </FormItem>
+            )}
+          />
+          {/* Vehicle */}
+          <FormField
+            control={form.control}
+            name="vehicle"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Own a Vehicle*</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger className="inputstyle">
+                      <SelectValue placeholder="Select an Option" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="Yes">Yes</SelectItem>
+                    <SelectItem value="No">No</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          {/* Languages */}
+          <FormField
+            control={form.control}
+            name="languages"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Languages Known*</FormLabel>
+                <FormControl>
+                  <MultipleSelector
+                    selectedValues={field.value || []}
+                    onChange={field.onChange}
+                    options={[
+                      { value: "English", label: "English" },
+                      { value: "Hindi", label: "Hindi" },
+                      { value: "Marathi", label: "Marathi" },
+                      { value: "Other", label: "Other" },
+                    ]}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Resume */}
+
+          <FormField
+            control={form.control}
+            name="resume"
+            render={({ field }) => {
+              const [fileName, setFileName] = useState<string>("");
+
+              const handleFileChange = (
+                e: React.ChangeEvent<HTMLInputElement>
+              ) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  setFileName(file.name); // Set the file name when a file is selected
+                  field.onChange(file); // Pass the file object to the field value
+                }
+              };
+
+              return (
+                <FormItem className=" col-span-2">
+                  <FormLabel>Resume</FormLabel>
+                  <FormControl>
+                    <div className="flex w-[48.5%] items-center text-sm gap-2 border p-2 rounded-md">
+                      <Paperclip className="h-5 w-5 text-gray-600" />{" "}
+                      {/* Icon */}
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        onChange={handleFileChange}
+                        className="hidden" // Hide the default file input
+                        id="resume-upload" // ID for triggering click event
+                      />
+                      <label
+                        htmlFor="resume-upload"
+                        className="text-gray-600 cursor-pointer"
+                      >
+                        {fileName ? fileName : "Click to attach your resume"}
+                      </label>
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              );
+            }}
+          />
+
+          {/* Checkbox for Confirmation */}
+          <FormField
+            control={form.control}
+            name="confirm"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Checkbox
+                    id="confirm"
+                    checked={field.value} // Use checked instead of value
+                    onChange={(e) => field.onChange((e.target as HTMLInputElement).checked)}  // Explicitly cast event target
+                  />
+                </FormControl>
+                <FormLabel htmlFor="confirm">
+                  By checking this box, I confirm that the information provided
+                  is accurate and true to the best of my knowledge.
+                </FormLabel>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
+
         <div className="flex flex-row items-center justify-end gap-10">
           <Button
             type="button"

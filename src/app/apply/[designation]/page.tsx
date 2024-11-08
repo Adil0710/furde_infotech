@@ -18,7 +18,7 @@ type ApplyFormProps = {
   };
 };
 
-export default function ApplyForm({ params }: ApplyFormProps) {
+export default function ApplyForm({ params, searchParams }: ApplyFormProps) {
   const { designation } = params;
   // const { department, description, location, type } = searchParams;
 
