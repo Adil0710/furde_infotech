@@ -31,12 +31,19 @@ import {
 import { Textarea } from "./ui/textarea";
 import { MultipleSelector } from "./multiselector";
 import { Checkbox } from "./ui/checkbox";
+import toast from "react-hot-toast";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { formatDateToDDMMYYYY } from "@/helpers/formatDateToDDMMYYYY";
 
 // Infer the schema type
 type FormData = z.infer<typeof applicationFormSchema>;
+interface ApplicationFormProps {
+  designation: string;
+}
 
-export default function ApplicationForm() {
+export default function ApplicationForm({ designation }: ApplicationFormProps) {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   const form = useForm<FormData>({
     resolver: zodResolver(applicationFormSchema),
@@ -74,8 +81,69 @@ export default function ApplicationForm() {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true);
+    const formData = new FormData();
+
+    formData.append("firstname", data.firstname);
+    formData.append("lastname", data.lastname);
+    formData.append("dob", data.dob ? formatDateToDDMMYYYY(data.dob) : "");
+    formData.append("gender", data.gender);
+    formData.append("phone", data.phone);
+    formData.append("email", data.email);
+    formData.append("address", data.address);
+    formData.append("caste", data.caste);
+    formData.append("maritalStatus", data.maritalStatus);
+    formData.append("schoolname", data.schoolname);
+    formData.append("sscyear", data.sscyear);
+    formData.append("sscmarks", data.sscmarks);
+    formData.append("hscdiplomaname", data.hscdiplomaname);
+    formData.append("hscdiplomadepartment", data.hscdiplomadepartment);
+    formData.append("hscdiplomayear", data.hscdiplomayear);
+    formData.append("hscdiplomamarks", data.hscdiplomamarks);
+    formData.append("graduationname", data.graduationname || "");
+    formData.append("graduationdepartment", data.graduationdepartment || "");
+    formData.append("graduationyear", data.graduationyear || "");
+    formData.append("graduationmarks", data.graduationmarks || "");
+    formData.append("pgraduationname", data.pgraduationname || "");
+    formData.append("pgraduationdepartment", data.pgraduationdepartment || "");
+    formData.append("pgraduationyear", data.pgraduationyear || "");
+    formData.append("pgraduationmarks", data.pgraduationmarks || "");
+    formData.append("experience", data.experience);
+    formData.append("courses", data.courses);
+    formData.append("vehicle", data.vehicle);
+    formData.append("designation", designation);
+
+    if (data.languages && data.languages.length > 0) {
+      formData.append("languages", data.languages.join(","));
+    } else {
+      formData.append("languages", "");
+    }
+
+    if (data.resume) {
+      formData.append("resume", data.resume);
+    }
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        toast.success("Application sent successfully!");
+      } else {
+        const errorText = await response.text();
+        toast.error(`Failed to send application: ${errorText}`);
+      }
+    } catch (error) {
+      toast.error("An error occurred while sending the application.");
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // State to track the selected month and year
@@ -133,11 +201,12 @@ export default function ApplicationForm() {
               <FormItem>
                 <FormLabel>D.O.B.*</FormLabel>
                 <FormControl>
-                  <Popover>
+                  <Popover open={open} onOpenChange={setOpen}>
                     <PopoverTrigger asChild>
                       <FormControl>
                         <Button
                           variant={"outline"}
+                          onClick={() => setOpen(!open)}
                           className={cn(
                             "w-full inputstyle hover:bg-[#D9D9D9]",
                             !field.value && "text-muted-foreground"
@@ -153,8 +222,7 @@ export default function ApplicationForm() {
                       </FormControl>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-4" align="start">
-                      <div className=" flex flex-row items-center justify-between gap-5">
-                        {/* Month Selector */}
+                      <div className="flex flex-row items-center justify-between gap-5">
                         <Select
                           defaultValue={selectedMonth.toString()}
                           onValueChange={(month) =>
@@ -173,7 +241,6 @@ export default function ApplicationForm() {
                           </SelectContent>
                         </Select>
 
-                        {/* Year Selector */}
                         <Select
                           defaultValue={selectedYear.toString()}
                           onValueChange={(year) =>
@@ -195,11 +262,13 @@ export default function ApplicationForm() {
                           </SelectContent>
                         </Select>
                       </div>
-                      {/* Calendar Component */}
                       <Calendar
                         mode="single"
                         selected={field.value as Date | undefined}
-                        onSelect={(date) => field.onChange(date?.toISOString())}
+                        onSelect={(date) => {
+                          field.onChange(date?.toISOString());
+                          setOpen(false); // Close the popover when a date is selected
+                        }}
                         disabled={(date) =>
                           date > new Date() || date < new Date("1900-01-01")
                         }
@@ -872,14 +941,14 @@ export default function ApplicationForm() {
               ) => {
                 const file = e.target.files?.[0];
                 if (file) {
-                  setFileName(file.name); // Set the file name when a file is selected
-                  field.onChange(file); // Pass the file object to the field value
+                  setFileName(file.name); // Display the selected file name
+                  field.onChange(file); // Pass the file object to the form
                 }
               };
 
               return (
-                <FormItem className=" col-span-2">
-                  <FormLabel>Resume</FormLabel>
+                <FormItem className="col-span-2">
+                  <FormLabel>Resume*</FormLabel>
                   <FormControl>
                     <div className="flex w-[48.5%] items-center text-sm gap-2 border p-2 rounded-md">
                       <Paperclip className="h-5 w-5 text-gray-600" />{" "}
@@ -910,15 +979,15 @@ export default function ApplicationForm() {
             control={form.control}
             name="confirm"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className=" col-span-2">
                 <FormControl>
                   <Checkbox
                     id="confirm"
-                    checked={field.value} // Use checked instead of value
-                    onChange={(e) => field.onChange((e.target as HTMLInputElement).checked)}  // Explicitly cast event target
+                    checked={field.value || false} // Control the checked state
+                    onCheckedChange={(checked) => field.onChange(checked)} // Update on change
                   />
                 </FormControl>
-                <FormLabel htmlFor="confirm">
+                <FormLabel htmlFor="confirm" className=" ml-2">
                   By checking this box, I confirm that the information provided
                   is accurate and true to the best of my knowledge.
                 </FormLabel>
@@ -938,9 +1007,16 @@ export default function ApplicationForm() {
           </Button>
           <Button
             type="submit"
+            disabled={isLoading}
             className="rounded bg-blue-500 text-white w-36 flex items-center gap-2 justify-center py-2 hover:bg-blue-800 duration-500"
           >
-            Submit
+            {isLoading ? (
+              <>
+                <AiOutlineLoading3Quarters className=" animate-spin" /> Applying
+              </>
+            ) : (
+              "Apply"
+            )}
           </Button>
         </div>
       </form>

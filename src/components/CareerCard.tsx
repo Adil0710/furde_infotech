@@ -35,7 +35,7 @@ function CareerCard({
       <Link
          href={{
           pathname: `/apply/${designation.replace(/\s+/g, "-").toLowerCase()}`, // Dynamic route based on job designation
-          query: { designation, department, description, location, type }, // Pass job details
+          query: { designation }, // Pass job details
         }}
         className=" rounded text-white text-sm w-36 flex items-center gap-2 justify-center py-2 bg-[#1d4ed8] hover:bg-[#1E3A8A] duration-500"
       >

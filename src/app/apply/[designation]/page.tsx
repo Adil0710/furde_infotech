@@ -2,32 +2,28 @@
 import ApplicationForm from "@/components/ApplicationForm";
 // import { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa6";
-
-
-
+import { useRouter } from "next/navigation";
 
 type ApplyFormProps = {
-  params: {
-    designation: string;
-  };
+  // params: {
+  //   designation: string;
+  // };
   searchParams: {
-    department?: string;
-    description?: string;
-    location?: string;
-    type?: string;
+    designation: string;
+    // department?: string;
+    // description?: string;
+    // location?: string;
+    // type?: string;
   };
 };
 
-export default function ApplyForm({ params, searchParams }: ApplyFormProps) {
-  const { designation } = params;
-  // const { department, description, location, type } = searchParams;
-
+export default function ApplyForm({ searchParams }: ApplyFormProps) {
+  const { designation } = searchParams;
+  const router = useRouter();
   // // State to manage form input
   // const [applicantName, setApplicantName] = useState("");
   // const [applicantEmail, setApplicantEmail] = useState("");
   // const [message, setMessage] = useState("");
-
-
 
   // const handleSubmit = async (e: React.FormEvent) => {
   //   e.preventDefault();
@@ -48,16 +44,22 @@ export default function ApplyForm({ params, searchParams }: ApplyFormProps) {
   //   setMessage("");
   // };
 
-
-
   return (
     <section className=" text-gray-900 bg-white pt-[12%] md:pl-20 md:pr-20 pb-20 px-5 w-full">
       <h1 className=" text-4xl font-bold leading-tight capitalize flex flex-row items-center gap-6">
-        <FaChevronLeft size={30} /> {designation}
+        <FaChevronLeft
+          size={30}
+          className=" cursor-pointer"
+          onClick={() => router.back()}
+        />{" "}
+        {designation}
       </h1>
-      <p className=" text-gray-800 mt-8">Enter the Following details</p>
+      <div className="mt-8 flex flex-row justify-between items-center">
+        <p className=" text-gray-800">Enter the Following details</p>{" "}
+        <p className=" text-gray-800">Fields marked with an asterisk (<span className=" font-bold">*</span>) are required.</p>
+      </div>
 
-     <ApplicationForm/>
+      <ApplicationForm designation={designation} />
     </section>
   );
 }

@@ -51,7 +51,7 @@ export const applicationFormSchema = z.object({
   schoolname: z
     .string()
     .min(2, { message: "School Name must be at least 2 characters." })
-    .max(50, { message: "School Name must not exceed 50 characters." }),
+    .max(100, { message: "School Name must not exceed 100 characters." }),
   sscyear: z
     .string()
     .min(4, { message: "Select Passing Year" })
@@ -69,7 +69,7 @@ export const applicationFormSchema = z.object({
   hscdiplomaname: z
     .string()
     .min(2, { message: "College Name must be at least 2 characters." })
-    .max(50, { message: "College Name must not exceed 50 characters." }),
+    .max(100, { message: "College Name must not exceed 100 characters." }),
   hscdiplomadepartment: z
     .string()
     .min(2, { message: "Department must be at least 2 characters." })
@@ -91,7 +91,7 @@ export const applicationFormSchema = z.object({
   graduationname: z
     .string()
     .min(2, { message: "College Name must be at least 2 characters." })
-    .max(50, { message: "College Name must not exceed 50 characters." })
+    .max(100, { message: "College Name must not exceed 100 characters." })
     .optional(),
   graduationdepartment: z
     .string()
@@ -118,7 +118,7 @@ export const applicationFormSchema = z.object({
   pgraduationname: z
     .string()
     .min(2, { message: "College Name must be at least 2 characters." })
-    .max(50, { message: "College Name must not exceed 50 characters." })
+    .max(100, { message: "College Name must not exceed 100 characters." })
     .optional(),
   pgraduationdepartment: z
     .string()
