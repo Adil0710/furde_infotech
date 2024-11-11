@@ -5,9 +5,9 @@ import { FaChevronLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 
 type ApplyFormProps = {
-  // params: {
-  //   designation: string;
-  // };
+  params: {
+    designation: string;
+  };
   searchParams: {
     designation: string;
     // department?: string;
@@ -17,8 +17,9 @@ type ApplyFormProps = {
   };
 };
 
-export default function ApplyForm({ searchParams }: ApplyFormProps) {
-  const { designation } = searchParams;
+export default function ApplyForm({ searchParams, params }: ApplyFormProps) {
+  const { designation } = searchParams || params;
+
   const router = useRouter();
   // // State to manage form input
   // const [applicantName, setApplicantName] = useState("");
@@ -56,7 +57,7 @@ export default function ApplyForm({ searchParams }: ApplyFormProps) {
       </h1>
       <div className="mt-8 flex flex-row justify-between items-center">
         <p className=" text-gray-800">Enter the Following details</p>{" "}
-        <p className=" text-gray-800">Fields marked with an asterisk (<span className=" font-bold">*</span>) are required.</p>
+        <p className=" text-gray-800">Fields marked with an asterisk <span className=" font-bold">*</span> are required.</p>
       </div>
 
       <ApplicationForm designation={designation} />
