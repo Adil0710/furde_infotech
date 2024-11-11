@@ -44,6 +44,10 @@ interface ApplicationFormProps {
 export default function ApplicationForm({ designation }: ApplicationFormProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  // State to track the selected month and year
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
 
   const form = useForm<FormData>({
     resolver: zodResolver(applicationFormSchema),
@@ -80,8 +84,6 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
       confirm: false,
     },
   });
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
@@ -145,10 +147,6 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
       setIsLoading(false);
     }
   };
-
-  // State to track the selected month and year
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
-  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
 
   return (
     <Form {...form}>
