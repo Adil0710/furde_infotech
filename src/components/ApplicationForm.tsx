@@ -48,6 +48,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
   // State to track the selected month and year
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+  const [fileName, setFileName] = useState<string>("");
 
   const form = useForm<FormData>({
     resolver: zodResolver(applicationFormSchema),
@@ -932,7 +933,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="resume"
             render={({ field }) => {
-              const [fileName, setFileName] = useState<string>("");
+              
 
               const handleFileChange = (
                 e: React.ChangeEvent<HTMLInputElement>
