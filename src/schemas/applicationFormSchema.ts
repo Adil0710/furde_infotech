@@ -90,12 +90,12 @@ export const applicationFormSchema = z.object({
     .max(10, { message: "Percentage or CGPA must not exceed 10 characters." }),
   graduationname: z
     .string()
-    .min(2, { message: "College Name must be at least 2 characters." })
+    
     .max(100, { message: "College Name must not exceed 100 characters." })
     .optional(),
   graduationdepartment: z
     .string()
-    .min(2, { message: "Department must be at least 2 characters." })
+   
     .max(50, { message: "Department Name must not exceed 50 characters." })
     .optional(),
   graduationyear: z
@@ -112,17 +112,17 @@ export const applicationFormSchema = z.object({
     .optional(),
   graduationmarks: z
     .string()
-    .min(2, { message: "Enter Percentage or CGPA " })
+ 
     .max(10, { message: "Percentage or CGPA must not exceed 10 characters." })
     .optional(),
   pgraduationname: z
     .string()
-    .min(2, { message: "College Name must be at least 2 characters." })
+    
     .max(100, { message: "College Name must not exceed 100 characters." })
     .optional(),
   pgraduationdepartment: z
     .string()
-    .min(2, { message: "Department must be at least 2 characters." })
+
     .max(50, { message: "Department Name must not exceed 50 characters." })
     .optional(),
   pgraduationyear: z
@@ -139,7 +139,7 @@ export const applicationFormSchema = z.object({
     .optional(),
   pgraduationmarks: z
     .string()
-    .min(2, { message: "Enter Percentage or CGPA " })
+   
     .max(10, { message: "Percentage or CGPA must not exceed 10 characters." })
     .optional(),
   experience: z

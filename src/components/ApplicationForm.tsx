@@ -848,13 +848,13 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 <FormMessage />
                 {!form.formState.errors.address && (
                   <div className="mt-1 text-right text-xs text-gray-500">
-                    Max 200 characters
+                   Fresher kindly enter N/A | Max 200 characters
                   </div>
                 )}
               </FormItem>
             )}
           />
-          {/* Experience */}
+          {/* Courses */}
           <FormField
             control={form.control}
             name="courses"
@@ -872,7 +872,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 <FormMessage />
                 {!form.formState.errors.address && (
                   <div className="mt-1 text-right text-xs text-gray-500">
-                    Enter courses separated with commas | e.g. MS-CIT, Java
+                    Enter courses separated with commas e.g. MS-CIT, Java  |  Enter N/A if no courses have been completed.
                   </div>
                 )}
               </FormItem>
