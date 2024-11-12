@@ -5,12 +5,12 @@ import mobile2 from "@/assets/mobile2.png";
 import mobile3 from "@/assets/mobile3.png";
 import mobile4 from "@/assets/mobile4.png";
 import mobile5 from "@/assets/mobile5.png";
-import web from "@/assets/web.png";
-import backend from "@/assets/backend.png";
-import maintainance from "@/assets/maintainance.png";
-import consulting from "@/assets/consulting.png";
-import emerging from "@/assets/emerging.png";
-import testing from "@/assets/testing.png";
+// import web from "@/assets/web.png";
+// import backend from "@/assets/backend.png";
+// import maintainance from "@/assets/maintainance.png";
+// import consulting from "@/assets/consulting.png";
+// import emerging from "@/assets/emerging.png";
+// import testing from "@/assets/testing.png";
 import { ITService } from "@/types/types";
 
 export const itServices: ITService[]= [
