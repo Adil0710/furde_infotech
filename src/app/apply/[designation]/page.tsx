@@ -8,19 +8,14 @@ type ApplyFormProps = {
   params: {
     designation: string;
   };
-  searchParams: {
-    designation: string;
-    // department?: string;
-    // description?: string;
-    // location?: string;
-    // type?: string;
-  };
 };
 
-export default function ApplyForm({ searchParams, params }: ApplyFormProps) {
-  const { designation } = searchParams || params;
+export default function ApplyForm({ params }: ApplyFormProps) {
+
 
   const router = useRouter();
+
+  const designation = params.designation.replace(/-/g, " ");
   // // State to manage form input
   // const [applicantName, setApplicantName] = useState("");
   // const [applicantEmail, setApplicantEmail] = useState("");
