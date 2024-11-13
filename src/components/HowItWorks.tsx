@@ -9,53 +9,53 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function HowItWorks() {
-  const [options, setOptions] = useState<string>("Initial Consultation");
+  const [selectedOption, setSelectedOption] = useState<string>("Initial Consultation");
+
+  // Store steps and image descriptions in an array for cleaner mapping
+  const steps = [
+    { label: "Initial Consultation", img: how1, description: "Understanding client needs, goals, and project scope." },
+    { label: "Planning and Strategy", img: how2, description: "Defining the project roadmap, timelines, and resource allocation." },
+    { label: "Design and Development", img: how3, description: "Creating wireframes, user interface (UI), and writing code for the solution." },
+    { label: "Testing and Assurance", img: how4, description: "Ensuring the product is functional, secure, and bug-free through rigorous testing." },
+    { label: "Client Feedback", img: how5, description: "Gathering client input and making necessary adjustments or improvements." },
+  ];
+
+  // Find the current step object to display corresponding image and description
+  const currentStep = steps.find((step) => step.label === selectedOption);
 
   return (
     <div className="bg-white md:pl-20 md:pr-20 px-5 py-10">
-      {/* Hidden preloaded images */}
+      {/* Preload images for faster switching */}
       <div style={{ display: "none" }}>
-        <Image src={how1} alt="Preload Initial Consultation" priority />
-        <Image src={how2} alt="Preload Planning and Strategy" priority />
-        <Image src={how3} alt="Preload Design and Development" priority />
-        <Image src={how4} alt="Preload Testing and Assurance" priority />
-        <Image src={how5} alt="Preload Client Feedback" priority />
+        {steps.map((step, index) => (
+          <Image key={index} src={step.img} alt={`Preload ${step.label}`} priority />
+        ))}
       </div>
 
       <div>
-        <h1 className=" text-4xl font-bold leading-tight text-black">
-          HOW IT WORKS: OUR STREAMLINED WORKFLOW
-        </h1>
+        <h1 className="text-4xl font-bold leading-tight text-black">HOW IT WORKS: OUR STREAMLINED WORKFLOW</h1>
         <p className="mt-5 text-md text-[#9CA3AF]">
           Explore our streamlined workflow, where we combine clear planning,
           efficient execution, and continuous feedback to deliver tailored
           solutions that drive results.
         </p>
 
-        <div className="mt-10 flex flex-row">
-          {/* Left side */}
-          <ul className="flex flex-col w-1/2 justify-evenly">
-            {[
-              "Initial Consultation",
-              "Planning and Strategy",
-              "Design and Development",
-              "Testing and Assurance",
-              "Client Feedback",
-            ].map((step, index) => (
+        <div className="mt-16 flex flex-row">
+          {/* Left side options */}
+          <ul className="flex flex-col w-1/2 justify-evenly -mt-5">
+            {steps.map((step, index) => (
               <React.Fragment key={index}>
                 <li
-                  onClick={() => setOptions(step)}
-                  className={`${
-                    options === step ? "font-bold" : ""
-                  } group cursor-pointer flex flex-row justify-between items-center w-[90%] hover:font-bold duration-200`}
+                  onClick={() => setSelectedOption(step.label)}
+                  className={`cursor-pointer flex flex-row justify-between items-center w-[90%] hover:font-bold ${
+                    selectedOption === step.label ? "font-bold" : ""
+                  } duration-200`}
                 >
-                  {step}
+                  {step.label}
                   <FaArrowRightLong
-                    className={`${
-                      options === step
-                        ? "translate-x-0 opacity-100"
-                        : "-translate-x-5 opacity-0"
-                    } transition-all duration-500`}
+                    className={`transition-transform duration-500 ${
+                      selectedOption === step.label ? "translate-x-0 opacity-100" : "-translate-x-5 opacity-0"
+                    }`}
                   />
                 </li>
                 <div className="h-[0.6px] bg-[#9CA3AF] w-[90%] rounded-full"></div>
@@ -63,86 +63,21 @@ export default function HowItWorks() {
             ))}
           </ul>
 
-          {/* Right side */}
+          {/* Right side content */}
           <div className="w-1/2">
-            <div
-              key={options}
-              className={`transition-opacity duration-500 ${
-                options ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              {options === "Initial Consultation" && (
+            <div className="pb-5">
+              {currentStep && (
                 <>
-                  <Image
-                    src={how1}
-                    alt="Initial Consultation"
-                    quality={90}
-                    priority
-                    className="transition-opacity duration-500 ease-in-out opacity-100"
-                  />
-                  <p className="ml-5 text-sm text-[#6B7280]">
-                    Understanding client needs, goals, and project scope.
-                  </p>
-                </>
-              )}
-              {options === "Planning and Strategy" && (
-                <>
-                  <Image
-                    src={how2}
-                    alt="Planning and Strategy"
-                    quality={90}
-                    priority
-                    className="transition-opacity duration-500 ease-in-out opacity-100"
-                  />
-                  <p className="ml-5 text-sm text-[#6B7280]">
-                    Defining the project roadmap, timelines, and resource
-                    allocation.
-                  </p>
-                </>
-              )}
-              {options === "Design and Development" && (
-                <>
-                  <Image
-                    src={how3}
-                    alt="Design and Development"
-                    quality={90}
-                    priority
-                    className="transition-opacity duration-500 ease-in-out opacity-100"
-                  />
-                  <p className="ml-5 text-sm text-[#6B7280]">
-                    Creating wireframes, user interface (UI), and writing code
-                    for the solution.
-                  </p>
-                </>
-              )}
-              {options === "Testing and Assurance" && (
-                <>
-                  <Image
-                    src={how4}
-                    alt="Testing and Assurance"
-                    quality={90}
-                    priority
-                    className="transition-opacity duration-500 ease-in-out opacity-100"
-                  />
-                  <p className="ml-5 text-sm text-[#6B7280]">
-                    Ensuring the product is functional, secure, and bug-free
-                    through rigorous testing.
-                  </p>
-                </>
-              )}
-              {options === "Client Feedback" && (
-                <>
-                  <Image
-                    src={how5}
-                    alt="Client Feedback"
-                    quality={90}
-                    priority
-                    className="transition-opacity duration-500 ease-in-out opacity-100"
-                  />
-                  <p className="ml-5 text-sm text-[#6B7280]">
-                    Gathering client input and making necessary adjustments or
-                    improvements.
-                  </p>
+                  <div className="pb-5">
+                    <Image
+                      src={currentStep.img}
+                      alt={currentStep.label}
+                      quality={90}
+                      priority
+                      className="cardShadow rounded-xl"
+                    />
+                  </div>
+                  <p className="ml-5 text-sm text-[#6B7280]">{currentStep.description}</p>
                 </>
               )}
             </div>

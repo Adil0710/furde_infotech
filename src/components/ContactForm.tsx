@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -27,11 +27,16 @@ import {
 import { FaUserFriends } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { contactFormSchema } from "@/schemas/contactFormSchema";
+import toast from "react-hot-toast";
+import { LuLoader2 } from "react-icons/lu";
 
 // Infer the schema type
 type FormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
   const form = useForm<FormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -42,8 +47,35 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
+  const onSubmit = async (data: FormData) => {
+    setIsLoading(true)
+
+    const formData = new FormData()
+
+    formData.append("name", data.name);
+    formData.append("phone", data.phone);
+    formData.append("email", data.email);
+    formData.append("service", data.service);
+
+    try {
+      const response = await fetch ("/api/send-contact-email", {
+        method: "POST",
+        body: formData
+      })
+
+      if(response.ok) {
+        toast.success("Message sent successfully!");
+      }else {
+        const errorText = await response.text()
+        toast.error(`Failed to send message: ${errorText}`)
+      }
+      
+    } catch (error) {
+      toast.error("An error occured while sending the message.")
+      console.error("Error submitting form:", error);
+    }finally{
+      setIsLoading(false)
+    }
   };
 
   return (
@@ -151,9 +183,19 @@ export default function ContactForm() {
             </Button>
             <Button
               type="submit"
+              disabled={isLoading}
               className="border border-white rounded bg-black text-white text-sm w-[48%] flex items-center gap-2 justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
             >
+              {isLoading ? (
+              <>
+                <LuLoader2 className=" animate-spin" /> Submitting
+              </>
+            ) : (
+              <>
               Submit <FaArrowRightLong />
+              </>
+            )}
+              
             </Button>
           </div>
         </form>

@@ -32,7 +32,7 @@ import { Textarea } from "./ui/textarea";
 import { MultipleSelector } from "./multiselector";
 import { Checkbox } from "./ui/checkbox";
 import toast from "react-hot-toast";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { LuLoader2 } from "react-icons/lu";
 import { formatDateToDDMMYYYY } from "@/helpers/formatDateToDDMMYYYY";
 
 // Infer the schema type
@@ -1011,7 +1011,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
           >
             {isLoading ? (
               <>
-                <AiOutlineLoading3Quarters className=" animate-spin" /> Applying
+                <LuLoader2 className=" animate-spin" /> Applying
               </>
             ) : (
               "Apply"

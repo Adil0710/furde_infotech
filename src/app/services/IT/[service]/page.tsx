@@ -68,7 +68,7 @@ const ServiceDetails = async ({ params }: ServiceDetailsProps) => {
         </div>
         
         {/* Text on Right for even index */}
-        <div className="col-span-2 pr-8 relative flex items-center"> {/* Adjusted padding */}
+        <div className="col-span-2 relative flex items-center"> {/* Adjusted padding */}
           <div className="  w-[70%] absolute right-0">
           <h1 className="font-semibold text-3xl uppercase">{card.title}</h1>
           <ul className="mt-8 flex flex-col gap-4 text-gray-500 list-disc list-inside -ml-3">
