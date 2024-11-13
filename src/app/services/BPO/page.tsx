@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import bg from "@/assets/staticbg.jpg";
+import BPOService from "@/components/BPOService";
 
 export default function BPO() {
   return (
@@ -43,6 +44,7 @@ export default function BPO() {
           </div>
         </div>
       </div>
+      <BPOService/>
     </section>
   );
 }
