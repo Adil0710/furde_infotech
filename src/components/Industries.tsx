@@ -1,8 +1,4 @@
 import React from "react";
-import { BsBank2 } from "react-icons/bs";
-import { FaLandmarkDome } from "react-icons/fa6";
-import { FaHospital } from "react-icons/fa";
-import { IoShieldCheckmarkSharp } from "react-icons/io5";
 
 function Industries() {
   return (
