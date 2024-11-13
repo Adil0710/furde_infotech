@@ -35,7 +35,7 @@ type FormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<FormData>({
     resolver: zodResolver(contactFormSchema),
