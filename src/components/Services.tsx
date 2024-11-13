@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Image, { StaticImageData } from "next/image";
 
 // Reusable ServiceCard component
-const ServiceCard = ({ imageSrc, title, description }: { imageSrc: StaticImageData; title: string; description: string }) => (
+const ServiceCard = ({ imageSrc, title, description, link }: { imageSrc: StaticImageData; title: string; description: string; link: string }) => (
   <div className="border border-r-white bg-neutral-800 overflow-hidden pb-5 min-h-[450px] rounded-xl">
     <Image src={imageSrc} alt={title} />
     <div className="pt-5 pb-5 px-10">
@@ -16,7 +16,7 @@ const ServiceCard = ({ imageSrc, title, description }: { imageSrc: StaticImageDa
     </div>
     <div className="flex justify-end px-10 mt-5">
       <Link
-        href=""
+        href={link}
         className="border border-white rounded text-white text-sm w-36 flex items-center gap-2 justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
       >
         Explore <FaArrowRightLong />
@@ -31,16 +31,19 @@ const services = [
     imageSrc: IT,
     title: "IT",
     description: "Empowering businesses with innovative technology services that enhance efficiency, security, and scalability.",
+    link: "/services/IT"
   },
   {
     imageSrc: KPO,
     title: "KPO",
     description: "Delivering specialized knowledge and analytical insights to help companies make informed decisions and drive growth.",
+    link: "/services/KPO"
   },
   {
     imageSrc: BPO,
     title: "BPO",
     description: "Optimizing operational workflows with reliable outsourcing, ensuring cost efficiency and improved performance.",
+    link: "/services/BPO"
   },
 ];
 
@@ -59,6 +62,7 @@ function Services() {
             imageSrc={service.imageSrc}
             title={service.title}
             description={service.description}
+            link={service.link}
           />
         ))}
       </div>

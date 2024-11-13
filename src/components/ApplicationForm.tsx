@@ -137,6 +137,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
 
       if (response.ok) {
         toast.success("Application sent successfully!");
+        form.reset()
       } else {
         const errorText = await response.text();
         toast.error(`Failed to send application: ${errorText}`);

@@ -145,7 +145,10 @@ export default function Footer() {
 
         {/* Rightside */}
               
-        <ContactForm/>
+        <div className="w-1/2 pl-40">
+      <h1 className="text-3xl mb-10 mt-24 font-semibold leading-tight">Contact Us</h1>
+      <ContactForm/>
+      </div>
       </div>
     </div>
   );

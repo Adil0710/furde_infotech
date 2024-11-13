@@ -65,6 +65,7 @@ export default function ContactForm() {
 
       if(response.ok) {
         toast.success("Message sent successfully!");
+        form.reset()
       }else {
         const errorText = await response.text()
         toast.error(`Failed to send message: ${errorText}`)
@@ -79,12 +80,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-1/2 pl-40">
-      <h1 className="text-3xl mt-24 font-semibold leading-tight">Contact Us</h1>
+    
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-7 mt-10 flex flex-col"
+          className="space-y-7 flex flex-col text-white"
         >
           <FormField
             control={form.control}
@@ -200,6 +200,6 @@ export default function ContactForm() {
           </div>
         </form>
       </Form>
-    </div>
+    
   );
 }

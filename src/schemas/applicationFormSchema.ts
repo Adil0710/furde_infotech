@@ -144,11 +144,11 @@ export const applicationFormSchema = z.object({
     .optional(),
   experience: z
     .string()
-    .min(5, { message: "Experience must be at least 5 characters." })
+    .min(2, { message: "Experience must be at least 5 characters." })
     .max(200, { message: "Experience must not exceed 200 characters." }),
   courses: z
     .string()
-    .min(5, { message: "Courses must be at least 5 characters." })
+    .min(2, { message: "Courses must be at least 5 characters." })
     .max(200, { message: "Courses must not exceed 200 characters." }),
   vehicle: z.enum(["Yes", "No"], {
     required_error: "Select an option",
