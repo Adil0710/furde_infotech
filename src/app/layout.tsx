@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+
+const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Furde Infotech",
@@ -17,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` antialiased`}>
+      <body className={`${montserrat.className} antialiased`}>
         <Navbar />
         {children}
         <Footer />
