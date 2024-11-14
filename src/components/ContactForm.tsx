@@ -42,10 +42,11 @@ export default function ContactForm() {
 }, []);
 
 const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/adilpatel-fit/30min' });
-    return false;
+  e.preventDefault();
+  window.Calendly.initPopupWidget({ url: 'https://calendly.com/adilpatel-fit/30min' });
+  return false;
 };
+
 
   const [isLoading, setIsLoading] = useState(false);
 
