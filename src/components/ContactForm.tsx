@@ -64,15 +64,21 @@ export default function ContactForm() {
       })
 
       if(response.ok) {
-        toast.success("Message sent successfully!");
+        toast.success("Message sent successfully!", {
+          duration:5000
+        });
         form.reset()
       }else {
         const errorText = await response.text()
-        toast.error(`Failed to send message: ${errorText}`)
+        toast.error(`Failed to send message: ${errorText}`, {
+          duration:5000
+        })
       }
       
     } catch (error) {
-      toast.error("An error occured while sending the message.")
+      toast.error("An error occured while sending the message.", {
+        duration:5000
+      })
       console.error("Error submitting form:", error);
     }finally{
       setIsLoading(false)

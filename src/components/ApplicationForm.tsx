@@ -136,14 +136,20 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
       });
 
       if (response.ok) {
-        toast.success("Application sent successfully!");
+        toast.success("Application sent successfully!", {
+          duration:5000
+        });
         form.reset()
       } else {
         const errorText = await response.text();
-        toast.error(`Failed to send application: ${errorText}`);
+        toast.error(`Failed to send application: ${errorText}`, {
+          duration:5000
+        });
       }
     } catch (error) {
-      toast.error("An error occurred while sending the application.");
+      toast.error("An error occurred while sending the application.", {
+        duration:5000
+      } );
       console.error("Error submitting form:", error);
     } finally {
       setIsLoading(false);
