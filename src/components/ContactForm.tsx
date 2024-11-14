@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -34,6 +34,18 @@ import { LuLoader2 } from "react-icons/lu";
 type FormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+}, []);
+
+const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/adilpatel-fit/30min' });
+    return false;
+};
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -183,8 +195,13 @@ export default function ContactForm() {
           <div className="pt-1 flex flex-row items-center justify-between">
             <Button
               type="button"
+              onClick={handleClick}
               className="border border-white rounded bg-black text-white text-sm w-[48%] flex items-center gap-2 justify-center py-2 hover:bg-[#F43F5E] hover:border-[#F43F5E] duration-500"
             >
+              <link
+                href="https://assets.calendly.com/assets/external/widget.css"
+                rel="stylesheet"
+              />
               Plan a Call <FaUserFriends />
             </Button>
             <Button
