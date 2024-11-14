@@ -49,7 +49,7 @@ function OurStory() {
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35 }}
+                  transition={{ duration: 0.5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                 >
                   <h1 className="font-semibold text-5xl">Furde Group</h1>

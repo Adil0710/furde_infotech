@@ -107,7 +107,7 @@ export default function HowItWorks() {
                   key={currentStep.label}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35 }}
+                  transition={{ duration: 0.5 }}
                   whileInView={{ opacity: 1, y: 0 }}
                 >
                   <div className="pb-5">

@@ -15,28 +15,51 @@ import { IoMailOutline } from "react-icons/io5";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
 import ContactForm from "./ContactForm";
-
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown, Headphones, BarChart3, Laptop } from "lucide-react";
 
 const Links = [
   {
     title: "Home",
-    link: "/"
+    link: "/",
   },
   {
     title: "Services",
-    link: "/services"
+    link: "/services",
+    subLinks: [
+      {
+        title: "IT",
+        link: "/services/IT",
+        icon: <Laptop size={16} className="mr-1" />,
+      },
+      {
+        title: "BPO",
+        link: "/services/BPO",
+        icon: <Headphones size={16} className="mr-1" />,
+      },
+      {
+        title: "KPO",
+        link: "/services/KPO",
+        icon: <BarChart3 size={16} className="mr-1" />,
+      },
+    ],
   },
   {
     title: "Careers",
-    link: "/careers"
+    link: "/careers",
   },
   {
     title: "About Us",
-    link: "/about-us"
+    link: "/about-us",
   },
   {
-    title: "Contact US",
-    link: "/contact-us"
+    title: "Contact Us",
+    link: "/contact-us",
   },
 ];
 
@@ -90,10 +113,43 @@ export default function Footer() {
             <div>
               <h2 className=" text-3xl font-semibold">Quick Links</h2>
               <ul className=" mt-8 flex flex-col text-[#9CA3AF] justify-center gap-5">
-                {Links.map((link, index) => {
-                  return (
-                    <Link href={link.link} key={index}><li className=' cursor-pointer hover:text-white duration-200'>{link.title}</li></Link>
-                  );
+                {Links.map((nav, index) => {
+                  if (nav.title === "Services" && nav.subLinks) {
+                    // Render Dropdown for "Services"
+                    return (
+                      <DropdownMenu key={index}>
+                        <DropdownMenuTrigger asChild>
+                          <li className="cursor-pointer flex flex-row items-center gap-2">
+                            {nav.title} <ChevronDown size={18} />
+                          </li>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                          align="center"
+                          sideOffset={0}
+                          className="glass-effect text-white w-40"
+                        >
+                          {nav.subLinks.map((subLink, subIndex) => (
+                            <DropdownMenuItem asChild key={subIndex}>
+                              <Link
+                                href={subLink.link}
+                                className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded"
+                              >
+                                {subLink.icon}
+                                <span>{subLink.title}</span>
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    );
+                  } else {
+                    // Render regular nav items
+                    return (
+                      <Link href={nav.link} key={index}>
+                        <li className="cursor-pointer">{nav.title}</li>
+                      </Link>
+                    );
+                  }
                 })}
               </ul>
             </div>
@@ -144,11 +200,13 @@ export default function Footer() {
         </div>
 
         {/* Rightside */}
-              
+
         <div className="w-1/2 pl-40">
-      <h1 className="text-3xl mb-10 mt-24 font-semibold leading-tight">Contact Us</h1>
-      <ContactForm/>
-      </div>
+          <h1 className="text-3xl mb-10 mt-24 font-semibold leading-tight">
+            Contact Us
+          </h1>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );
