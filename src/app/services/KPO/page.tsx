@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import bg from "@/assets/staticbg.jpg";
+import KPOService from "@/components/KPOService";
 
 export default function KPO() {
   return (
@@ -44,6 +45,7 @@ export default function KPO() {
           </div>
         </div>
       </div>
+      <KPOService/>
     </section>
   );
 }

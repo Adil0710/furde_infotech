@@ -1,3 +1,4 @@
+// IT Services
 import mobile from "@/assets/mobile.png";
 import mobilebg from "@/assets/mobilebg.png";
 import mobile1 from "@/assets/mobile1.png";
@@ -39,6 +40,32 @@ import testingbg from "@/assets/testingbg.png";
 import testing1 from "@/assets/testing1.png";
 import testing2 from "@/assets/testing2.png";
 import testing3 from "@/assets/testing3.png";
+
+// BPO Services
+import customer from "@/assets/customer.png"
+import backoffice from "@/assets/backoffice.png"
+import finance from "@/assets/finance.png"
+import hr from "@/assets/hr.png"
+import technical from "@/assets/technical.png"
+import sales from "@/assets/sales.png"
+import healthcare from "@/assets/healthcare.png"
+import legal from "@/assets/legal.png"
+import industry from "@/assets/industry.png"
+
+
+// KPO Services 
+import market from "@/assets/market.png"
+import business from "@/assets/business.png"
+import data from "@/assets/data.png"
+import intellectual from "@/assets/intellectual.png"
+import regulatory from "@/assets/regulatory.png"
+import competative from "@/assets/competative.png"
+import investment from "@/assets/investment.png"
+import financial from "@/assets/financial.png"
+import consumer from "@/assets/consumer.png"
+import content from "@/assets/content.png"
+
+
 import { ITService } from "@/types/types";
 
 export const itServices: ITService[] = [
@@ -410,7 +437,7 @@ export const itServices: ITService[] = [
 
 export const bpoServices: ITService[] = [
   {
-    image: mobile,
+    image: customer,
     title: "Customer Support",
     description:
       "Comprehensive, round the clock support to enhance customer satisfaction.",
@@ -472,7 +499,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: backoffice,
     title: "Back Office Support",
     description:
       "Efficient support for data entry, document management, and business operations.",
@@ -534,7 +561,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: finance,
     title: "Financial and Accounting",
     description:
       " Professional bookkeeping, payroll, and financial reporting services.",
@@ -596,7 +623,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: hr,
     title: "Human Resources",
     description:
       "End to end HR services, from recruitment to compliance management.",
@@ -658,7 +685,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: technical,
     title: "IT and Technical Support",
     description:
       " Reliable technical support and cybersecurity solutions for IT infrastructure.",
@@ -720,7 +747,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: sales,
     title: " Sales and Marketing",
     description:
       "Lead generation, telemarketing, and digital marketing solutions.",
@@ -782,7 +809,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: healthcare,
     title: "Healthcare BPO",
     description:
       "Comprehensive BPO solutions for medical billing, transcription, and telehealth support.",
@@ -844,7 +871,7 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: legal,
     title: "Legal Process Outsourcing",
     description:
       "Specialized support in legal research, document management, and litigation assistance.",
@@ -906,10 +933,10 @@ export const bpoServices: ITService[] = [
     ],
   },
   {
-    image: mobile,
+    image: industry,
     title: "Industry Specific BPO",
     description:
-      "Tailored BPO solutions for retail, telecom, banking, travel, and e commerce industries.",
+      "Tailored BPO solutions for retail, telecom, banking, travel, and e-commerce industries.",
     link: "/services/BPO/industry-specific-BPO-services",
     backgroundImage: mobilebg,
     descriptionvm:
@@ -969,12 +996,435 @@ export const bpoServices: ITService[] = [
   },
 ];
 
+export const kpoServices: ITService[] = [
+  {
+  image: market,
+  title: "Market Research & Analysis",
+  description:
+    "Comprehensive research and analysis to help businesses understand market dynamics, and industry trends.",
+  link: "/services/KPO/market-research-and-analysis",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Market Research & Analysis services empower businesses with deep insights and data-driven strategies to make informed decisions and stay ahead in competitive markets. We conduct thorough research using both quantitative and qualitative methods to provide a clear understanding of market trends, customer behavior, and competitor activities. From identifying target audiences and analyzing customer needs to forecasting market trends and evaluating brand positioning, our tailored research solutions equip businesses with the knowledge needed to optimize strategies, reduce risks, and drive growth in dynamic industries.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Customer Insights",
+      descriptionLines: [
+        "    Identify customer preferences and motivations.",
+        "    Develop customer personas based on data driven insights.",
+        "    Enhance product market fit through customer needs analysis.",
+        "    Forecast trends in customer behaviour.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Competitor Analysis",
+      descriptionLines: [
+        "    Evaluate competitor strategies and market positioning.",
+        "    Benchmark performance against key industry players.",
+        "    Identify competitive advantages and market gaps.",
+        "    Predict competitor movements and strategies.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Industry Benchmarking",
+      descriptionLines: [
+        "    Compare performance metrics against industry standards.",
+        "    Track regulatory changes impacting the industry.",
+        "    Identify emerging industry trends and innovations.",
+        "    Establish KPIs based on industry best practices.",
+      ],
+    },
+  ],
+},
+{
+  image: business,
+  title: "Business and Financial Analysis",
+  description:
+    "In-depth analysis of business and financial data to support strategic decision-making and optimize performance.",
+  link: "/services/KPO/business-and-financial-analysis",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Business and Financial Analysis services are designed to provide organizations with actionable insights and a comprehensive understanding of their financial health and operational efficiency. We conduct in-depth analysis to evaluate financial performance, identify growth opportunities, and uncover potential risks. Our experts assess critical financial metrics, analyze market dynamics, and provide strategic recommendations to enhance profitability, optimize cash flow, and improve overall business performance. From financial forecasting and budgeting to profitability analysis and business valuation, our customized solutions support data-driven decision-making, enabling clients to confidently navigate financial challenges and capitalize on growth opportunities.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Financial Modeling",
+      descriptionLines: [
+        "    Create dynamic models to forecast financial outcomes.",
+        "    Analyze cash flow, profitability, and investment potential.",
+        "    Perform scenario analysis to assess potential risks.",
+        "    Use predictive analytics for strategic planning.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Risk Assessment",
+      descriptionLines: [
+        "    Evaluate potential financial and operational risks.",
+        "    Implement mitigation strategies to minimize impact.",
+        "    Develop risk scenarios based on historical data.",
+        "    Identify high risk areas requiring immediate action.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Performance Metrics",
+      descriptionLines: [
+        "    Track KPIs to measure financial and operational health.",
+        "    Benchmark performance against business objectives.",
+        "    Provide actionable insights to enhance profitability.",
+        "    Utilize data to drive continuous performance improvements.",
+      ],
+    },
+  ],
+},
+{
+  image: data,
+  title: "Data Mining",
+  description:
+    "Advanced data mining and analytics to uncover patterns and insights that drive smarter business decisions.",
+  link: "/services/KPO/data-mining",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Data Mining services empower organizations to unlock valuable insights hidden within large volumes of data. Using advanced techniques in machine learning, predictive analytics, and statistical modeling, we help clients discover patterns, trends, and correlations that drive informed decision-making. From customer behavior analysis to fraud detection, our solutions are tailored to meet industry-specific needs, enabling businesses to optimize operations, personalize customer experiences, and identify growth opportunities. By transforming raw data into strategic assets, we support clients in enhancing business intelligence, improving operational efficiency, and gaining a competitive advantage.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Data Processing",
+      descriptionLines: [
+        "Clean and transform data for advanced analysis.",
+        "Organize data to ensure accessibility and efficiency.",
+        "Identify anomalies for further investigation.",
+        "    Structure data for machine learning applications.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Predictive Analytics",
+      descriptionLines: [
+        "    Forecast future outcomes based on historical data.",
+        "Identify factors influencing trends and customer behavior.",
+        "    Develop predictive models for proactive decision making.",
+        "    Optimize resources by predicting demand fluctuations.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Trend Identification",
+      descriptionLines: [
+        "    Analyze historical data to uncover emerging trends.",
+        "    Highlight market shifts for strategic responses.",
+        "    Identify customer preferences to guide marketing efforts.",
+        "    Use insights to stay ahead of industry changes.",
+      ],
+    },
+  ],
+},
+{
+  image: intellectual,
+  title: "Intellectual Property Research",
+  description:
+    "Support for intellectual property management, including patent research,  and compliance monitoring.",
+  link: "/services/KPO/intellectual-property-research",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Intellectual Property Research services provide critical insights to protect and manage your intellectual assets effectively. With in-depth patent searches, trademark analysis, and competitive IP assessments, we help clients navigate the complex landscape of intellectual property. Our team conducts comprehensive research to ensure originality, prevent infringement risks, and uncover opportunities for innovation. Whether you’re securing patents, defending trademarks, or exploring licensing opportunities, our services support your strategic goals, helping you safeguard innovations and maintain a competitive edge. By leveraging data-driven insights, we empower businesses to maximize the value of their IP portfolios in an ever-evolving market.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Patent Landscape Analysis",
+      descriptionLines: [
+        "    Identify patented technologies within the industry.",
+        "    Analyze patent trends for innovation opportunities.",
+        "    Conduct freedom to operate analysis for new products.",
+        "    Identify potential infringement risks.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Trademark Research",
+      descriptionLines: [
+        "    Check trademark availability and conflict risks.",
+        "    Monitor trademark filings within the industry.",
+        "    Conduct brand analysis for strategic positioning.",
+        "    Prevent infringement with proactive research.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "IP Compliance",
+      descriptionLines: [
+        "    Ensure IP activities align with legal requirements.",
+        "    Monitor compliance for patent and trademark laws.",
+        "    Assist in filing procedures for IP protection.",
+        "    Provide guidance on IP management best practices.",
+      ],
+    },
+  ],
+},
+{
+  image: regulatory,
+  title: "Regulatory Research",
+  description:
+    "Regulatory, Legal research and compliance monitoring to help businesses navigate regulatory environments.",
+  link: "/services/KPO/regulatory-research",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Regulatory Research services empower businesses to navigate complex regulatory landscapes with confidence. We specialize in tracking, analyzing, and interpreting global and industry-specific regulations, including compliance standards, policy changes, and emerging legal requirements. With expertise in sectors such as healthcare, finance, technology, and manufacturing, we provide timely insights to help companies understand and adhere to applicable laws and guidelines. Our proactive approach supports clients in mitigating compliance risks, streamlining operations, and aligning with best practices, ensuring that regulatory obligations are met efficiently. By partnering with us, businesses can stay informed, avoid costly penalties, and maintain a reputation for regulatory excellence.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Compliance Analysis",
+      descriptionLines: [
+        "    Review legal frameworks for business operations.",
+        "    Analyze current compliance requirements.",
+        "    Identify areas at risk of non compliance.",
+        "    Implement corrective actions to meet standards.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Risk Assessment",
+      descriptionLines: [
+        "    Evaluate potential legal risks within the business.",
+        "    Develop strategies to mitigate compliance risks.",
+        "    Identify changes in regulatory requirements.",
+        "    Perform regular audits to maintain compliance.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Legal Document Preparation",
+      descriptionLines: [
+        "    Draft and review legal documents.",
+        "    Ensure documents adhere to regulatory requirements.",
+        "    Assist in structuring agreements for legal safety.",
+        "    Provide legal support for strategic planning.",
+      ],
+    },
+  ],
+},
+{
+  image: competative,
+  title: "Competitive Intelligence",
+  description:
+    "Insightful analysis of competitors to enhance strategic positioning and identify growth opportunities.",
+  link: "/services/KPO/competitive-intelligence",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Competitive Intelligence services equip businesses with actionable insights into the competitive landscape, helping them stay ahead in dynamic markets. We analyze key competitors' strategies, product offerings, pricing models, and market positioning to provide a comprehensive view of the industry's competitive dynamics. Our research spans across industry trends, customer preferences, and innovation strategies, enabling businesses to identify opportunities, anticipate market shifts, and refine their strategic approach. With our support, companies can make informed decisions, adapt quickly to competitive pressures, and strengthen their position to gain a sustainable advantage in their sector.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Competitor Benchmarking",
+      descriptionLines: [
+        "    Assess strengths and weaknesses of competitors.",
+        "    Identify key success factors within the industry.",
+        "    Establish benchmarks for competitive improvement.",
+        "    Monitor competitor activities to inform strategies.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "SWOT Analysis",
+      descriptionLines: [
+        "    Analyze company strengths and opportunities.",
+        "    Address weaknesses to mitigate potential threats.",
+        "    Develop strategic initiatives based on SWOT.",
+        "    Support decision making with targeted insights.  ",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Market Positioning",
+      descriptionLines: [
+        "    Map current market standing against competitors.",
+        "    Identify growth opportunities in new markets.",
+        "    Adjust strategies for a stronger market position.",
+        "    Enhance brand reputation and market share.",
+      ],
+    },
+  ],
+},
+{
+  image: investment,
+  title: "Investment Research Analysis",
+  description:
+    "Thorough investment research for better decision-making, including portfolio analysis and risk management.",
+  link: "/services/KPO/investment-research-analysis",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Investment Research Analysis services provide in-depth insights to help clients make informed, strategic investment decisions. By examining financial data, market trends, and economic indicators, we deliver comprehensive evaluations of investment opportunities across various sectors. Our team analyzes key performance metrics, conducts risk assessments, and forecasts potential returns, ensuring a thorough understanding of the investment landscape. Whether for equities, fixed income, real estate, or alternative assets, our research empowers clients to make data-driven choices, optimize their portfolios, and achieve their financial goals with confidence.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Market Analysis",
+      descriptionLines: [
+        "    Analyze economic trends and market fluctuations.",
+        "    Identify high potential investment opportunities.",
+        "    Assess market risks and potential returns.",
+        "    Support investment decisions with in depth data.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Portfolio Monitoring",
+      descriptionLines: [
+        "    Track portfolio performance and risk factors.",
+        "    Adjust asset allocation for optimal returns.",
+        "    Use analytics to enhance portfolio resilience.",
+        "    Ensure alignment with investment goals.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Risk Assessment",
+      descriptionLines: [
+        "    Evaluate risks associated with investment choices.",
+        "    Provide mitigation strategies for volatile assets.",
+        "    Optimize investment returns by minimizing risks.",
+        "    Utilize data to make informed investment decisions.",
+      ],
+    },
+  ],
+},
+{
+  image: financial,
+  title: "Financial Risk Management",
+  description:
+    "Identifying and managing financial risks through analysis and strategic planning to ensure business resilience.",
+  link: "/services/KPO/financial-risk-management",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Financial Risk Management services enable businesses to identify, assess, and mitigate risks that could impact financial stability and growth. We provide tailored strategies that cover market risk, credit risk, operational risk, and liquidity risk, using advanced analytics and industry best practices to anticipate potential challenges. Our team works to design comprehensive risk frameworks, implement robust monitoring processes, and provide actionable insights, helping clients safeguard assets, reduce volatility, and ensure compliance with regulatory standards. With our expertise, businesses can make confident decisions, strengthen their financial resilience, and navigate uncertainty effectively.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Risk Identification",
+      descriptionLines: [
+        "    Identify key risk areas in financial operations.",
+        "    Conduct risk assessments across business functions.",
+        "    Develop awareness of potential risk sources.",
+        "    Ensure comprehensive risk coverage.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Mitigation Strategies",
+      descriptionLines: [
+        "Create risk mitigation plans for critical areas.",
+        "    Implement safeguards to prevent financial loss.",
+        "    Identify strategies for crisis management.",
+        "    Monitor and update plans as risk factors evolve.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Regulatory Compliance",
+      descriptionLines: [
+        "Ensure adherence to financial regulations.",
+        "    Monitor changes in compliance standards.",
+        "    Conduct regular compliance audits.",
+        "    Prepare reports to satisfy regulatory bodies.",
+      ],
+    },
+  ],
+},
+{
+  image: consumer,
+  title: "Consumer Analytics",
+  description:
+    "Deep customer insights through behavioral analysis, and journey mapping to improve engagement.",
+  link: "/services/KPO/consumer-analytics",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Consumer Analytics services provide in-depth insights into customer behavior, preferences, and purchasing patterns, enabling businesses to make data-driven decisions that drive growth and enhance customer engagement. By leveraging advanced analytics tools, we analyze consumer data across various touchpoints to identify trends, segment audiences, and predict future behaviors. Our approach helps businesses personalize marketing strategies, optimize product offerings, and improve customer experiences, resulting in increased loyalty and higher conversion rates. From market segmentation to predictive modeling, we equip businesses with the insights needed to understand and meet evolving consumer demands effectively.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Customer Segmentation",
+      descriptionLines: [
+        "    Classify customers by demographics and behavior.",
+        "    Tailor products to meet segmented group needs.",
+        "    Identify high value customer segments.",
+        "    Guide marketing efforts with segmentation insights.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Behavioral Insights",
+      descriptionLines: [
+        "    Track customer behaviors for trend identification.",
+        "    Use insights to optimize user experiences.",
+        "    Understand factors driving customer loyalty.",
+        "    Enhance engagement with personalized strategies.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Engagement Strategies",
+      descriptionLines: [
+        "    Develop campaigns targeting customer interests.",
+        "    Utilize data to improve marketing effectiveness.",
+        "    Measure and optimize engagement channels.",
+        "    Drive retention with loyalty focused strategies.",
+      ],
+    },
+  ],
+},
+{
+  image: content,
+  title: "Content and Editorial Research",
+  description:
+    "Content research and editorial analysis to support content strategy, and audience engagement.",
+  link: "/services/KPO/content-and-editorial-research",
+  backgroundImage: mobilebg,
+  descriptionvm:
+    "Our Content and Editorial Research services offer comprehensive insights and strategic support for developing high-quality, audience-driven content. From identifying trending topics to analyzing audience engagement patterns, we help businesses create content that resonates with their target market. Our team conducts thorough research to uncover insights on readership preferences, content gaps, and competitor strategies, ensuring your content is both relevant and impactful. We support editorial planning, optimize content for SEO, and align with brand voice and messaging to drive traffic, enhance brand authority, and foster audience loyalty. Let us empower your content strategy with data-backed, insightful editorial research.",
+  cards: [
+    {
+      image: mobile1,
+      title: "Topic Research",
+      descriptionLines: [
+        "Identify trending topics within the industry.",
+        "    Develop content calendars based on audience needs.",
+        "    Perform competitor content analysis.",
+        "    Provide insights to guide content planning.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Audience Analysis",
+      descriptionLines: [
+        "    Segment audiences based on demographics and interests.",
+        "    Identify content preferences for target groups.",
+        "    Use analytics to enhance audience engagement.",
+        "    Improve messaging through audience insights.",
+      ],
+    },
+    {
+      image: mobile1,
+      title: "Content Optimization",
+      descriptionLines: [
+        "    Optimize content for SEO and audience engagement.",
+        "    Measure content performance with analytics tools.",
+        "    Enhance readability and relevance of content.",
+        "    Implement A/B testing to refine strategies. ",
+      ],
+    },
+  ],
+},
+]
+
 // {
 //   image: mobile,
 //   title: "",
 //   description:
 //     "",
-//   link: "/services/BPO/",
+//   link: "/services/KPO/",
 //   backgroundImage: mobilebg,
 //   descriptionvm:
 //     "",
