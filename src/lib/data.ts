@@ -43,27 +43,121 @@ import testing3 from "@/assets/testing3.png";
 
 // BPO Services
 import customer from "@/assets/customer.png"
+import customerbg from "@/assets/customerbg.png"
+import customer1 from "@/assets/customer1.png"
+import customer2 from "@/assets/customer2.png"
+import customer3 from "@/assets/customer3.png"
+import customer4 from "@/assets/customer4.png"
+import customer5 from "@/assets/customer5.png"
 import backoffice from "@/assets/backoffice.png"
+import backofficebg from "@/assets/backofficebg.png"
+import backoffice1 from "@/assets/backoffice1.png"
+import backoffice2 from "@/assets/backoffice2.png"
+import backoffice3 from "@/assets/backoffice3.png"
+import backoffice4 from "@/assets/backoffice4.png"
+import backoffice5 from "@/assets/backoffice5.png"
 import finance from "@/assets/finance.png"
+import financebg from "@/assets/financebg.png"
+import finance1 from "@/assets/finance1.png"
+import finance2 from "@/assets/finance2.png"
+import finance3 from "@/assets/finance3.png"
+import finance4 from "@/assets/finance4.png"
+import finance5 from "@/assets/finance5.png"
 import hr from "@/assets/hr.png"
+import hrbg from "@/assets/hrbg.png"
+import hr1 from "@/assets/hr1.png"
+import hr2 from "@/assets/hr2.png"
+import hr3 from "@/assets/hr3.png"
+import hr4 from "@/assets/hr4.png"
+import hr5 from "@/assets/hr5.png"
 import technical from "@/assets/technical.png"
+import technicalbg from "@/assets/technicalbg.png"
+import technical1 from "@/assets/technical1.png"
+import technical2 from "@/assets/technical2.png"
+import technical3 from "@/assets/technical3.png"
+import technical4 from "@/assets/technical4.png"
+import technical5 from "@/assets/technical5.png"
 import sales from "@/assets/sales.png"
+import salesbg from "@/assets/salesbg.png"
+import sales1 from "@/assets/sales1.png"
+import sales2 from "@/assets/sales2.png"
+import sales3 from "@/assets/sales3.png"
+import sales4 from "@/assets/sales4.png"
+import sales5 from "@/assets/sales5.png"
 import healthcare from "@/assets/healthcare.png"
+import healthcarebg from "@/assets/healthcarebg.png"
+import healthcare1 from "@/assets/healthcare1.png"
+import healthcare2 from "@/assets/healthcare2.png"
+import healthcare3 from "@/assets/healthcare3.png"
+import healthcare4 from "@/assets/healthcare4.png"
+import healthcare5 from "@/assets/healthcare5.png"
 import legal from "@/assets/legal.png"
+import legalbg from "@/assets/legalbg.png"
+import legal1 from "@/assets/legal1.png"
+import legal2 from "@/assets/legal2.png"
+import legal3 from "@/assets/legal3.png"
+import legal4 from "@/assets/legal4.png"
+import legal5 from "@/assets/legal5.png"
 import industry from "@/assets/industry.png"
+import industrybg from "@/assets/industrybg.png"
+import industry1 from "@/assets/industry1.png"
+import industry2 from "@/assets/industry2.png"
+import industry3 from "@/assets/industry3.png"
+import industry4 from "@/assets/industry4.png"
+import industry5 from "@/assets/industry5.png"
 
 
 // KPO Services 
 import market from "@/assets/market.png"
+import marketbg from "@/assets/marketbg.png"
+import market1 from "@/assets/market1.png"
+import market2 from "@/assets/market2.png"
+import market3 from "@/assets/market3.png"
 import business from "@/assets/business.png"
+import businessbg from "@/assets/businessbg.png"
+import business1 from "@/assets/business1.png"
+import business2 from "@/assets/business2.png"
+import business3 from "@/assets/business3.png"
 import data from "@/assets/data.png"
+import databg from "@/assets/databg.png"
+import data1 from "@/assets/data1.png"
+import data2 from "@/assets/data2.png"
+import data3 from "@/assets/data3.png"
 import intellectual from "@/assets/intellectual.png"
+import intellectualbg from "@/assets/intellectualbg.png"
+import intellectual1 from "@/assets/intellectual1.png"
+import intellectual2 from "@/assets/intellectual2.png"
+import intellectual3 from "@/assets/intellectual3.png"
 import regulatory from "@/assets/regulatory.png"
+import regulatorybg from "@/assets/regulatorybg.png"
+import regulatory1 from "@/assets/regulatory1.png"
+import regulatory2 from "@/assets/regulatory2.png"
+import regulatory3 from "@/assets/regulatory3.png"
 import competative from "@/assets/competative.png"
+import competativebg from "@/assets/competativebg.png"
+import competative1 from "@/assets/competative1.png"
+import competative2 from "@/assets/competative2.png"
+import competative3 from "@/assets/competative3.png"
 import investment from "@/assets/investment.png"
+import investmentbg from "@/assets/investmentbg.png"
+import investment1 from "@/assets/investment1.png"
+import investment2 from "@/assets/investment2.png"
+import investment3 from "@/assets/investment3.png"
 import financial from "@/assets/financial.png"
+import financialbg from "@/assets/financialbg.png"
+import financial1 from "@/assets/financial1.png"
+import financial2 from "@/assets/financial2.png"
+import financial3 from "@/assets/financial3.png"
 import consumer from "@/assets/consumer.png"
+import consumerbg from "@/assets/consumerbg.png"
+import consumer1 from "@/assets/consumer1.png"
+import consumer2 from "@/assets/consumer2.png"
+import consumer3 from "@/assets/consumer3.png"
 import content from "@/assets/content.png"
+import contentbg from "@/assets/contentbg.png"
+import content1 from "@/assets/content1.png"
+import content2 from "@/assets/content2.png"
+import content3 from "@/assets/content3.png"
 
 
 import { ITService } from "@/types/types";
@@ -442,12 +536,12 @@ export const bpoServices: ITService[] = [
     description:
       "Comprehensive, round the clock support to enhance customer satisfaction.",
     link: "/services/BPO/customer-support-services",
-    backgroundImage: mobilebg,
+    backgroundImage: customerbg,
     descriptionvm:
       "Deliver exceptional support experiences with our Customer Support Services tailored to meet your users' needs. We provide comprehensive assistance through multi-channel support, including live chat, email, and phone, ensuring quick and effective resolution of issues. Our support team is trained to handle queries with empathy and efficiency, helping enhance customer satisfaction, build loyalty, and foster positive relationships that drive long-term growth for your business.",
     cards: [
       {
-        image: mobile1,
+        image: customer1,
         title: "24/7 Customer Support",
         descriptionLines: [
           "Instant, round the clock support, ensuring issues are resolved whenever they arise.",
@@ -457,7 +551,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile2,
+        image: customer2,
         title: "Multi Channel Support",
         descriptionLines: [
           "  Engage with customers through various platforms like chat, email, phone, and social media.",
@@ -467,7 +561,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile3,
+        image: customer3,
         title: "Technical Support",
         descriptionLines: [
           "  Comprehensive troubleshooting for software, hardware, and digital solutions.",
@@ -477,7 +571,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile4,
+        image: customer4,
         title: "Helpdesk Services",
         descriptionLines: [
           "Centralized helpdesk for query handling and ticket resolution.",
@@ -487,7 +581,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile5,
+        image: customer5,
         title: "Complaint Handling and Resolution",
         descriptionLines: [
           "  Addresses and resolves customer complaints promptly and effectively.",
@@ -504,12 +598,12 @@ export const bpoServices: ITService[] = [
     description:
       "Efficient support for data entry, document management, and business operations.",
     link: "/services/BPO/back-office-support-services",
-    backgroundImage: mobilebg,
+    backgroundImage: backofficebg,
     descriptionvm:
       "Streamline your business operations with our Back Office Support Services, designed to optimize efficiency and allow you to focus on core functions. We handle essential administrative tasks such as data management, payroll processing, documentation, and financial reporting with accuracy and discretion. Our dedicated team ensures that your back-office operations run smoothly, reducing overheads and supporting overall business productivity, while you concentrate on driving growth and strategic objectives.",
     cards: [
       {
-        image: mobile1,
+        image: backoffice1,
         title: "Data Entry and Processing",
         descriptionLines: [
           "  Accurate data entry to ensure reliable records and insights.",
@@ -519,7 +613,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: backoffice2,
         title: "Document Management",
         descriptionLines: [
           "  Organizes documents systematically for quick access and retrieval.",
@@ -529,7 +623,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: backoffice3,
         title: "Order Processing",
         descriptionLines: [
           "  Manages order placement, verification, and fulfillment seamlessly.",
@@ -539,7 +633,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: backoffice4,
         title: "Payment Processing",
         descriptionLines: [
           "  Secure, prompt processing of customer payments and refunds.",
@@ -549,7 +643,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: backoffice5,
         title: "Data Analytics and Reporting",
         descriptionLines: [
           "  Detailed reports to provide insights for informed decision making.",
@@ -566,12 +660,12 @@ export const bpoServices: ITService[] = [
     description:
       " Professional bookkeeping, payroll, and financial reporting services.",
     link: "/services/BPO/financial-and-accounting-services",
-    backgroundImage: mobilebg,
+    backgroundImage: financebg,
     descriptionvm:
       "Our Financial and Accounting Services offer precise, reliable, and compliant support for all your financial management needs. From bookkeeping and financial reporting to tax preparation and strategic financial planning, our expert team ensures transparency and accuracy in every transaction. We help businesses maintain financial health, optimize cash flow, and meet regulatory requirements, providing insights that drive smarter financial decisions and foster sustainable growth.",
     cards: [
       {
-        image: mobile1,
+        image: finance1,
         title: "Bookkeeping and Accounting",
         descriptionLines: [
           "  Precise record keeping to maintain accurate financial statements.",
@@ -581,7 +675,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: finance2,
         title: "Payroll Processing",
         descriptionLines: [
           "  Timely and accurate payroll calculation and distribution.",
@@ -591,7 +685,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: finance3,
         title: "Invoice Processing",
         descriptionLines: [
           "  Manages invoice generation and approval workflows.",
@@ -601,7 +695,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: finance4,
         title: "Tax Preparation and Filing",
         descriptionLines: [
           "  Accurate tax calculation and preparation for compliance.",
@@ -611,7 +705,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: finance5,
         title: "Financial Analysis and Reporting",
         descriptionLines: [
           "  Provides insights into business performance through detailed reports.",
@@ -628,12 +722,12 @@ export const bpoServices: ITService[] = [
     description:
       "End to end HR services, from recruitment to compliance management.",
     link: "/services/BPO/human-resources-services",
-    backgroundImage: mobilebg,
+    backgroundImage: hrbg,
     descriptionvm:
       "Our Human Resources Services are designed to streamline and enhance every aspect of your workforce management. From recruitment and onboarding to employee relations, benefits administration, and compliance, we support your organization in building and retaining a skilled, motivated team. Our HR solutions are tailored to align with your company’s culture and strategic goals, empowering your workforce, reducing turnover, and fostering a productive and positive work environment.",
     cards: [
       {
-        image: mobile1,
+        image: hr1,
         title: "Recruitment and Staffing",
         descriptionLines: [
           "  Attracts, screens, and recruits top talent to fit your organization’s needs.",
@@ -643,7 +737,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: hr2,
         title: "Employee Benefits Administration",
         descriptionLines: [
           "  Manages employee benefits programs, including health and retirement.",
@@ -653,7 +747,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: hr3,
         title: "Payroll Administration",
         descriptionLines: [
           " Processes payroll accurately to ensure employees are paid on time.",
@@ -663,7 +757,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: hr4,
         title: "Performance Management",
         descriptionLines: [
           "  Tracks employee progress and provides constructive feedback.",
@@ -673,7 +767,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: hr5,
         title: "HR Compliance",
         descriptionLines: [
           "  Ensures adherence to employment laws and company policies.",
@@ -690,12 +784,12 @@ export const bpoServices: ITService[] = [
     description:
       " Reliable technical support and cybersecurity solutions for IT infrastructure.",
     link: "/services/BPO/IT-and-technical-support-services",
-    backgroundImage: mobilebg,
+    backgroundImage: technicalbg,
     descriptionvm:
       "Our IT and Technical Support Services offer comprehensive solutions to ensure your business’s technology infrastructure runs smoothly and efficiently. We provide 24/7 helpdesk support, network management, system troubleshooting, software installation, and maintenance services, tailored to meet your specific needs. Whether it’s resolving technical issues, managing hardware and software, or ensuring data security, our experienced team delivers timely and effective support. We help minimize downtime, improve productivity, and enable businesses to leverage technology for growth, all while maintaining the highest standards of customer service and technical expertise.",
     cards: [
       {
-        image: mobile1,
+        image: technical1,
         title: "IT Helpdesk Support",
         descriptionLines: [
           "  Offers 24/7 troubleshooting and technical assistance.",
@@ -705,7 +799,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: technical2,
         title: "Network Management",
         descriptionLines: [
           "  Ensures stable and secure network connections across devices.",
@@ -715,7 +809,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: technical3,
         title: "System Administration",
         descriptionLines: [
           "  Manages server setup, maintenance, and configurations.",
@@ -725,7 +819,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: technical4,
         title: "Cybersecurity Services",
         descriptionLines: [
           "  Protects data with advanced cybersecurity measures.",
@@ -735,7 +829,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: technical5,
         title: "Software Support and Maintenance",
         descriptionLines: [
           "  Provides updates and fixes for critical software applications.",
@@ -752,12 +846,12 @@ export const bpoServices: ITService[] = [
     description:
       "Lead generation, telemarketing, and digital marketing solutions.",
     link: "/services/BPO/sales-and-marketing-services",
-    backgroundImage: mobilebg,
+    backgroundImage: salesbg,
     descriptionvm:
       "Our Sales and Marketing Services are tailored to drive brand visibility, customer engagement, and revenue growth for your business. We blend data-driven strategies with creative approaches to build comprehensive marketing campaigns that resonate with your target audience. From market research and digital marketing to lead generation, CRM management, and sales support, we equip your business with the tools and expertise needed to excel in competitive markets. Our goal is to boost your brand’s reach and foster customer loyalty, empowering sustainable growth and measurable success.",
     cards: [
       {
-        image: mobile1,
+        image: sales1,
         title: "Telemarketing Services",
         descriptionLines: [
           "  Engages prospects directly through targeted telemarketing campaigns.",
@@ -767,7 +861,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: sales2,
         title: "Lead Generation",
         descriptionLines: [
           "  Identifies and attracts potential customers for your business.",
@@ -777,7 +871,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: sales3,
         title: "Market Research",
         descriptionLines: [
           "  Gathers valuable insights into market trends and customer needs.",
@@ -787,7 +881,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: sales4,
         title: "Social Media Management",
         descriptionLines: [
           "  Builds a strong brand presence across social media platforms.",
@@ -797,7 +891,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: sales5,
         title: "Email Marketing Campaigns",
         descriptionLines: [
           "  Creates engaging email content to capture audience attention.",
@@ -814,12 +908,12 @@ export const bpoServices: ITService[] = [
     description:
       "Comprehensive BPO solutions for medical billing, transcription, and telehealth support.",
     link: "/services/BPO/healthcare-BPO-services",
-    backgroundImage: mobilebg,
+    backgroundImage: healthcarebg,
     descriptionvm:
       "Our Healthcare BPO Services streamline healthcare operations, enabling providers to focus on patient care while we manage administrative and back-office functions. From medical billing, coding, and claims processing to patient scheduling, insurance verification, and records management, we offer end-to-end support that ensures accuracy, compliance, and efficiency. Our solutions are designed to reduce costs, improve service delivery, and enhance data security. With our expertise in healthcare regulations and standards, we help organizations meet industry requirements while prioritizing patient confidentiality and operational excellence.",
     cards: [
       {
-        image: mobile1,
+        image: healthcare1,
         title: "Medical Billing and Coding",
         descriptionLines: [
           "  Provides accurate coding for healthcare claims processing.",
@@ -829,7 +923,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: healthcare2,
         title: "Claims Processing",
         descriptionLines: [
           "  Manages insurance claims efficiently to reduce processing time.",
@@ -839,7 +933,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: healthcare3,
         title: "Patient Scheduling and Appointments",
         descriptionLines: [
           "  Manages patient appointments to optimize scheduling.",
@@ -849,7 +943,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: healthcare4,
         title: "Medical Transcription",
         descriptionLines: [
           "  Provides accurate transcription of medical records and notes.",
@@ -859,7 +953,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: healthcare5,
         title: "Telehealth Support",
         descriptionLines: [
           "  Facilitates virtual appointments and patient consultations.",
@@ -876,12 +970,12 @@ export const bpoServices: ITService[] = [
     description:
       "Specialized support in legal research, document management, and litigation assistance.",
     link: "/services/BPO/legal-process-outsourcing-services",
-    backgroundImage: mobilebg,
+    backgroundImage: legalbg,
     descriptionvm:
       "Our Legal Process Outsourcing (LPO) Services provide efficient and cost-effective solutions to handle a wide range of legal tasks. From document review, legal research, contract management, and compliance services to e-discovery and litigation support, we streamline legal operations for businesses, law firms, and corporate legal departments. Our team of skilled professionals ensures accuracy, confidentiality, and adherence to legal standards while reducing operational costs and turnaround time. By outsourcing legal processes to us, clients can focus on core business functions while ensuring that their legal operations remain seamless and compliant with industry regulations.",
     cards: [
       {
-        image: mobile1,
+        image: legal1,
         title: "Legal Research and Analysis",
         descriptionLines: [
           "  Provides in depth legal research for cases and proceedings.",
@@ -891,7 +985,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: legal2,
         title: "Document Review and Management",
         descriptionLines: [
           "  Manages and organizes legal documents for easy retrieval.",
@@ -901,7 +995,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: legal3,
         title: "Contract Management",
         descriptionLines: [
           "Drafts, reviews, and manages contracts efficiently.",
@@ -911,7 +1005,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: legal4,
         title: "Litigation Support",
         descriptionLines: [
           "  Provides litigation support for case preparation and filing.",
@@ -921,7 +1015,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: legal5,
         title: "E Discovery Services",
         descriptionLines: [
           "  Identifies and processes electronic data for legal cases.",
@@ -938,12 +1032,12 @@ export const bpoServices: ITService[] = [
     description:
       "Tailored BPO solutions for retail, telecom, banking, travel, and e-commerce industries.",
     link: "/services/BPO/industry-specific-BPO-services",
-    backgroundImage: mobilebg,
+    backgroundImage: industrybg,
     descriptionvm:
       "Our Industry-Specific BPO Services are tailored to meet the unique needs of businesses across various sectors, providing specialized solutions that enhance operational efficiency and drive business growth. Whether it's healthcare, finance, retail, telecommunications, or any other industry, we offer a full suite of back-office and customer support services designed to meet the specific challenges of each industry. Our dedicated teams are equipped with the knowledge and expertise to address regulatory compliance, data management, and customer service needs, ensuring high-quality, cost-effective solutions that help businesses stay competitive and scalable in their respective markets.",
     cards: [
       {
-        image: mobile1,
+        image: industry1,
         title: "Retail BPO Services",
         descriptionLines: [
           "Supports retail operations with order processing and customer service.",
@@ -953,7 +1047,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: industry2,
         title: "Telecom BPO Services",
         descriptionLines: [
           "  Manages customer support and billing inquiries for telecom services.",
@@ -963,7 +1057,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: industry3,
         title: "Banking and Financial Services BPO",
         descriptionLines: [
           "  Supports financial institutions with transaction processing and account management.",
@@ -973,7 +1067,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: industry4,
         title: "Travel and Hospitality BPO",
         descriptionLines: [
           "  Assists customers with booking, reservations, and travel inquiries.",
@@ -983,7 +1077,7 @@ export const bpoServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: industry5,
         title: "E Commerce BPO Services",
         descriptionLines: [
           "  Manages order fulfillment and customer inquiries for e commerce stores.",
@@ -1003,12 +1097,12 @@ export const kpoServices: ITService[] = [
   description:
     "Comprehensive research and analysis to help businesses understand market dynamics, and industry trends.",
   link: "/services/KPO/market-research-and-analysis",
-  backgroundImage: mobilebg,
+  backgroundImage: marketbg,
   descriptionvm:
     "Our Market Research & Analysis services empower businesses with deep insights and data-driven strategies to make informed decisions and stay ahead in competitive markets. We conduct thorough research using both quantitative and qualitative methods to provide a clear understanding of market trends, customer behavior, and competitor activities. From identifying target audiences and analyzing customer needs to forecasting market trends and evaluating brand positioning, our tailored research solutions equip businesses with the knowledge needed to optimize strategies, reduce risks, and drive growth in dynamic industries.",
   cards: [
     {
-      image: mobile1,
+      image: market1,
       title: "Customer Insights",
       descriptionLines: [
         "    Identify customer preferences and motivations.",
@@ -1018,7 +1112,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: market2,
       title: "Competitor Analysis",
       descriptionLines: [
         "    Evaluate competitor strategies and market positioning.",
@@ -1028,7 +1122,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: market3,
       title: "Industry Benchmarking",
       descriptionLines: [
         "    Compare performance metrics against industry standards.",
@@ -1045,12 +1139,12 @@ export const kpoServices: ITService[] = [
   description:
     "In-depth analysis of business and financial data to support strategic decision-making and optimize performance.",
   link: "/services/KPO/business-and-financial-analysis",
-  backgroundImage: mobilebg,
+  backgroundImage: businessbg,
   descriptionvm:
     "Our Business and Financial Analysis services are designed to provide organizations with actionable insights and a comprehensive understanding of their financial health and operational efficiency. We conduct in-depth analysis to evaluate financial performance, identify growth opportunities, and uncover potential risks. Our experts assess critical financial metrics, analyze market dynamics, and provide strategic recommendations to enhance profitability, optimize cash flow, and improve overall business performance. From financial forecasting and budgeting to profitability analysis and business valuation, our customized solutions support data-driven decision-making, enabling clients to confidently navigate financial challenges and capitalize on growth opportunities.",
   cards: [
     {
-      image: mobile1,
+      image: business1,
       title: "Financial Modeling",
       descriptionLines: [
         "    Create dynamic models to forecast financial outcomes.",
@@ -1060,7 +1154,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: business2,
       title: "Risk Assessment",
       descriptionLines: [
         "    Evaluate potential financial and operational risks.",
@@ -1070,7 +1164,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: business3,
       title: "Performance Metrics",
       descriptionLines: [
         "    Track KPIs to measure financial and operational health.",
@@ -1087,12 +1181,12 @@ export const kpoServices: ITService[] = [
   description:
     "Advanced data mining and analytics to uncover patterns and insights that drive smarter business decisions.",
   link: "/services/KPO/data-mining",
-  backgroundImage: mobilebg,
+  backgroundImage: databg,
   descriptionvm:
     "Our Data Mining services empower organizations to unlock valuable insights hidden within large volumes of data. Using advanced techniques in machine learning, predictive analytics, and statistical modeling, we help clients discover patterns, trends, and correlations that drive informed decision-making. From customer behavior analysis to fraud detection, our solutions are tailored to meet industry-specific needs, enabling businesses to optimize operations, personalize customer experiences, and identify growth opportunities. By transforming raw data into strategic assets, we support clients in enhancing business intelligence, improving operational efficiency, and gaining a competitive advantage.",
   cards: [
     {
-      image: mobile1,
+      image: data1,
       title: "Data Processing",
       descriptionLines: [
         "Clean and transform data for advanced analysis.",
@@ -1102,7 +1196,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: data2,
       title: "Predictive Analytics",
       descriptionLines: [
         "    Forecast future outcomes based on historical data.",
@@ -1112,7 +1206,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: data3,
       title: "Trend Identification",
       descriptionLines: [
         "    Analyze historical data to uncover emerging trends.",
@@ -1129,12 +1223,12 @@ export const kpoServices: ITService[] = [
   description:
     "Support for intellectual property management, including patent research,  and compliance monitoring.",
   link: "/services/KPO/intellectual-property-research",
-  backgroundImage: mobilebg,
+  backgroundImage: intellectualbg,
   descriptionvm:
     "Our Intellectual Property Research services provide critical insights to protect and manage your intellectual assets effectively. With in-depth patent searches, trademark analysis, and competitive IP assessments, we help clients navigate the complex landscape of intellectual property. Our team conducts comprehensive research to ensure originality, prevent infringement risks, and uncover opportunities for innovation. Whether you’re securing patents, defending trademarks, or exploring licensing opportunities, our services support your strategic goals, helping you safeguard innovations and maintain a competitive edge. By leveraging data-driven insights, we empower businesses to maximize the value of their IP portfolios in an ever-evolving market.",
   cards: [
     {
-      image: mobile1,
+      image: intellectual1,
       title: "Patent Landscape Analysis",
       descriptionLines: [
         "    Identify patented technologies within the industry.",
@@ -1144,7 +1238,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: intellectual2,
       title: "Trademark Research",
       descriptionLines: [
         "    Check trademark availability and conflict risks.",
@@ -1154,7 +1248,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: intellectual3,
       title: "IP Compliance",
       descriptionLines: [
         "    Ensure IP activities align with legal requirements.",
@@ -1171,12 +1265,12 @@ export const kpoServices: ITService[] = [
   description:
     "Regulatory, Legal research and compliance monitoring to help businesses navigate regulatory environments.",
   link: "/services/KPO/regulatory-research",
-  backgroundImage: mobilebg,
+  backgroundImage: regulatorybg,
   descriptionvm:
     "Our Regulatory Research services empower businesses to navigate complex regulatory landscapes with confidence. We specialize in tracking, analyzing, and interpreting global and industry-specific regulations, including compliance standards, policy changes, and emerging legal requirements. With expertise in sectors such as healthcare, finance, technology, and manufacturing, we provide timely insights to help companies understand and adhere to applicable laws and guidelines. Our proactive approach supports clients in mitigating compliance risks, streamlining operations, and aligning with best practices, ensuring that regulatory obligations are met efficiently. By partnering with us, businesses can stay informed, avoid costly penalties, and maintain a reputation for regulatory excellence.",
   cards: [
     {
-      image: mobile1,
+      image: regulatory1,
       title: "Compliance Analysis",
       descriptionLines: [
         "    Review legal frameworks for business operations.",
@@ -1186,7 +1280,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: regulatory2,
       title: "Risk Assessment",
       descriptionLines: [
         "    Evaluate potential legal risks within the business.",
@@ -1196,7 +1290,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: regulatory3,
       title: "Legal Document Preparation",
       descriptionLines: [
         "    Draft and review legal documents.",
@@ -1213,12 +1307,12 @@ export const kpoServices: ITService[] = [
   description:
     "Insightful analysis of competitors to enhance strategic positioning and identify growth opportunities.",
   link: "/services/KPO/competitive-intelligence",
-  backgroundImage: mobilebg,
+  backgroundImage: competativebg,
   descriptionvm:
     "Our Competitive Intelligence services equip businesses with actionable insights into the competitive landscape, helping them stay ahead in dynamic markets. We analyze key competitors' strategies, product offerings, pricing models, and market positioning to provide a comprehensive view of the industry's competitive dynamics. Our research spans across industry trends, customer preferences, and innovation strategies, enabling businesses to identify opportunities, anticipate market shifts, and refine their strategic approach. With our support, companies can make informed decisions, adapt quickly to competitive pressures, and strengthen their position to gain a sustainable advantage in their sector.",
   cards: [
     {
-      image: mobile1,
+      image: competative1,
       title: "Competitor Benchmarking",
       descriptionLines: [
         "    Assess strengths and weaknesses of competitors.",
@@ -1228,7 +1322,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: competative2,
       title: "SWOT Analysis",
       descriptionLines: [
         "    Analyze company strengths and opportunities.",
@@ -1238,7 +1332,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: competative3,
       title: "Market Positioning",
       descriptionLines: [
         "    Map current market standing against competitors.",
@@ -1255,12 +1349,12 @@ export const kpoServices: ITService[] = [
   description:
     "Thorough investment research for better decision-making, including portfolio analysis and risk management.",
   link: "/services/KPO/investment-research-analysis",
-  backgroundImage: mobilebg,
+  backgroundImage: investmentbg,
   descriptionvm:
     "Our Investment Research Analysis services provide in-depth insights to help clients make informed, strategic investment decisions. By examining financial data, market trends, and economic indicators, we deliver comprehensive evaluations of investment opportunities across various sectors. Our team analyzes key performance metrics, conducts risk assessments, and forecasts potential returns, ensuring a thorough understanding of the investment landscape. Whether for equities, fixed income, real estate, or alternative assets, our research empowers clients to make data-driven choices, optimize their portfolios, and achieve their financial goals with confidence.",
   cards: [
     {
-      image: mobile1,
+      image: investment1,
       title: "Market Analysis",
       descriptionLines: [
         "    Analyze economic trends and market fluctuations.",
@@ -1270,7 +1364,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: investment2,
       title: "Portfolio Monitoring",
       descriptionLines: [
         "    Track portfolio performance and risk factors.",
@@ -1280,7 +1374,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: investment3,
       title: "Risk Assessment",
       descriptionLines: [
         "    Evaluate risks associated with investment choices.",
@@ -1297,12 +1391,12 @@ export const kpoServices: ITService[] = [
   description:
     "Identifying and managing financial risks through analysis and strategic planning to ensure business resilience.",
   link: "/services/KPO/financial-risk-management",
-  backgroundImage: mobilebg,
+  backgroundImage: financialbg,
   descriptionvm:
     "Our Financial Risk Management services enable businesses to identify, assess, and mitigate risks that could impact financial stability and growth. We provide tailored strategies that cover market risk, credit risk, operational risk, and liquidity risk, using advanced analytics and industry best practices to anticipate potential challenges. Our team works to design comprehensive risk frameworks, implement robust monitoring processes, and provide actionable insights, helping clients safeguard assets, reduce volatility, and ensure compliance with regulatory standards. With our expertise, businesses can make confident decisions, strengthen their financial resilience, and navigate uncertainty effectively.",
   cards: [
     {
-      image: mobile1,
+      image: financial1,
       title: "Risk Identification",
       descriptionLines: [
         "    Identify key risk areas in financial operations.",
@@ -1312,7 +1406,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: financial2,
       title: "Mitigation Strategies",
       descriptionLines: [
         "Create risk mitigation plans for critical areas.",
@@ -1322,7 +1416,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: financial3,
       title: "Regulatory Compliance",
       descriptionLines: [
         "Ensure adherence to financial regulations.",
@@ -1339,12 +1433,12 @@ export const kpoServices: ITService[] = [
   description:
     "Deep customer insights through behavioral analysis, and journey mapping to improve engagement.",
   link: "/services/KPO/consumer-analytics",
-  backgroundImage: mobilebg,
+  backgroundImage: consumerbg,
   descriptionvm:
     "Our Consumer Analytics services provide in-depth insights into customer behavior, preferences, and purchasing patterns, enabling businesses to make data-driven decisions that drive growth and enhance customer engagement. By leveraging advanced analytics tools, we analyze consumer data across various touchpoints to identify trends, segment audiences, and predict future behaviors. Our approach helps businesses personalize marketing strategies, optimize product offerings, and improve customer experiences, resulting in increased loyalty and higher conversion rates. From market segmentation to predictive modeling, we equip businesses with the insights needed to understand and meet evolving consumer demands effectively.",
   cards: [
     {
-      image: mobile1,
+      image: consumer1,
       title: "Customer Segmentation",
       descriptionLines: [
         "    Classify customers by demographics and behavior.",
@@ -1354,7 +1448,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: consumer2,
       title: "Behavioral Insights",
       descriptionLines: [
         "    Track customer behaviors for trend identification.",
@@ -1364,7 +1458,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: consumer3,
       title: "Engagement Strategies",
       descriptionLines: [
         "    Develop campaigns targeting customer interests.",
@@ -1381,12 +1475,12 @@ export const kpoServices: ITService[] = [
   description:
     "Content research and editorial analysis to support content strategy, and audience engagement.",
   link: "/services/KPO/content-and-editorial-research",
-  backgroundImage: mobilebg,
+  backgroundImage: contentbg,
   descriptionvm:
     "Our Content and Editorial Research services offer comprehensive insights and strategic support for developing high-quality, audience-driven content. From identifying trending topics to analyzing audience engagement patterns, we help businesses create content that resonates with their target market. Our team conducts thorough research to uncover insights on readership preferences, content gaps, and competitor strategies, ensuring your content is both relevant and impactful. We support editorial planning, optimize content for SEO, and align with brand voice and messaging to drive traffic, enhance brand authority, and foster audience loyalty. Let us empower your content strategy with data-backed, insightful editorial research.",
   cards: [
     {
-      image: mobile1,
+      image: content1,
       title: "Topic Research",
       descriptionLines: [
         "Identify trending topics within the industry.",
@@ -1396,7 +1490,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: content2,
       title: "Audience Analysis",
       descriptionLines: [
         "    Segment audiences based on demographics and interests.",
@@ -1406,7 +1500,7 @@ export const kpoServices: ITService[] = [
       ],
     },
     {
-      image: mobile1,
+      image: content3,
       title: "Content Optimization",
       descriptionLines: [
         "    Optimize content for SEO and audience engagement.",
