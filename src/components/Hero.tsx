@@ -3,6 +3,7 @@ import Image from "next/image";
 import bg from "@/assets/staticbg.jpg";
 import Link from "next/link";
 import WordRotate from "./ui/word-rotate";
+import { FaUserFriends } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -49,12 +50,13 @@ export default function Hero() {
           </p>
 
           <div className=" flex flex-row gap-5 mt-10 w-full">
-            <Link
-              href="/services"
-              className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
+          <button
+              type="button"
+              className="border border-white rounded bg-transparent text-white text-sm w-36 flex items-center gap-2 justify-center py-2 hover:bg-[#F43F5E] hover:border-[#F43F5E] duration-500"
             >
-              Explore Services
-            </Link>
+              Plan a Call <FaUserFriends />
+            </button>
+              
             <Link
               href="/contact-us"
               className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
