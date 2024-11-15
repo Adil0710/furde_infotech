@@ -8,11 +8,11 @@ import {
   FaLinkedin,
   FaLocationDot,
   FaXTwitter,
-  FaYoutube,
+  // FaYoutube,
 } from "react-icons/fa6";
 import { BiPhone } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
-import { RiFacebookCircleFill } from "react-icons/ri";
+// import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
 import ContactForm from "./ContactForm";
 import {
@@ -175,9 +175,9 @@ export default function Footer() {
               </Link>
 
               <div className=" mt-8 flex flex-row justify-between items-center">
-                <Link href="" target="_blank" className="group">
+                {/* <Link href="" target="_blank" className="group">
                   <RiFacebookCircleFill className=" text-2xl group-hover:text-blue-500 duration-200" />
-                </Link>
+                </Link> */}
 
                 <Link href="" target="_blank" className="group">
                   <AiFillInstagram className=" text-2xl group-hover:text-rose-600 duration-200" />
@@ -191,9 +191,9 @@ export default function Footer() {
                   <FaLinkedin className=" text-2xl group-hover:text-blue-600 duration-200" />
                 </Link>
 
-                <Link href="" target="_blank" className="group">
+                {/* <Link href="" target="_blank" className="group">
                   <FaYoutube className=" text-2xl group-hover:text-red-600 duration-200" />
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

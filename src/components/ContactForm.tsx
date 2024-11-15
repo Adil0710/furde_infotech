@@ -43,7 +43,7 @@ export default function ContactForm() {
 
 const handleClick = (e: React.MouseEvent) => {
   e.preventDefault();
-  window.Calendly.initPopupWidget({ url: 'https://calendly.com/adilpatel-fit/30min' });
+  window.Calendly.initPopupWidget({ url: 'https://calendly.com/furdeinfotech-info/30min' });
   return false;
 };
 

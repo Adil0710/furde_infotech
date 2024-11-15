@@ -2,9 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import { AiFillInstagram } from "react-icons/ai";
-import { RiFacebookCircleFill } from "react-icons/ri";
+// import { RiFacebookCircleFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+// import { FaYoutube } from "react-icons/fa";
 
 function Social() {
   return (
@@ -12,15 +12,15 @@ function Social() {
       <h1 className="text-4xl font-bold leading-tight">SOCIAL</h1>
       <p className="mt-5 text-md">Follow us for the latest updates.</p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-40 mt-10'> {/* Adjusted grid classes */}
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-40 mt-10'> {/* Adjusted grid classes */}
 
-        <Link href="" className='group flex gap-2 items-cente max-w-40'>
+        {/* <Link href="" className='group flex gap-2 items-cente max-w-40'>
           <div><RiFacebookCircleFill className=' group-hover:text-blue-500 duration-200 text-4xl' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-blue-500 duration-200'>Facebook</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
-        </Link>
+        </Link> */}
         
         <Link href="" className='group flex gap-2 items-center max-w-40'>
           <div><AiFillInstagram className='text-4xl group-hover:text-rose-600 duration-200' /></div>
@@ -30,7 +30,7 @@ function Social() {
           </div>
         </Link>
 
-        <Link href="" className='flex gap-2 items-center max-w-40'>
+        <Link href="" className='group flex gap-2 items-center max-w-40'>
           <div><FaSquareXTwitter className='text-3xl' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold'>X</p>
@@ -46,13 +46,13 @@ function Social() {
           </div>
         </Link>
 
-        <Link href="" className=' group flex gap-2 items-center max-w-40'>
+        {/* <Link href="" className=' group flex gap-2 items-center max-w-40'>
           <div><FaYoutube className='text-3xl group-hover:text-red-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-red-600 duration-200'>YouTube</p>
             <p className='text-xs'>Furde Infotech</p>
           </div>
-        </Link>
+        </Link> */}
 
       </div>
     </div>
