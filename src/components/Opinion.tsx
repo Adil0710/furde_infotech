@@ -1,15 +1,21 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { LuLoader2 } from "react-icons/lu";
 
 function Opinion() {
-  const [allDisabled, setAllDisabled] = useState(() => {
-    return localStorage.getItem("allButtonsDisabled") === "true";
-  });
+  const [allDisabled, setAllDisabled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Check if `localStorage` is available and only then read the item
+    if (typeof window !== "undefined") {
+      const isDisabled = localStorage.getItem("allButtonsDisabled") === "true";
+      setAllDisabled(isDisabled);
+    }
+  }, []);
 
   const handleClick = async (buttonId: string) => {
     if (allDisabled || isLoading) return;
@@ -20,19 +26,21 @@ function Opinion() {
       const response = await axios.put("/api/opinion", { buttonId });
 
       if (response.data.success) {
-        toast.success("Thank you for your feedback!", {
+        toast.success("Thank you for your feedback!",{
             duration: 5000
         });
         setAllDisabled(true);
-        localStorage.setItem("allButtonsDisabled", "true");
+        if (typeof window !== "undefined") {
+          localStorage.setItem("allButtonsDisabled", "true");
+        }
       } else {
-        toast.error("Something went wrong, please try again.", {
+        toast.error("Something went wrong, please try again.",{
             duration: 5000
         });
       }
     } catch (error) {
       console.error("Error clicking button:", error);
-      toast.error("Error: Unable to submit your feedback.", {
+      toast.error("Error: Unable to submit your feedback.",{
         duration: 5000
     });
     } finally {
