@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import CareerCard from "./CareerCard";
+import Opinion from "./Opinion";
 
 
 // Data for the jobs
@@ -118,51 +119,8 @@ export default function CareersCard() {
         })}
       </div>
 
-      <h1 className="mt-28 text-4xl font-bold leading-tight uppercase">
-        your opinion matters
-      </h1>
-      <p className=" text-[#4B5563] mt-10">Bring Your Expertise to Our department.</p>
-
-      <div className=" flex flex-row gap-5 mt-8 w-full">
-       
-      <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-          Google Search
-        </Link>
-        <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-         Social Media
-        </Link>
-        <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-          Referral from a Friend
-        </Link>
-        <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-          Event or conference
-        </Link>
-        <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-          Job Board
-        </Link>
-        <Link
-          href=""
-          className=" border border-black rounded font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500"
-        >
-         Others
-        </Link>
-       
-      </div>
+     <Opinion/>
+     
     </div>
   );
 }
