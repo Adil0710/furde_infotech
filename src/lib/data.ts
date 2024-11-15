@@ -40,6 +40,7 @@ import testingbg from "@/assets/testingbg.png";
 import testing1 from "@/assets/testing1.png";
 import testing2 from "@/assets/testing2.png";
 import testing3 from "@/assets/testing3.png";
+import testing4 from "@/assets/testing4.jpeg";
 
 // BPO Services
 import customer from "@/assets/customer.png"
@@ -516,7 +517,7 @@ export const itServices: ITService[] = [
         ],
       },
       {
-        image: mobile1,
+        image: testing4,
         title: "Performance Testing",
         descriptionLines: [
           "Tests app stability and speed under various conditions.",
