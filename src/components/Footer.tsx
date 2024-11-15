@@ -179,7 +179,7 @@ export default function Footer() {
                   <RiFacebookCircleFill className=" text-2xl group-hover:text-blue-500 duration-200" />
                 </Link> */}
 
-                <Link href="https://www.instagram.com/furdeinfotech?igsh=MTAxZzk3MXY5dTVxNQ==" target="_blank" className="group">
+                <Link href="https://www.instagram.com/furdeinfotech" target="_blank" className="group">
                   <AiFillInstagram className=" text-2xl group-hover:text-rose-600 duration-200" />
                 </Link>
 
