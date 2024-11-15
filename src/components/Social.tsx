@@ -22,7 +22,7 @@ function Social() {
           </div>
         </Link> */}
         
-        <Link href="https://www.instagram.com/furdeinfotech" target='_blank' className='group flex gap-2 items-center max-w-40'>
+        <Link href="https://www.instagram.com/furdeinfotech/" target='_blank' className='group flex gap-2 items-center max-w-40'>
           <div><AiFillInstagram className='text-4xl group-hover:text-rose-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-rose-600 duration-200'>Instagram</p>
