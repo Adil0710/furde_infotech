@@ -179,15 +179,15 @@ export default function Footer() {
                   <RiFacebookCircleFill className=" text-2xl group-hover:text-blue-500 duration-200" />
                 </Link> */}
 
-                <Link href="" target="_blank" className="group">
+                <Link href="https://www.instagram.com/furdeinfotech?igsh=MTAxZzk3MXY5dTVxNQ==" target="_blank" className="group">
                   <AiFillInstagram className=" text-2xl group-hover:text-rose-600 duration-200" />
                 </Link>
 
-                <Link href="" target="_blank" className="group">
+                <Link href="https://x.com/FurdeInfotech" target="_blank" className="group">
                   <FaXTwitter className=" text-2xl group-hover:text-gray-400 duration-200" />
                 </Link>
 
-                <Link href="" target="_blank" className="group">
+                <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target="_blank" className="group">
                   <FaLinkedin className=" text-2xl group-hover:text-blue-600 duration-200" />
                 </Link>
 

@@ -22,27 +22,27 @@ function Social() {
           </div>
         </Link> */}
         
-        <Link href="" className='group flex gap-2 items-center max-w-40'>
+        <Link href="https://www.instagram.com/furdeinfotech" target='_blank' className='group flex gap-2 items-center max-w-40'>
           <div><AiFillInstagram className='text-4xl group-hover:text-rose-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-rose-600 duration-200'>Instagram</p>
-            <p className='text-xs'>Furde Infotech</p>
+            <p className='text-xs'>@furdeinfotech</p>
           </div>
         </Link>
 
-        <Link href="" className='group flex gap-2 items-center max-w-40'>
+        <Link href="https://x.com/FurdeInfotech" target='_blank' className='group flex gap-2 items-center max-w-40'>
           <div><FaSquareXTwitter className='text-3xl' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold'>X</p>
-            <p className='text-xs'>Furde Infotech</p>
+            <p className='text-xs'>@ FurdeInfotech</p>
           </div>
         </Link>
 
-        <Link href="" className='group flex gap-2 items-center max-w-40'>
+        <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target='_blank' className='group flex gap-2 items-center max-w-40'>
           <div><FaLinkedin className='text-3xl group-hover:text-blue-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-blue-600 duration-200'>LinkedIn</p>
-            <p className='text-xs'>Furde Infotech</p>
+            <p className='text-xs'>Furde Infotech Pvt Ltd</p>
           </div>
         </Link>
 
