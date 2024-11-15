@@ -51,7 +51,7 @@ export default function OurStory() {
   const currentStory = timeline.find((item) => item.year === selectedYear);
 
   return (
-    <div className="bg-white md:pl-20 md:pr-20 px-5 py-10">
+    <div className="bg-white md:pl-20 md:pr-20 px-5 py-10 scroll-m-28" id="ourstory">
       <div>
         <h1 className="text-4xl font-bold leading-tight text-black">
           Our Story

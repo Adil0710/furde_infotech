@@ -36,7 +36,7 @@ export default function AboutUs() {
           </p>
           <div className=" flex flex-row gap-5 mt-16 w-full">
             <Link
-              href=""
+              href="about-us/#ourstory"
               className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
             >
               Our Story
