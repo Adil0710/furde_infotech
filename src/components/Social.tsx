@@ -38,7 +38,7 @@ function Social() {
           </div>
         </Link>
 
-        <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target='_blank' className='group flex gap-2 items-center max-w-40'>
+        <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target='_blank' className='group flex gap-2 items-center max-w-42'>
           <div><FaLinkedin className='text-3xl group-hover:text-blue-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-blue-600 duration-200'>LinkedIn</p>
