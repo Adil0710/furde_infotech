@@ -12,8 +12,15 @@ function Opinion() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Check if all buttons are disabled
       const isDisabled = localStorage.getItem("allButtonsDisabled") === "true";
       setAllDisabled(isDisabled);
+
+      // Retrieve the clicked button ID from localStorage
+      const storedButtonId = localStorage.getItem("clickedButtonId");
+      if (storedButtonId) {
+        setClickedButtonId(storedButtonId);
+      }
     }
   }, []);
 
@@ -30,9 +37,12 @@ function Opinion() {
         toast.success("Thank you for your feedback!", {
           duration: 5000,
         });
+
+        // Persist state in localStorage
         setAllDisabled(true);
         if (typeof window !== "undefined") {
           localStorage.setItem("allButtonsDisabled", "true");
+          localStorage.setItem("clickedButtonId", buttonId);
         }
       } else {
         toast.error("Something went wrong, please try again.", {
