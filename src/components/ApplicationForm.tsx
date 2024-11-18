@@ -214,7 +214,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                           variant={"outline"}
                           onClick={() => setOpen(!open)}
                           className={cn(
-                            "w-full inputstyle hover:bg-[#D9D9D9]",
+                            "w-full inputstyle hover:bg-[#D9D9D9] hover:ring-[0.4px] focus:ring-[0.4px] ring-black",
                             !field.value && "text-muted-foreground"
                           )}
                         >

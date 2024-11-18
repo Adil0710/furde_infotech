@@ -159,6 +159,15 @@ import contentbg from "@/assets/contentbg.png"
 import content1 from "@/assets/content1.png"
 import content2 from "@/assets/content2.png"
 import content3 from "@/assets/content3.png"
+import medical from "@/assets/medical.png"
+import medicalbg from "@/assets/medicalbg.png"
+import medical1 from "@/assets/medical1.png"
+import medical2 from "@/assets/medical2.png"
+import medical3 from "@/assets/medical3.png"
+import medical4 from "@/assets/medical4.png"
+import medical5 from "@/assets/medical5.png"
+import medical6 from "@/assets/medical6.png"
+import medical7 from "@/assets/medical7.png"
 
 
 import { ITService } from "@/types/types";
@@ -1508,6 +1517,88 @@ export const kpoServices: ITService[] = [
         "    Measure content performance with analytics tools.",
         "    Enhance readability and relevance of content.",
         "    Implement A/B testing to refine strategies. ",
+      ],
+    },
+  ],
+},
+{
+  image: medical,
+  title: "Medical and Healthcare",
+  description:
+    "Streamline your medical & healthcare operations accurate, efficient & compliant.",
+  link: "/services/KPO/medical-and-healthcare",
+  backgroundImage: medicalbg,
+  descriptionvm:
+    "Our Medical and Healthcare KPO services are designed to enhance efficiency and accuracy in your operations. From medical billing and coding to patient data management and regulatory compliance, we ensure seamless support tailored to your requirements. With our expertise, you can focus on delivering quality care while we handle the complexities of back-office operations. Trust us to provide reliable and HIPAA-compliant solutions to support your healthcare goals.",
+  cards: [
+    {
+      image: medical1,
+      title: "Medical Billing and Coding",
+      descriptionLines: [
+        "Streamline financial workflows with accurate billing and coding services.",
+        "Ensure compliance with ICD and other global standards.",
+        "Reduce claim rejections through efficient submission processes.",
+        "Optimize revenue cycle management with expert insights.",
+      ],
+    },
+    {
+      image: medical2,
+      title: "Clinical Data Management",
+      descriptionLines: [
+        "Securely manage clinical trial data for regulatory compliance.",
+        "Implement electronic data capture (EDC) for efficiency.",
+        "Validate and clean data to ensure accuracy and reliability.",
+        "Generate actionable insights with detailed data reporting.",
+      ],
+    },
+    {
+      image: medical3,
+      title: "Medical Research and Analysis",
+      descriptionLines: [
+        "Conduct comprehensive literature reviews for informed healthcare decisions.",
+        "Analyze market trends to optimize healthcare strategies.",
+        "Present data visually for quick interpretation and reporting.",
+        "Ensure regulatory and compliance adherence during research.",
+      ],
+    },
+    {
+      image: medical4,
+      title: "Healthcare Consulting Services",
+      descriptionLines: [
+        "Improve patient outcomes with tailored process strategies.",
+        "Integrate advanced IT solutions to modernize operations.",
+        "Foster patient engagement with innovative solutions.",
+        "Minimize costs while maintaining high-quality care delivery.",
+      ],
+    },
+    {
+      image: medical5,
+      title: "Medical Transcription Services",
+      descriptionLines: [
+        "Transform dictations into precise medical records.",
+        "Document patient histories for better continuity of care.",
+        "Summarize charts and notes for streamlined information retrieval.",
+        "Ensure compliance with medical transcription standards.",
+      ],
+    },
+    {
+      image: medical6,
+      title: "Telehealth Support",
+      descriptionLines: [
+        "Manage appointments seamlessly for virtual consultations.",
+        "Provide technical support to ensure glitch-free telehealth sessions.",
+        "Engage patients with timely follow-ups post-consultation.",
+        "Safeguard sensitive data with robust privacy measures.",
+      ],
+    },
+    {
+      image: medical7 ,
+      title: "Pharmacovigilance Services",
+      descriptionLines: [
+        "Monitor and report adverse drug reactions to ensure safety.",
+        "Develop and implement risk management plans.",
+        "Analyze safety data for regulatory submissions and compliance.",
+        "Support global drug safety initiatives to protect patient health.",
       ],
     },
   ],

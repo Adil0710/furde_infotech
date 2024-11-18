@@ -19,13 +19,13 @@ export default function SteeringOurMission() {
           </p>
         </div>
         <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg cardShadow">
-          <Image src={RohanFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-16 "/>
+          <Image src={RohanFurde} alt="Rohan Furde" objectFit="contain" fill />
         </div>
       </div>
 
       <div className="flex flex-row justify-between mt-14">
       <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg cardShadow">
-          <Image src={SunilFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-24 "/>
+          <Image src={SunilFurde} alt="Rohan Furde" objectFit="contain" fill/>
         </div>
         <div className="w-[63%] pt-10">
           <h2 className="mt-2 font-semibold text-2xl">Director</h2>
