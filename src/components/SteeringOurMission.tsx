@@ -18,13 +18,13 @@ export default function SteeringOurMission() {
             Rohan Furde, a graduate in Software Engineering from Walchand Institute of Technology, Solapur, is a dynamic entrepreneur and technology enthusiast. Currently serving as Director at Furde Constructions, he has embarked on a new journey as the Founder & Director of Furde Infotech Pvt Ltd. Here, he focuses on developing advanced applications designed to foster business growth and enhance monitoring capabilities. Rohan brings a blend of technical expertise and strategic vision to drive innovation and deliver impactful solutions in the tech industry.
           </p>
         </div>
-        <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg ">
-          <Image src={RohanFurde} alt="Rohan Furde" objectFit="contain" fill />
+        <div className="w-[35%] h-[500px] relative overflow-hidden rounded-lg cardShadow">
+          <Image src={RohanFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-12"/>
         </div>
       </div>
 
       <div className="flex flex-row justify-between mt-14">
-      <div className="w-[35%] h-[450px] relative overflow-hidden rounded-lg cardShadow">
+      <div className="w-[35%] h-[500px] relative overflow-hidden rounded-lg cardShadow">
           <Image src={SunilFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-24"/>
         </div>
         <div className="w-[63%] pt-10">
