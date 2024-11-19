@@ -38,14 +38,14 @@ export default function Navbar() {
     <nav className='glass-effect fixed w-full z-50 md:pl-20 px-5 py-5 md:pr-20 flex items-center justify-between'>
       <Link href="/"><Image src={logomain} alt='FIT logo' height={50} width={150} /></Link>
       
-      <ul className='text-white flex justify-center items-center gap-14'>
+      <ul className='text-gray-200 flex justify-center items-center gap-14'>
         {navbar.map((nav, index) => {
           if (nav.title === "Services" && nav.subLinks) {
             // Render Dropdown for "Services"
             return (
               <DropdownMenu key={index}>
                 <DropdownMenuTrigger asChild>
-                  <li className='cursor-pointer flex flex-row items-center gap-2'>{nav.title} <ChevronDown size={18} /></li>
+                  <li className='cursor-pointer flex flex-row items-center gap-2 hover:text-white duration-200'>{nav.title} <ChevronDown size={18} /></li>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="center" sideOffset={8} className="glass-effect text-white w-40">
                   {nav.subLinks.map((subLink, subIndex) => (
@@ -63,7 +63,7 @@ export default function Navbar() {
             // Render regular nav items
             return (
               <Link href={nav.link} key={index}>
-                <li className='cursor-pointer'>{nav.title}</li>
+                <li className='cursor-pointer hover:text-white duration-200'>{nav.title}</li>
               </Link>
             );
           }

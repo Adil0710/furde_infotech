@@ -85,12 +85,12 @@ export default function Footer() {
           <Link
             href="https://maps.app.goo.gl/wG4EunDXihBcfHFH9"
             target="_blank"
-            className=" mt-10 flex flex-col"
+            className="group mt-10 flex flex-col"
           >
             <p className=" flex flex-row text-2xl font-semibold gap-2">
               <FaLocationDot /> Solapur{" "}
             </p>
-            <p className=" text-[#9CA3AF] mt-2">
+            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2">
               Furde complex, Damaninagar , Solapur-413001, Maharashtra, India
             </p>
           </Link>
@@ -98,12 +98,12 @@ export default function Footer() {
           <Link
             href="https://maps.app.goo.gl/JwVtKnUuiWMD3gtx6"
             target="_blank"
-            className=" mt-10 flex flex-col"
+            className="group mt-10 flex flex-col"
           >
             <p className=" flex flex-row text-2xl font-semibold gap-2">
               <FaLocationDot /> Pune{" "}
             </p>
-            <p className=" text-[#9CA3AF] mt-2">
+            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2">
               SNO -151/5A, FL No-B1101, Sukhwani Emerald, Magarpatta Road
               Hadapsar, Pune -411028 Maharashtra, India
             </p>
@@ -119,7 +119,7 @@ export default function Footer() {
                     return (
                       <DropdownMenu key={index}>
                         <DropdownMenuTrigger asChild>
-                          <li className="cursor-pointer flex flex-row items-center gap-2">
+                          <li className="cursor-pointer flex flex-row items-center gap-2 hover:text-white duration-200">
                             {nav.title} <ChevronDown size={18} />
                           </li>
                         </DropdownMenuTrigger>
@@ -146,7 +146,7 @@ export default function Footer() {
                     // Render regular nav items
                     return (
                       <Link href={nav.link} key={index}>
-                        <li className="cursor-pointer">{nav.title}</li>
+                        <li className="cursor-pointer hover:text-white duration-200">{nav.title}</li>
                       </Link>
                     );
                   }

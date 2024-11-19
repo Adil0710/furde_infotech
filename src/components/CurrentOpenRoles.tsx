@@ -101,7 +101,7 @@ export default function CurrentOpenRoles() {
         <h3 className="text-xl font-semibold text-gray-800">
           Entry Level Roles
         </h3>
-        <Link href="/entry-level-roles" className="text-[#1D4ED8]">
+        <Link href="/entry-level-roles" className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
           View More
         </Link>
       </div>
@@ -133,7 +133,7 @@ export default function CurrentOpenRoles() {
         <h3 className="text-xl font-semibold text-gray-800">
           Experienced Opportunities
         </h3>
-        <Link href="/experienced-level-roles" className="text-[#1D4ED8]">
+        <Link href="/experienced-level-roles" className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
           View More
         </Link>
       </div>
