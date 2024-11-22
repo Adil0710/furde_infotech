@@ -81,7 +81,7 @@ export default function HowItWorks() {
               <React.Fragment key={index}>
                 <li
                   onClick={() => setSelectedOption(step.label)}
-                  className={`cursor-pointer flex flex-row justify-between md:text-base text-sm items-center w-[90%] hover:font-bold ${
+                  className={`cursor-pointer flex flex-row justify-between md:text-base text-[11px] items-center w-[90%] hover:font-bold ${
                     selectedOption === step.label ? "font-bold" : ""
                   } duration-200`}
                 >
@@ -119,7 +119,7 @@ export default function HowItWorks() {
                       className="cardShadow rounded-xl"
                     />
                   </div>
-                  <p className="md:ml-5 ml-0 md:text-sm text-xs text-[#6B7280]">
+                  <p className="md:ml-5 ml-0 md:text-sm text-[10px] text-[#6B7280]">
                     {currentStep.description}
                   </p>
                 </motion.div>
