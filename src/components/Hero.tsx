@@ -31,15 +31,15 @@ export default function Hero() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-        <div className="absolute top-[25%] md:pl-20 px-5 w-full">
-          <h1 className="text-[#9CA3AF] md:text-7xl text-2xl font-bold ">
+        <div className="absolute top-[25%] md:pl-20 px-7 w-full">
+          <h1 className="text-[#9CA3AF] md:text-7xl text-4xl font-bold ">
             Welcome to{" "}
             <span className="text-white">
               FURDE <br /> INFOTECH
             </span>
           </h1>
 
-          <h2 className=" text-[#9CA3AF] font-semibold md:text-2xl text-base mt-10 flex sm:flex-row flex-col sm:items-center sm:gap-2">
+          <h2 className=" text-[#9CA3AF] font-semibold md:text-3xl text-2xl mt-10 flex sm:flex-row flex-col sm:items-center sm:gap-2">
             Empowering businesses with{" "}
             <span className=" text-white">
               {" "}
@@ -54,19 +54,19 @@ export default function Hero() {
             </span>
           </h2>
 
-          <p className=" text-white mt-12 text-md">
+          <p className=" text-white mt-12 md:w-1/2 w-full text-md">
             Furde Infotech Pvt. Ltd. is dedicated to delivering cutting-edge IT,
-            KPO, and BPO <br />
+            KPO, and BPO 
             solutions tailored to meet the unique needs of each client. Our
-            approach focuses <br /> on driving operational excellence, enabling
-            businesses to streamline workflows <br /> and enhance productivity.{" "}
+            approach focuses on driving operational excellence, enabling
+            businesses to streamline workflows and enhance productivity.{" "}
           </p>
 
           <div className=" flex flex-row gap-5 mt-10 w-full">
             <button
               type="button"
               onClick={handleClick}
-              className="border border-white rounded bg-transparent text-white text-sm w-36 flex items-center gap-2 justify-center py-2 hover:bg-[#F43F5E] hover:border-[#F43F5E] duration-500"
+              className="border border-white rounded bg-transparent text-white text-sm md:w-36 w-full flex items-center gap-2 justify-center py-2 hover:bg-[#F43F5E] hover:border-[#F43F5E] duration-500"
             >
               <link
                 href="https://assets.calendly.com/assets/external/widget.css"
@@ -77,7 +77,7 @@ export default function Hero() {
 
             <Link
               href="/contact-us"
-              className=" border border-white rounded font-semibold text-white text-sm w-36 flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
+              className=" border border-white rounded font-semibold text-white text-sm md:w-36 w-full flex items-center justify-center py-2 hover:bg-white hover:text-black duration-500"
             >
               Contact Us
             </Link>
