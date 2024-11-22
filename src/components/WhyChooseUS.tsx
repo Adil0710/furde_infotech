@@ -74,8 +74,8 @@ export default function WhyChooseUS() {
         className="-z-[10] object-cover"
         priority // Optimizes the background image loading
       />
-      <div className="md:pl-20 px-5 w-[44.5%]">
-        <h1 className="text-white text-4xl font-bold leading-tight">
+      <div className="md:pl-20 px-7 w-full">
+        <h1 className="text-white text-4xl md:mt-0 -mt-[70%] font-bold leading-tight">
           WHY CHOOSE US?
         </h1>
         <h2 className="text-white font-semibold text-3xl mt-10 flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function WhyChooseUS() {
         </p>
       </div>
 
-      <div className="grid text-white md:pl-20 px-5 md:pr-20 grid-cols-1 sm:grid-cols-4 gap-5 mt-12">
+      <div className="grid text-white md:pl-20 px-7 md:pr-20 grid-cols-1 sm:grid-cols-4 md:gap-5 gap-8 mt-12">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
@@ -97,7 +97,7 @@ export default function WhyChooseUS() {
         ))}
       </div>
 
-      <div className="md:pl-20 px-5 mt-12">
+      <div className="md:pl-20 md:pb-0 pb-10 px-7 mt-12">
         <p className="text-[#9CA3AF] text-md">
           Discover our story and explore what sets us apart.
         </p>
