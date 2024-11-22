@@ -8,9 +8,9 @@ import Image, { StaticImageData } from "next/image";
 
 // Reusable ServiceCard component
 const ServiceCard = ({ imageSrc, title, description, link }: { imageSrc: StaticImageData; title: string; description: string; link: string }) => (
-  <div className="border border-r-white bg-neutral-800 overflow-hidden pb-5 min-h-[450px] rounded-xl">
+  <div className="border border-r-white bg-neutral-800 overflow-hidden md:pb-5 pb-7 md:min-h-[450px] rounded-xl">
     <Image src={imageSrc} alt={title} />
-    <div className="pt-5 pb-5 px-10">
+    <div className="pt-5 pb-5 md:px-10 px-4">
       <p className="font-semibold text-3xl">{title}</p>
       <p className="text-sm mt-2">{description}</p>
     </div>

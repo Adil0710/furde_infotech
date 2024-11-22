@@ -39,12 +39,12 @@ export default function Careers() {
         {
           y: 0,
           opacity: 1,
-          duration: 1,
+          duration: 1.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: contentElement,
-            start: "top 70%",
-            end: "top 50%",
+            start: "top 80%",
+            end: "top 40%",
             scrub: true,
           },
         }
