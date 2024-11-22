@@ -31,7 +31,7 @@ export default function Hero() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-        <div className="absolute md:top-[25%] top-[15%] md:pl-20 px-7 w-full">
+        <div className="absolute md:top-[25%] top-[15%] md:pl-20 px-5 w-full">
           <h1 className="text-[#9CA3AF] md:text-7xl text-4xl font-bold ">
             Welcome to{" "}
             <span className="text-white">

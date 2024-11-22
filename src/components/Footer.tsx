@@ -75,9 +75,9 @@ export default function Footer() {
         priority // Optimizes the background image loading
       />
 
-      <div className=" flex md:flex-row flex-col md:pl-20 md:pr-20 px-5 py-10 z-10 text-white">
+      <div className=" flex md:flex-row flex-col-reverse md:pl-20 md:pr-20 px-5 py-10 z-10 text-white">
         {/* Leftside */}
-        <div className=" w-1/2">
+        <div className=" w-full md:w-1/2 md:mt-0 mt-20">
           <Link href="/">
             <Image src={logomain} alt="FIT logo" height={50} width={150} />
           </Link>
@@ -109,10 +109,10 @@ export default function Footer() {
             </p>
           </Link>
 
-          <div className=" flex flex-row mt-10 gap-20">
+          <div className=" flex md:flex-row flex-col-reverse mt-10 gap-20">
             <div>
               <h2 className=" text-3xl font-semibold">Quick Links</h2>
-              <ul className=" mt-8 flex flex-col text-[#9CA3AF] justify-center gap-5">
+              <ul className=" mt-8 flex md:flex-col flex-row text-[#9CA3AF] md:justify-center justify-between gap-5">
                 {Links.map((nav, index) => {
                   if (nav.title === "Services" && nav.subLinks) {
                     // Render Dropdown for "Services"
@@ -174,7 +174,7 @@ export default function Footer() {
                 info@furdeinfotech.com
               </Link>
 
-              <div className=" mt-8 flex flex-row justify-between items-center">
+              <div className=" md:mt-8 mt-12 flex flex-row justify-between items-center">
                 {/* <Link href="" target="_blank" className="group">
                   <RiFacebookCircleFill className=" text-2xl group-hover:text-blue-500 duration-200" />
                 </Link> */}
@@ -201,8 +201,8 @@ export default function Footer() {
 
         {/* Rightside */}
 
-        <div className="w-1/2 pl-40">
-          <h1 className="text-3xl mb-10 mt-24 font-semibold leading-tight">
+        <div className="w-full md:w-1/2 pl-0 md:pl-40">
+          <h1 className="text-3xl mb-10 md:mt-24 font-semibold leading-tight">
             Contact Us
           </h1>
           <ContactForm />

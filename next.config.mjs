@@ -1,7 +1,8 @@
-import withVideos from 'next-videos';
 /** @type {import('next').NextConfig} */
-const nextConfig = withVideos({});
+const nextConfig = {
+    images: {
+        domains: ["img.icons8.com" ]
+    }
+};
 
 export default nextConfig;
-
-

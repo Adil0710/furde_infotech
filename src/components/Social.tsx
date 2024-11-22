@@ -12,7 +12,7 @@ function Social() {
       <h1 className="text-4xl font-bold leading-tight">SOCIAL</h1>
       <p className="mt-5 text-md">Follow us for the latest updates.</p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-40 mt-10'> {/* Adjusted grid classes */}
+      <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-40 gap-10 text-lg mt-10'> {/* Adjusted grid classes */}
 
         {/* <Link href="" className='group flex gap-2 items-cente max-w-40'>
           <div><RiFacebookCircleFill className=' group-hover:text-blue-500 duration-200 text-4xl' /></div>
@@ -23,7 +23,7 @@ function Social() {
         </Link> */}
         
         <Link href="https://www.instagram.com/furdeinfotech" target='_blank' className='group flex gap-2 items-center max-w-40'>
-          <div><AiFillInstagram className='text-4xl group-hover:text-rose-600 duration-200' /></div>
+          <div><AiFillInstagram className='text-5xl group-hover:text-rose-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-rose-600 duration-200'>Instagram</p>
             <p className='text-xs'>@furdeinfotech</p>
@@ -31,15 +31,15 @@ function Social() {
         </Link>
 
         <Link href="https://x.com/FurdeInfotech" target='_blank' className='group flex gap-2 items-center max-w-40'>
-          <div><FaSquareXTwitter className='text-3xl' /></div>
+          <div><FaSquareXTwitter className='text-4xl' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold'>X</p>
             <p className='text-xs'>@ FurdeInfotech</p>
           </div>
         </Link>
 
-        <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target='_blank' className='group flex gap-2 items-center max-w-42'>
-          <div><FaLinkedin className='text-3xl group-hover:text-blue-600 duration-200' /></div>
+        <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target='_blank' className='group md:ml-0 ml-1.5 flex gap-2 items-center max-w-42'>
+          <div><FaLinkedin className='text-4xl group-hover:text-blue-600 duration-200' /></div>
           <div className='flex flex-col'>
             <p className='font-semibold group-hover:text-blue-600 duration-200'>LinkedIn</p>
             <p className='text-xs'>Furde Infotech Pvt Ltd</p>

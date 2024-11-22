@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function Industries() {
@@ -18,8 +19,8 @@ function Industries() {
         {/* Leftside */}
         <div className=" w-1/2 text-black">
           <ul className="flex flex-col gap-5 font-medium">
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-glyphs/30/tesla-model-x.png"
@@ -27,8 +28,8 @@ function Industries() {
               />
               Automotive
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/book-and-pencil.png"
@@ -36,8 +37,8 @@ function Industries() {
               />
               Education
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/flash-on.png"
@@ -45,8 +46,8 @@ function Industries() {
               />
               Energy and Utilities
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/financial-analytics.png"
@@ -54,8 +55,8 @@ function Industries() {
               />
               Finance and Banking
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/parliament.png"
@@ -63,8 +64,8 @@ function Industries() {
               />
               Government and Public Sector
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/hospital-bed-with-iv-machine.png"
@@ -72,8 +73,8 @@ function Industries() {
               />
               Healthcare
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/security-checked.png"
@@ -88,8 +89,8 @@ function Industries() {
 
         <div className=" w-1/2  ">
           <ul className="flex flex-col gap-5 font-medium">
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/scales--v1.png"
@@ -97,8 +98,8 @@ function Industries() {
               />
               Legal Services
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/truck.png"
@@ -106,8 +107,8 @@ function Industries() {
               />
               Logistics and Supply Chain
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/reverse-conveyor-movement.png"
@@ -115,8 +116,8 @@ function Industries() {
               />
               Manufacturing
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/real-estate.png"
@@ -124,7 +125,7 @@ function Industries() {
               />
               Real Estate
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
@@ -137,8 +138,8 @@ function Industries() {
               </svg>
               Retail and E-commerce
             </li>
-            <li className="flex items-center gap-2">
-              <img
+            <li className="flex items-center gap-4">
+              <Image
                 width="25"
                 height="25"
                 src="https://img.icons8.com/ios-filled/50/radio-tower.png"
@@ -146,7 +147,7 @@ function Industries() {
               />
               Telecommunications
             </li>
-            <li className="flex items-center gap-2"><img width="25" height="25" src="https://img.icons8.com/ios/50/sunbathe.png" alt="sunbathe"/>Travel and Hospitality</li>
+            <li className="flex items-center gap-4"><img width="25" height="25" src="https://img.icons8.com/ios/50/sunbathe.png" alt="sunbathe"/>Travel and Hospitality</li>
           </ul>
         </div>
       </div>

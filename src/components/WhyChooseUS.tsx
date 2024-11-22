@@ -74,7 +74,7 @@ export default function WhyChooseUS() {
         className="-z-[10] object-cover"
         priority // Optimizes the background image loading
       />
-      <div className="md:pl-20 px-7 w-full">
+      <div className="md:pl-20 px-5 w-full">
         <h1 className="text-white text-4xl md:mt-0 -mt-[70%] font-bold leading-tight">
           WHY CHOOSE US?
         </h1>
@@ -97,7 +97,7 @@ export default function WhyChooseUS() {
         ))}
       </div>
 
-      <div className="md:pl-20 md:pb-0 pb-10 px-7 mt-12">
+      <div className="md:pl-20 md:pb-0 pb-10 px-5 mt-12">
         <p className="text-[#9CA3AF] text-md">
           Discover our story and explore what sets us apart.
         </p>

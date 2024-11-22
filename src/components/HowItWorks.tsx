@@ -65,7 +65,7 @@ export default function HowItWorks() {
       </div>
 
       <div>
-        <h1 className="text-4xl font-bold leading-tight text-black">
+        <h1 className="md:text-4xl text-3xl font-bold leading-tight text-black">
           HOW IT WORKS: OUR STREAMLINED WORKFLOW
         </h1>
         <p className="mt-5 text-md text-[#9CA3AF]">
@@ -81,20 +81,20 @@ export default function HowItWorks() {
               <React.Fragment key={index}>
                 <li
                   onClick={() => setSelectedOption(step.label)}
-                  className={`cursor-pointer flex flex-row justify-between items-center w-[90%] hover:font-bold ${
+                  className={`cursor-pointer flex flex-row justify-between md:text-base text-sm items-center w-[90%] hover:font-bold ${
                     selectedOption === step.label ? "font-bold" : ""
                   } duration-200`}
                 >
                   {step.label}
                   <FaArrowRightLong
-                    className={`transition-transform duration-500 ${
+                    className={`transition-transform duration-500 md:block hidden ${
                       selectedOption === step.label
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-5 opacity-0"
                     }`}
                   />
                 </li>
-                <div className="h-[0.6px] bg-[#9CA3AF] w-[90%] rounded-full"></div>
+                <div className="h-[0.6px] bg-[#9CA3AF] md:w-[90%] w-0 rounded-full"></div>
               </React.Fragment>
             ))}
           </ul>
@@ -119,7 +119,7 @@ export default function HowItWorks() {
                       className="cardShadow rounded-xl"
                     />
                   </div>
-                  <p className="ml-5 text-sm text-[#6B7280]">
+                  <p className="md:ml-5 ml-0 md:text-sm text-xs text-[#6B7280]">
                     {currentStep.description}
                   </p>
                 </motion.div>

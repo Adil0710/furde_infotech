@@ -16,59 +16,155 @@ export default function Careers() {
     const imageElement = imageRef.current;
     const contentElement = contentRef.current;
 
-    // Image animation: width reduces from 100% to 50% as you scroll
-    gsap.fromTo(
-      imageElement,
-      { width: "100%" }, // Initial full width
-      {
-        width: "60%", // Reduced width
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: imageElement,
-          start: "top 80%", // When the image hits the top of the viewport
-          end: "center top", // Animation continues until the image reaches the center of the viewport
-          scrub: true, // Smooth transition tied to scroll
-        },
-      }
-    );
+    const mobileAnimation = () => {
+      // Mobile animation logic
+      gsap.fromTo(
+        imageElement,
+        { width: "50%" },
+        {
+          width: "100%",
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: imageElement,
+            start: "top 80%",
+            end: "center top",
+            scrub: true,
+          },
+        }
+      );
 
-    // Content animation: comes in from the bottom and fades in
-    gsap.fromTo(
-      contentElement,
-      { y: 100, opacity: 0 }, // Starting position below and invisible
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: contentElement,
-          start: "top 90%", // Adjusted to start later
-          end: "top 60%", // End point for the animation
-          scrub: true, // Smooth transition tied to scroll
-        },
+      gsap.fromTo(
+        contentElement,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: contentElement,
+            start: "top 70%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    };
+
+    const desktopAnimation = () => {
+      // Desktop animation logic
+      gsap.fromTo(
+        imageElement,
+        { width: "100%" },
+        {
+          width: "50%",
+          duration: 1.5,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: imageElement,
+            start: "top 75%",
+            end: "center center",
+            scrub: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        contentElement,
+        { y: 150, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: contentElement,
+            start: "top 85%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    };
+
+    const tabletAnimation = () => {
+      // Tablet animation logic
+      gsap.fromTo(
+        imageElement,
+        { width: "100%" },
+        {
+          width: "60%",
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: imageElement,
+            start: "top 80%",
+            end: "center top",
+            scrub: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        contentElement,
+        { y: 120, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: contentElement,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: true,
+          },
+        }
+      );
+    };
+
+    const applyAnimations = () => {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      const isTablet = window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches;
+
+      if (isMobile) {
+        mobileAnimation();
+      } else if (isTablet) {
+        tabletAnimation();
+      } else {
+        desktopAnimation();
       }
-    );
+    };
+
+    applyAnimations();
+    window.addEventListener("resize", applyAnimations);
+
+    return () => {
+      window.removeEventListener("resize", applyAnimations);
+    };
   }, []);
 
   return (
     <div className="bg-black w-full text-white md:pl-20 md:pr-20 px-5 py-10 overflow-x-hidden">
     <div className=" flex flex-col md:flex-row gap-5 items-center">
       {/* Image Section */}
-      <div ref={imageRef} className="w-full md:w-[100%] md:shrink-0">
+      <div ref={imageRef} className="w-1/2 md:w-[100%]  md:shrink-0">
         <Image
           src={career}
           alt="careers"
           className="rounded-md object-cover w-full"
         />
-        
+       
       </div>
+      <p className=" md:hidden block px-2 text-blue-500 text-3xl mt-5 nothing-font leading-relaxed tracking-widest">Ready to unlock your potential? <br />
+        
+        <span className=" text-rose-500 tracking-widest">Join us today!</span></p>
       
       {/* Content Section */}
       <div
         ref={contentRef}
-        className="opacity-0 md:opacity-100 w-full md:w-[27%] flex flex-col justify-center items-start md:ml-10"
+        className=" md:opacity-100 w-full md:w-[27%] flex flex-col justify-center items-start md:ml-10"
       >
         <h1 className="text-4xl font-bold leading-tight uppercase">Careers</h1>
         <p className="mt-5">
@@ -83,7 +179,7 @@ export default function Careers() {
       </div>
       
     </div>
-    <p className=" text-blue-500 text-5xl mt-5 nothing-font leading-relaxed tracking-widest">Ready to unlock your potential? <br />
+    <p className="md:block hidden text-blue-500 text-5xl mt-5 nothing-font leading-relaxed tracking-widest">Ready to unlock your potential? <br />
         
     <span className=" text-rose-500 tracking-widest">Join us today!</span></p>
     </div>

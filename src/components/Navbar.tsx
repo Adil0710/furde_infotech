@@ -47,7 +47,7 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="glass-effect fixed w-full z-50 md:pl-20 px-7 py-5 md:pr-20 flex items-center justify-between">
+      <nav className="glass-effect fixed w-full z-50 md:pl-20 px-5 py-5 md:pr-20 flex items-center justify-between">
         <Link href="/">
           <Image src={logomain} alt="FIT logo" height={50} width={150} />
         </Link>
