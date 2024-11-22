@@ -31,7 +31,7 @@ export default function Hero() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-        <div className="absolute md:top-[25%] top-[15%] md:pl-20 px-5 w-full">
+        <div className="absolute md:top-[25%] top-[20%] md:pl-20 px-5 w-full">
           <h1 className="text-[#9CA3AF] md:text-7xl text-3xl font-bold ">
             Welcome to{" "}
             <span className="text-white">
@@ -62,7 +62,7 @@ export default function Hero() {
             businesses to streamline workflows and enhance productivity.{" "}
           </p>
 
-          <div className=" flex flex-row gap-5 mt-10 w-full">
+          <div className=" flex flex-row gap-5 md:mt-10 mt-16 w-full">
             <button
               type="button"
               onClick={handleClick}
