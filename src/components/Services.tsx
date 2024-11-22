@@ -14,7 +14,7 @@ const ServiceCard = ({ imageSrc, title, description, link }: { imageSrc: StaticI
       <p className="font-semibold text-3xl">{title}</p>
       <p className="text-sm mt-2">{description}</p>
     </div>
-    <div className="flex justify-end px-10 mt-5">
+    <div className="flex justify-end md:px-10 px-5 mt-5">
       <Link
         href={link}
         className="border border-white rounded text-white text-sm w-36 flex items-center gap-2 justify-center py-2 hover:bg-[#1d4ed8] hover:border-[#1d4ed8] duration-500"
