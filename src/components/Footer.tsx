@@ -77,7 +77,7 @@ export default function Footer() {
 
       <div className=" flex md:flex-row flex-col-reverse md:pl-20 md:pr-20 px-5 py-10 z-10 text-white">
         {/* Leftside */}
-        <div className=" w-full md:w-1/2 md:mt-0 mt-20">
+        <div className=" w-full md:w-1/2 md:mt-0 mt-24">
           <Link href="/">
             <Image src={logomain} alt="FIT logo" height={50} width={150} />
           </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
             <p className=" flex flex-row text-2xl font-semibold gap-2">
               <FaLocationDot /> Solapur{" "}
             </p>
-            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2">
+            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2 md:text-base text-sm">
               Furde complex, Damaninagar , Solapur-413001, Maharashtra, India
             </p>
           </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
             <p className=" flex flex-row text-2xl font-semibold gap-2">
               <FaLocationDot /> Pune{" "}
             </p>
-            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2">
+            <p className="group-hover:text-white duration-200 text-[#9CA3AF] mt-2 md:text-base text-sm">
               SNO -151/5A, FL No-B1101, Sukhwani Emerald, Magarpatta Road
               Hadapsar, Pune -411028 Maharashtra, India
             </p>
@@ -112,14 +112,14 @@ export default function Footer() {
           <div className=" flex md:flex-row flex-col-reverse mt-10 gap-20">
             <div>
               <h2 className=" text-3xl font-semibold">Quick Links</h2>
-              <ul className=" mt-8 flex md:flex-col flex-row text-[#9CA3AF] md:justify-center justify-between gap-5">
+              <ul className=" mt-8 flex md:flex-col flex-row text-[#9CA3AF] md:justify-center md:items-start items-center justify-between md:gap-5 md:text-base text-xs">
                 {Links.map((nav, index) => {
                   if (nav.title === "Services" && nav.subLinks) {
                     // Render Dropdown for "Services"
                     return (
                       <DropdownMenu key={index}>
                         <DropdownMenuTrigger asChild>
-                          <li className="cursor-pointer flex flex-row items-center gap-2 hover:text-white duration-200">
+                          <li className="cursor-pointer flex flex-row items-center md:gap-2 gap-0.5 hover:text-white duration-200">
                             {nav.title} <ChevronDown size={18} />
                           </li>
                         </DropdownMenuTrigger>
@@ -160,7 +160,7 @@ export default function Footer() {
               <Link
                 href="tel:9689686686"
                 target="_blank"
-                className=" flex flex-row items-center mt-8 font-semibold gap-5"
+                className=" flex flex-row items-center mt-8 font-semibold gap-5 md:text-base text-sm"
               >
                 <BiPhone className=" text-2xl" /> +91 9689686686
               </Link>
@@ -168,7 +168,7 @@ export default function Footer() {
               <Link
                 href="mailto:info@furdeinfotech.com"
                 target="_blank"
-                className=" flex flex-row items-center mt-5 font-semibold gap-5"
+                className=" flex flex-row items-center mt-5 font-semibold gap-5 md:text-base text-sm"
               >
                 <IoMailOutline className=" text-2xl" />
                 info@furdeinfotech.com

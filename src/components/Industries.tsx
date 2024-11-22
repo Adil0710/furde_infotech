@@ -15,7 +15,7 @@ function Industries() {
         </p>
       </div>
 
-      <div className=" flex flex-row mt-10">
+      <div className=" flex flex-row mt-10 md:text-base text-sm">
         {/* Leftside */}
         <div className=" w-1/2 text-black">
           <ul className="flex flex-col gap-5 font-medium">

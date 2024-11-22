@@ -75,7 +75,7 @@ export default function WhyChooseUS() {
         priority // Optimizes the background image loading
       />
       <div className="md:pl-20 px-5 w-full">
-        <h1 className="text-white text-4xl md:mt-0 -mt-[70%] font-bold leading-tight">
+        <h1 className="text-white text-4xl md:mt-0  font-bold leading-tight">
           WHY CHOOSE US?
         </h1>
         <h2 className="text-white font-semibold text-3xl mt-10 flex items-center gap-2">

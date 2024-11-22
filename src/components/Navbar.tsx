@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronDown, Headphones, BarChart3, Laptop, Menu, X } from 'lucide-react';
+import { ChevronDown, Headphones, BarChart3, Laptop, Menu, X, ChevronUp } from 'lucide-react';
 import logomain from '@/assets/fitlogo.png';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
 
@@ -49,7 +49,7 @@ export default function Navbar() {
       {/* Navbar */}
       <nav className="glass-effect fixed w-full z-50 md:pl-20 px-5 py-5 md:pr-20 flex items-center justify-between">
         <Link href="/">
-          <Image src={logomain} alt="FIT logo" height={50} width={150} />
+          <Image src={logomain} alt="FIT logo" className=' md:w-36 w-28 ' />
         </Link>
         <div className="md:hidden flex items-center">
           <Menu size={28} className="cursor-pointer text-gray-200" onClick={toggleSidebar} />
@@ -97,12 +97,12 @@ export default function Navbar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full glass-effect z-50 transition-transform ${
+        className={`fixed top-0 right-0 w-60 h-full glass-effect z-50 transition-transform ${
           sidebarOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Sidebar Header */}
-        <div className="p-4 flex justify-between items-center">
+        <div className="p-4 flex justify-between items-center mt-4">
           <h2 className="text-lg font-bold text-gray-200 ">Menu</h2>
           <X size={28} className="cursor-pointer text-gray-200 " onClick={closeSidebar} />
         </div>
@@ -114,13 +114,13 @@ export default function Navbar() {
                 <div key={index}>
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
-                    className="flex justify-between items-center w-full text-left text-gray-200  py-2"
+                    className="flex justify-between items-center w-full text-left text-gray-200 transition-all py-2"
                   >
-                    {nav.title} <ChevronDown size={18} />
+                    {nav.title} {servicesOpen ? <ChevronUp size={18} />:<ChevronDown size={18} />}
                   </button>
                   <div
-                    className={`ml-4 flex flex-col gap-2 mt-2 transition-all ${
-                      servicesOpen ? 'max-h-40' : 'max-h-0 overflow-hidden'
+                    className={`ml-4 flex flex-col gap-2 transition-all ${
+                      servicesOpen ? 'max-h-40 mt-2' : 'max-h-0 overflow-hidden'
                     }`}
                   >
                     {nav.subLinks.map((subLink, subIndex) => (

@@ -32,14 +32,14 @@ export default function Hero() {
           priority
         />
         <div className="absolute md:top-[25%] top-[15%] md:pl-20 px-5 w-full">
-          <h1 className="text-[#9CA3AF] md:text-7xl text-4xl font-bold ">
+          <h1 className="text-[#9CA3AF] md:text-7xl text-3xl font-bold ">
             Welcome to{" "}
             <span className="text-white">
               FURDE <br /> INFOTECH
             </span>
           </h1>
 
-          <h2 className=" text-[#9CA3AF] font-semibold md:text-3xl text-2xl mt-10 flex sm:flex-row flex-col sm:items-center sm:gap-2">
+          <h2 className=" text-[#9CA3AF] font-semibold md:text-3xl text-xl mt-10 flex sm:flex-row flex-col sm:items-center sm:gap-2">
             Empowering businesses with{" "}
             <span className=" text-white">
               {" "}
