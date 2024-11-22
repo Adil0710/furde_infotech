@@ -11,10 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Careers() {
   const imageRef = useRef(null);
   const contentRef = useRef(null);
+  const joinref = useRef(null)
 
   useEffect(() => {
     const imageElement = imageRef.current;
     const contentElement = contentRef.current;
+    const joinElement = joinref.current;
 
     const createMobileAnimation = () => {
       gsap.fromTo(
@@ -32,7 +34,22 @@ export default function Careers() {
           },
         }
       );
-
+      gsap.fromTo(
+        joinElement,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: contentElement,
+            start: "top 80%",
+            end: "top 40%",
+            scrub: true,
+          },
+        }
+      );
       gsap.fromTo(
         contentElement,
         { y: 100, opacity: 0 },
@@ -119,7 +136,7 @@ export default function Careers() {
             className="rounded-md object-cover w-full"
           />
         </div>
-        <p className="md:hidden block px-2 text-blue-500 text-3xl mt-5 nothing-font leading-relaxed tracking-widest">
+        <p ref={joinref} className="md:hidden opacity-0 block px-2 text-blue-500 text-lg mt-5 nothing-font leading-relaxed tracking-widest">
           Ready to unlock your potential? <br />
           <span className="text-rose-500 tracking-widest">Join us today!</span>
         </p>
