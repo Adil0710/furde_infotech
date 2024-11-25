@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import bg from "@/assets/staticbg.jpg";
 import ContactForm from '@/components/ContactForm';
+import Social from '@/components/Social';
 
 function ContactUs() {
   return (
@@ -29,6 +30,7 @@ function ContactUs() {
           
         </div>
       </div>
+      <Social/>
     </section>
   )
 }

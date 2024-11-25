@@ -22,8 +22,6 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown, Headphones, BarChart3, Laptop } from "lucide-react";
-import { usePathname } from "next/navigation";
-import FooterContact from "./FooterContact";
 
 const Links = [
   {
@@ -65,13 +63,7 @@ const Links = [
   },
 ];
 
-export default function Footer() {
-
-  const pathname = usePathname()
-
-  if ( pathname === "/contact-us"){
-    return <FooterContact/>
-  }
+export default function FooterContact() {
   return (
     <div className="relative min-h-screen">
       <Image
@@ -210,10 +202,7 @@ export default function Footer() {
         {/* Rightside */}
 
         <div className="w-full md:w-1/2 pl-0 md:pl-40">
-          <h1 className="text-3xl mb-10 md:mt-24 font-semibold leading-tight">
-            Contact Us
-          </h1>
-          <ContactForm />
+          
         </div>
       </div>
     </div>

@@ -12,11 +12,13 @@ export default function Careers() {
   const imageRef = useRef(null);
   const contentRef = useRef(null);
   const joinref = useRef(null)
+  const joinreftwo = useRef(null)
 
   useEffect(() => {
     const imageElement = imageRef.current;
     const contentElement = contentRef.current;
     const joinElement = joinref.current;
+    const joinElementtwo = joinreftwo.current;
 
     const createMobileAnimation = () => {
       gsap.fromTo(
@@ -84,6 +86,23 @@ export default function Careers() {
           },
         }
       );
+      gsap.fromTo(
+        joinElementtwo,
+        { x: -150, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: contentElement,
+            start: "top 60%",
+            end: "top 10%",
+            scrub: true,
+          },
+        }
+      );
+      
 
       gsap.fromTo(
         contentElement,
@@ -158,7 +177,7 @@ export default function Careers() {
           </Link>
         </div>
       </div>
-      <p className="md:block hidden text-blue-500 text-5xl mt-5 nothing-font leading-relaxed tracking-widest">
+      <p ref={joinreftwo} className="md:block opacity-0 hidden text-blue-500 text-5xl mt-5 nothing-font leading-relaxed tracking-widest">
         Ready to unlock your potential? <br />
         <span className="text-rose-500 tracking-widest">Join us today!</span>
       </p>
