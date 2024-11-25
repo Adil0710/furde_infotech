@@ -1003,10 +1003,10 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
           />
         </div>
 
-        <div className="flex flex-row items-center justify-end gap-10">
+        <div className="flex flex-row items-center md:justify-end justify-between md:gap-12 gap-6">
           <Button
             type="button"
-            className="rounded bg-red-500 text-white w-36 flex items-center gap-2 justify-center py-2 hover:bg-red-800 duration-500"
+            className="rounded bg-red-500 text-white md:w-36 w-full flex items-center gap-2 justify-center py-2 hover:bg-red-800 duration-500"
             onClick={() => router.back()}
           >
             Cancel
@@ -1014,7 +1014,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
           <Button
             type="submit"
             disabled={isLoading}
-            className="rounded bg-blue-500 text-white w-36 flex items-center gap-2 justify-center py-2 hover:bg-blue-800 duration-500"
+            className="rounded bg-blue-500 text-white md:w-36 w-full flex items-center gap-2 justify-center py-2 hover:bg-blue-800 duration-500"
           >
             {isLoading ? (
               <>
