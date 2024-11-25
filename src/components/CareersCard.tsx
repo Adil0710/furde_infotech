@@ -96,7 +96,7 @@ export default function CareersCard() {
       <h1 className="mt-28 text-4xl font-bold leading-tight uppercase">
           Experienced Opportunities
         </h1>
-      <div className=" mt-10 flex justify-between items-center md:text-base text-xs">
+      <div className=" mt-10 flex justify-between items-center md:text-base text-[13px]">
       <p className=" text-[#4B5563] ">Bring Your Expertise to Our department.</p>
         
         <Link href="/experienced-level-roles" className=" text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
