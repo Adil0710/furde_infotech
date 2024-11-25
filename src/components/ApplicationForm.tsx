@@ -828,7 +828,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right text-xs text-gray-500">
+                      <div className="mt-1 text-right md:text-xs text-[10px] text-gray-500">
                         Enter your Percentage or CGPA
                       </div>
                     )}
