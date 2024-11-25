@@ -80,7 +80,7 @@ function Opinion() {
         {buttons.map((button) => (
           <Button
             key={button.id}
-            className={`border border-black rounded bg-transparent hover:bg-transparent hover:bg-neutral-900 hover:text-white font-semibold text-black text-sm w-44 flex items-center justify-center py-2 duration-500 ${
+            className={`border border-black rounded bg-transparent hover:bg-transparent hover:bg-neutral-900 hover:text-white font-semibold text-black text-sm md:w-44 w-fit flex items-center justify-center py-2 duration-500 ${
               clickedButtonId === button.id
                 ? "bg-neutral-900 text-white"
                 : ""
