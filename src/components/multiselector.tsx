@@ -53,7 +53,7 @@ export function MultipleSelector({
           aria-expanded={open}
           className="w-full inputstyle hover:ring-[0.4px] focus:ring-[0.4px] ring-black hover:bg-[#D9D9D9] justify-between"
         >
-          <div className={`${selectedValues.length > 0 ? "overflow-x-scroll" : " overflow-x-hidden"} flex gap-2 justify-start `}>
+          <div className={`${selectedValues.length > 0 ? "md:overflow-x-hidden overflow-x-scroll" : " overflow-x-hidden"} flex gap-2 justify-start `}>
             {selectedValues.length > 0
               ? selectedValues.map((val, i) => (
                   <div

@@ -155,7 +155,12 @@ export const applicationFormSchema = z.object({
   }),
   languages: z.array(z.string()).nonempty({ message: "Please select at least one language." }),
   resume: z
-  .instanceof(File),
+  .instanceof(File)
+  .refine(
+    (file) => file.size <= 5 * 1024 * 1024, // 5 MB in bytes
+    { message: "Resume file size must not exceed 5 MB." }
+  ),
+
   confirm: z.boolean().refine(val => val === true, {
     message: "You must confirm that the information is accurate."
   }),

@@ -34,6 +34,9 @@ import { Checkbox } from "./ui/checkbox";
 import toast from "react-hot-toast";
 import { LuLoader2 } from "react-icons/lu";
 import { formatDateToDDMMYYYY } from "@/helpers/formatDateToDDMMYYYY";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogClose } from "@/components/ui/dialog";
+import CheckIconSvg from "./ui/CheckIconSvg";
+
 
 // Infer the schema type
 type FormData = z.infer<typeof applicationFormSchema>;
@@ -45,6 +48,9 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [submittedName, setSubmittedName] = React.useState<string | null>(null);
+
   // State to track the selected month and year
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
@@ -139,7 +145,10 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
         toast.success("Application sent successfully!", {
           duration:5000
         });
-        form.reset()
+        setSubmittedName(data.firstname)
+        setIsDialogOpen(true); // Show the dialog
+        // form.reset()
+        // router.back()
       } else {
         const errorText = await response.text();
         toast.error(`Failed to send application: ${errorText}`, {
@@ -157,6 +166,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
   };
 
   return (
+    <>
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
@@ -1027,5 +1037,23 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
         </div>
       </form>
     </Form>
+     {/* Dialog */}
+     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+     <DialogContent className=" flex justify-center items-center flex-col text-center">
+       <DialogHeader>
+         <DialogTitle>Thank You {submittedName} !</DialogTitle>
+       </DialogHeader>
+     <CheckIconSvg/>
+     <p className="text-[#3DC480] font-semibold">Application Submitted</p>
+       <p>Your application for <span className=" font-semibold">{designation}</span> has been submitted successfully!</p>
+       <p> We will contact you soon.</p>
+       <DialogFooter>
+         <DialogClose asChild onClick={() => setIsDialogOpen(false)}>
+           
+         </DialogClose>
+       </DialogFooter>
+     </DialogContent>
+   </Dialog>
+   </>
   );
 }

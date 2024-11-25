@@ -196,3 +196,30 @@ input[type=number] {
   scrollbar-color: rgb(78, 78, 78) transparent; /* Thumb and track colors */
   scroll-behavior: smooth !important;
 }
+
+
+
+
+
+.success-message__icon {
+    max-width: 75px;
+}
+
+.icon-checkmark {
+    circle {
+        fill: #3DC480;
+        transform-origin: 50% 50%;
+        transform: scale(1);
+        transition: transform 200ms cubic-bezier(.22, .96, .38, .98);
+    }
+    path {
+        transition: stroke-dashoffset 350ms ease;
+        transition-delay: 100ms;
+    }
+    
+    .active & {
+        circle {
+            transform: scale(1);
+        }
+    }
+}
