@@ -523,7 +523,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="hscdiplomaname"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       2. HSC / Diploma*
                     </FormLabel>
@@ -543,7 +543,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="hscdiplomadepartment"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       Department*
                     </FormLabel>
@@ -630,7 +630,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="graduationname"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       3. Graduation
                     </FormLabel>
@@ -651,7 +651,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="graduationdepartment"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       Department / Specialization
                     </FormLabel>
@@ -737,7 +737,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="pgraduationname"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       4. Post Graduation
                     </FormLabel>
@@ -758,7 +758,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="pgraduationdepartment"
                 render={({ field }) => (
-                  <FormItem className=" md:col-span-1 col-span-2">
+                  <FormItem className=" md:col-span-1 col-span-4">
                     <FormLabel className=" text-gray-500">
                       Department / Specialization
                     </FormLabel>
