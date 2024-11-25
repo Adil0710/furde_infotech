@@ -76,7 +76,7 @@ function Opinion() {
       <p className="text-[#4B5563] mt-10">
         Bring Your Expertise to Our Department.
       </p>
-      <div className="flex flex-row gap-5 mt-8 w-full">
+      <div className="flex flex-row gap-5 mt-8 w-full flex-wrap">
         {buttons.map((button) => (
           <Button
             key={button.id}
