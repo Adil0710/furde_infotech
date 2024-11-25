@@ -17,7 +17,7 @@ export default function KPO() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-       <div className="absolute md:top-1/2 top-[65%] left-0 transform -translate-y-[65%] md:-translate-y-1/2 md:pl-20 px-5 md:w-1/2 w-full">
+       <div className="absolute md:top-1/2 top-[67%] left-0 transform -translate-y-[67%] md:-translate-y-1/2 md:pl-20 px-5 md:w-1/2 w-full">
           <h1 className=" text-4xl font-bold leading-tight text-white">
           KPO SERVICES
           </h1>
@@ -28,8 +28,7 @@ export default function KPO() {
             services provide high-value support across critical functions,
             including market research, data analysis, and business intelligence,
             tailored to meet your unique needs. With a focus on accuracy,
-            confidentiality, and actionable insights, we empower your
-            organization to stay ahead in competitive markets. From financial
+            confidentiality, and actionable insights. From financial
             analysis to risk management, our team is dedicated to delivering
             knowledge-driven solutions that enhance efficiency and foster
             innovation. Let us be your partner in unlocking potential through
