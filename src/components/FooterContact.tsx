@@ -14,7 +14,6 @@ import { BiPhone } from "react-icons/bi";
 import { IoMailOutline } from "react-icons/io5";
 // import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
-import ContactForm from "./ContactForm";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
