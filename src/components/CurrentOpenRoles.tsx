@@ -98,7 +98,7 @@ export default function CurrentOpenRoles() {
 
       {/* Entry Level Jobs */}
       <div className="mt-8 flex justify-between items-center w-full">
-        <h3 className="text-xl font-semibold text-gray-800">
+        <h3 className="md:text-xl text-base font-semibold text-gray-800">
           Entry Level Roles
         </h3>
         <Link href="/entry-level-roles" className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
