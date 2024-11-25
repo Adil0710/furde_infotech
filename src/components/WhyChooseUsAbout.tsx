@@ -97,7 +97,7 @@ export default function WhyChooseUsAbout() {
         ))}
       </div>
 
-      <div className="md:pl-20 px-5 mt-12">
+      <div className="md:pl-20 px-5 mt-12 md:pb-0 pb-12">
         <p className="text-[#9CA3AF] text-md">
           At Furde Infotech, our commitment to excellence drives every aspect of
           our work. By prioritizing client needs, we build lasting partnerships

@@ -1,34 +1,53 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
+import { Skeleton } from "@/components/ui/skeleton";
+import React from "react";
 
-export default function Homepage() {
+function page() {
   return (
-    <div className="relative min-h-screen">
-      {/* Video background */}
-      <video
-        src="/videos/videobg.mp4" // Path to the video in the public folder
-        autoPlay
-        loop
-        muted
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-
-      <div className="relative z-10">
-        <Navbar />
-      </div>
-      <div className="absolute z-20 top-[25%] px-5 pl-10 w-1/2">
-        <h1 className="text-[#9CA3AF] text-7xl font-semibold leading-tight">
-          Welcome to <span className="text-white">FURDE INFOTECH</span>
-        </h1>
-
-        <h2 className="text-[#9CA3AF] font-semibold text-2xl mt-5">
-          Empowering businesses with <span className="text-white">Innovative Strategies</span>
-        </h2>
-
-        <p className="text-white mt-7 text-sm">
-          Furde Infotech Pvt. Ltd. is dedicated to delivering cutting-edge IT, KPO, and BPO solutions tailored to meet the unique needs of each client. Our approach focuses on driving operational excellence, enabling businesses to streamline workflows and enhance productivity. By providing customized and innovative services, we help organizations achieve their growth objectives while maintaining high standards of quality and efficiency. At Furde Infotech, we are committed to empowering businesses to thrive in an ever-evolving market landscape.
-        </p>
-      </div>
+    <div className="grid pt-60 pb-12 px-40 grid-cols-1 sm:grid-cols-3 gap-10">
+      <Skeleton className="cardShadow bg-white  overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col">
+        <div className="py-5 px-5">
+          <Skeleton className=" h-8 w-full" />
+          <Skeleton className=" mt-2 h-6 w-1/2" />
+          <Skeleton className=" mt-6 w-full h-4" />
+          <Skeleton className=" mt-2 w-full h-4" />
+          <Skeleton className=" mt-2 w-[75%] h-4" />
+          <Skeleton className=" mt-6 w-[60%] h-6" />
+          <Skeleton className=" mt-3 w-32 h-6" />
+        </div>
+        <div className="flex justify-end pb-5 px-5">
+          <Skeleton className=" h-8 w-28" />
+        </div>
+      </Skeleton>
+      <Skeleton className="cardShadow bg-white  overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col">
+        <div className="py-5 px-5">
+          <Skeleton className=" h-8 w-full" />
+          <Skeleton className=" mt-2 h-6 w-1/2" />
+          <Skeleton className=" mt-6 w-full h-4" />
+          <Skeleton className=" mt-2 w-full h-4" />
+          <Skeleton className=" mt-2 w-[75%] h-4" />
+          <Skeleton className=" mt-6 w-[60%] h-6" />
+          <Skeleton className=" mt-3 w-32 h-6" />
+        </div>
+        <div className="flex justify-end pb-5 px-5">
+          <Skeleton className=" h-8 w-28" />
+        </div>
+      </Skeleton>
+      <Skeleton className="cardShadow bg-white  overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col">
+        <div className="py-5 px-5">
+          <Skeleton className=" h-8 w-full" />
+          <Skeleton className=" mt-2 h-6 w-1/2" />
+          <Skeleton className=" mt-6 w-full h-4" />
+          <Skeleton className=" mt-2 w-full h-4" />
+          <Skeleton className=" mt-2 w-[75%] h-4" />
+          <Skeleton className=" mt-6 w-[60%] h-6" />
+          <Skeleton className=" mt-3 w-32 h-6" />
+        </div>
+        <div className="flex justify-end pb-5 px-5">
+          <Skeleton className=" h-8 w-28" />
+        </div>
+      </Skeleton>
     </div>
   );
 }
+
+export default page;
