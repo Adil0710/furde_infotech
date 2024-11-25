@@ -41,8 +41,8 @@ export default function ApplyForm({ params }: ApplyFormProps) {
   // };
 
   return (
-    <section className=" text-gray-900 bg-white md:pt-[12%] pt-[20%] md:pl-20 md:pr-20 pb-20 px-5 w-full">
-      <h1 className=" text-4xl font-bold leading-tight capitalize flex flex-row items-center gap-6">
+    <section className=" text-gray-900 bg-white md:pt-[12%] pt-[25%] md:pl-20 md:pr-20 pb-20 px-5 w-full">
+      <h1 className=" md:text-4xl text-2xl font-bold leading-tight capitalize flex flex-row items-center gap-6">
         <FaChevronLeft
           size={30}
           className=" cursor-pointer"

@@ -721,7 +721,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right md:text-xs text-[10px] text-gray-500">
+                      <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                         Enter your Percentage or CGPA
                       </div>
                     )}
@@ -854,7 +854,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 </FormControl>
                 <FormMessage />
                 {!form.formState.errors.address && (
-                  <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
+                  <div className="mt-1 text-right md:text-xs text-[10px] text-gray-500">
                    Fresher kindly enter N/A | Max 200 characters
                   </div>
                 )}
@@ -953,10 +953,10 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
               };
 
               return (
-                <FormItem className="md:col-span-2 col-span-4">
+                <FormItem className="col-span-2">
                   <FormLabel>Resume*</FormLabel>
                   <FormControl>
-                    <div className="flex w-[48.5%] items-center text-sm gap-2 border p-2 rounded-md">
+                    <div className="flex md:w-[48.5%] w-full items-center text-sm gap-2 border p-2 rounded-md">
                       <Paperclip className="h-5 w-5 text-gray-600" />{" "}
                       {/* Icon */}
                       <input
@@ -1003,7 +1003,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
           />
         </div>
 
-        <div className="flex flex-row items-center md:justify-end justify-between md:gap-12 gap-6 pt-8">
+        <div className="flex flex-row items-center justify-end gap-10">
           <Button
             type="button"
             className="rounded bg-red-500 text-white w-36 flex items-center gap-2 justify-center py-2 hover:bg-red-800 duration-500"
