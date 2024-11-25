@@ -381,7 +381,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 </FormControl>
                 <FormMessage />
                 {!form.formState.errors.address && (
-                  <div className="mt-1 text-right text-xs text-gray-500">
+                  <div className="mt-1 text-right md:text-xs text-[10px] text-gray-500">
                     Max 200 characters
                   </div>
                 )}
@@ -508,7 +508,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right text-xs text-gray-500">
+                      <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                         Enter your Percentage or CGPA
                       </div>
                     )}
@@ -556,7 +556,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right text-xs text-gray-500">
+                      <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                         HSC passed out kindly enter N/A
                       </div>
                     )}
@@ -614,7 +614,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right text-xs text-gray-500">
+                      <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                         Enter your Percentage or CGPA
                       </div>
                     )}
@@ -721,7 +721,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                     </FormControl>
                     <FormMessage />
                     {!form.formState.errors.address && (
-                      <div className="mt-1 text-right text-xs text-gray-500">
+                      <div className="mt-1 text-right md:text-xs text-[10px] text-gray-500">
                         Enter your Percentage or CGPA
                       </div>
                     )}
@@ -854,7 +854,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 </FormControl>
                 <FormMessage />
                 {!form.formState.errors.address && (
-                  <div className="mt-1 text-right text-xs text-gray-500">
+                  <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                    Fresher kindly enter N/A | Max 200 characters
                   </div>
                 )}
@@ -878,7 +878,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 </FormControl>
                 <FormMessage />
                 {!form.formState.errors.address && (
-                  <div className="mt-1 text-right text-xs text-gray-500">
+                  <div className="mt-1 text-right text-[10px] md:text-xs text-gray-500">
                     Enter courses separated with commas e.g. MS-CIT, Java  |  Enter N/A if no courses have been completed.
                   </div>
                 )}
@@ -953,7 +953,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
               };
 
               return (
-                <FormItem className="col-span-2">
+                <FormItem className="md:col-span-2 col-span-4">
                   <FormLabel>Resume*</FormLabel>
                   <FormControl>
                     <div className="flex w-[48.5%] items-center text-sm gap-2 border p-2 rounded-md">

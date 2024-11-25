@@ -41,7 +41,7 @@ export default function ApplyForm({ params }: ApplyFormProps) {
   // };
 
   return (
-    <section className=" text-gray-900 bg-white pt-[12%] md:pl-20 md:pr-20 pb-20 px-5 w-full">
+    <section className=" text-gray-900 bg-white md:pt-[12%] pt-[20%] md:pl-20 md:pr-20 pb-20 px-5 w-full">
       <h1 className=" text-4xl font-bold leading-tight capitalize flex flex-row items-center gap-6">
         <FaChevronLeft
           size={30}
@@ -51,8 +51,8 @@ export default function ApplyForm({ params }: ApplyFormProps) {
         {designation}
       </h1>
       <div className="mt-8 flex flex-row justify-between items-center">
-        <p className=" text-gray-800">Enter the Following details</p>{" "}
-        <p className=" text-gray-800">Fields marked with an asterisk <span className=" font-bold">*</span> are required.</p>
+        <p className=" text-gray-800 md:text-base text-xs">Enter the Following details</p>{" "}
+        <p className=" text-gray-800 md:text-base text-xs">Fields marked with an asterisk <span className=" font-bold">*</span> are required.</p>
       </div>
 
       <ApplicationForm designation={designation} />

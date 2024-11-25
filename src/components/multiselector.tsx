@@ -65,7 +65,7 @@ export function MultipleSelector({
                 ))
               : "Select Languages Known"}
           </div>
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className={`${selectedValues.length > 0 ? "hidden" : "block"} ml-2 h-4 w-4 shrink-0 opacity-50`} />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
