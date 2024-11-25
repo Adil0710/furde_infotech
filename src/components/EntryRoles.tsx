@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import NoResultIcon from "@/assets/noresult.svg";
 import Image from "next/image";
 import CareerCard from "./CareerCard";
