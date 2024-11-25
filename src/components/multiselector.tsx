@@ -53,7 +53,7 @@ export function MultipleSelector({
           aria-expanded={open}
           className="w-full inputstyle hover:ring-[0.4px] focus:ring-[0.4px] ring-black hover:bg-[#D9D9D9] justify-between"
         >
-          <div className="flex gap-2 justify-start">
+          <div className="flex gap-2 justify-start overflow-x-scroll">
             {selectedValues.length > 0
               ? selectedValues.map((val, i) => (
                   <div
