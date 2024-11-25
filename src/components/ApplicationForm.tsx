@@ -168,7 +168,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="firstname"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className=" md:col-span-1 col-span-2">
                 <FormLabel>First Name*</FormLabel>
                 <FormControl>
                   <Input
@@ -186,7 +186,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="lastname"
             render={({ field }) => (
-              <FormItem>
+              <FormItem  className=" md:col-span-1 col-span-2">
                 <FormLabel>Last Name*</FormLabel>
                 <FormControl>
                   <Input
@@ -204,7 +204,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="dob"
             render={({ field }) => (
-              <FormItem>
+              <FormItem  className=" md:col-span-1 col-span-2">
                 <FormLabel>D.O.B.*</FormLabel>
                 <FormControl>
                   <Popover open={open} onOpenChange={setOpen}>
@@ -298,7 +298,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="gender"
             render={({ field }) => (
-              <FormItem>
+              <FormItem  className=" md:col-span-1 col-span-2">
                 <FormLabel>Gender*</FormLabel>
                 <Select
                   onValueChange={field.onChange}
@@ -324,7 +324,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="phone"
             render={({ field }) => (
-              <FormItem>
+              <FormItem  className=" md:col-span-1 col-span-2">
                 <FormLabel>Phone*</FormLabel>
                 <FormControl>
                   <Input
@@ -351,7 +351,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem  className=" md:col-span-1 col-span-2">
                 <FormLabel>Email*</FormLabel>
                 <FormControl>
                   <Input
@@ -439,12 +439,12 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
           </FormLabel>
           <div className="col-span-2 grid grid-cols-4 gap-12">
             {/* SSC */}
-            <div className="col-span-4 grid grid-cols-4 gap-x-12">
+            <div className="col-span-4 grid grid-cols-4 gap-12">
               <FormField
                 control={form.control}
                 name="schoolname"
                 render={({ field }) => (
-                  <FormItem className="col-span-2">
+                  <FormItem className="md:col-span-2 col-span-4">
                     <FormLabel className=" text-gray-500">1. SSC*</FormLabel>
                     <FormControl>
                       <Input
@@ -462,7 +462,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="sscyear"
                 render={({ field }) => (
-                  <FormItem className=" col-span-1">
+                  <FormItem className=" md:col-span-1 col-span-2">
                     <FormLabel className="text-gray-500">
                       Passing Year*
                     </FormLabel>
@@ -495,7 +495,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                 control={form.control}
                 name="sscmarks"
                 render={({ field }) => (
-                  <FormItem className=" col-span-1">
+                  <FormItem className=" md:col-span-1 col-span-2">
                     <FormLabel className=" text-gray-500">
                       Percentage / CGPA*
                     </FormLabel>
