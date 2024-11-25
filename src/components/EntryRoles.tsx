@@ -78,7 +78,7 @@ export default function EntryRoles() {
   return (
     <div>
       {/* Search */}
-      <div className="relative mt-10 w-1/2">
+      <div className="relative mt-10 md:w-1/2 w-full">
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <Input
           className="bg-[#D9D9D9] pl-10 shadow-none"
@@ -96,9 +96,7 @@ export default function EntryRoles() {
         <h3 className="text-xl font-semibold text-gray-800">
           Entry Level Roles
         </h3>
-        <Link href="/entry-level-roles" className="text-[#1D4ED8]">
-          View More
-        </Link>
+        
       </div>
       <div
         className={`${

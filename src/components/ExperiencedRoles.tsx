@@ -75,7 +75,7 @@ export default function ExperiencedRoles() {
   return (
     <div>
       {/* Search */}
-      <div className="relative mt-10 w-1/2">
+      <div className="relative mt-10 md:w-1/2 w-full">
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <Input
           className="bg-[#D9D9D9] pl-10 shadow-none"
