@@ -162,7 +162,7 @@ export default function Careers() {
         {/* Content Section */}
         <div
           ref={contentRef}
-          className="opacity-0 md:opacity-100 w-full md:w-[27%] flex flex-col justify-center items-start md:ml-10"
+          className="opacity-0 md:opacity-100 w-full md:w-[27%] flex flex-col justify-center md:pb-0 pb-5 items-start md:ml-10"
         >
           <h1 className="text-4xl font-bold leading-tight uppercase">Careers</h1>
           <p className="mt-5">
