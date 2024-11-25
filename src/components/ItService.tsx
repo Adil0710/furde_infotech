@@ -9,7 +9,7 @@ function ItService() {
       <p className=" mt-8 text-[#4B5563]">
         Leveraging advanced technologies to propel your business growth.
       </p>
-      <div className=" mt-10 grid grid-cols-3 gap-8">
+      <div className=" mt-10 grid md:grid-cols-3 grid-cols-1 gap-8">
         {itServices.map((service, index) => {
           return (
             <ServiceCard
