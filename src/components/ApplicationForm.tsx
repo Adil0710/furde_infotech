@@ -309,7 +309,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
                       <SelectValue placeholder="Select Your Gender" />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
+                  <SelectContent className=" w-full">
                     <SelectItem value="Male">Male</SelectItem>
                     <SelectItem value="Female">Female</SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
@@ -625,7 +625,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
 
             {/* Gradution */}
 
-            <div className="-mt-4 col-span-4 grid grid-cols-4 gap-x-12">
+            <div className="-mt-4 col-span-4 grid grid-cols-4 md:gap-12 gap-6">
               <FormField
                 control={form.control}
                 name="graduationname"
@@ -732,7 +732,7 @@ export default function ApplicationForm({ designation }: ApplicationFormProps) {
 
             {/* Post Graduation */}
 
-            <div className="-mt-4 col-span-4 grid grid-cols-4 gap-x-12">
+            <div className="-mt-4 col-span-4 grid grid-cols-4 md:gap-12 gap-6">
               <FormField
                 control={form.control}
                 name="pgraduationname"
