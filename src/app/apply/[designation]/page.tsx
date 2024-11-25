@@ -50,9 +50,9 @@ export default function ApplyForm({ params }: ApplyFormProps) {
         />{" "}
         {designation}
       </h1>
-      <div className="mt-8 flex flex-row justify-between items-center">
-        <p className=" text-gray-800 md:text-base text-[10px]">Enter the Following details</p>{" "}
-        <p className=" text-gray-800 md:text-base text-[10px]">Fields marked with an asterisk <span className=" font-bold">*</span> are required.</p>
+      <div className="mt-8 flex md:flex-row flex-col justify-between md:items-center items-start md:gap-0 gap-2">
+        <p className=" text-gray-800 md:text-base text-sm">Enter the Following details</p>{" "}
+        <p className=" text-gray-800 md:text-base text-sm">Fields marked with an asterisk <span className=" font-bold">*</span> are required.</p>
       </div>
 
       <ApplicationForm designation={designation} />
