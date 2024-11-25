@@ -74,7 +74,7 @@ export default function WhyChooseUsAbout() {
         className="-z-[10] object-cover"
         priority // Optimizes the background image loading
       />
-      <div className="md:pl-20 px-5 w-[44.5%]">
+      <div className="md:pl-20 px-5 md:w-[44.5%] w-full">
         <h1 className="text-white text-4xl font-bold leading-tight">
           WHY CHOOSE US?
         </h1>

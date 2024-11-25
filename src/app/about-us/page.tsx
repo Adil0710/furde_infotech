@@ -18,7 +18,7 @@ export default function AboutUs() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-        <div className="absolute top-[25%] md:pl-20 px-5 w-1/2">
+        <div className="absolute md:top-[25%] top-[30%] md:pl-20 px-5 md:w-1/2 w-full">
           <h1 className=" text-4xl font-bold leading-tight text-white">
             About Us
           </h1>
