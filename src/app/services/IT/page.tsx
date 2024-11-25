@@ -17,7 +17,7 @@ export default function IT() {
           className="-z-[10]" // Ensure the image is behind other content
           priority
         />
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 md:pl-20 px-5 w-1/2">
+        <div className="absolute md:top-1/2 top-[65%] left-0 transform md:-translate-y-1/2 -translate-y-[65%] md:pl-20 px-5 md:w-1/2 w-full">
           <h1 className=" text-4xl font-bold leading-tight text-white">
             IT SERVICES
           </h1>
