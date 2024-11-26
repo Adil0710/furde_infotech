@@ -16,7 +16,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
 import { PanelRightClose, PanelRightOpen } from "lucide-react"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"

@@ -142,7 +142,7 @@ function Page() {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Add Job</DialogTitle>
-            <DialogDescription>Click save when you're done.</DialogDescription>
+            <DialogDescription>Click save when you&apos;re done.</DialogDescription>
           </DialogHeader>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
