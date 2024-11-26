@@ -71,6 +71,8 @@ export default function Footer() {
 
   if ( pathname === "/contact-us"){
     return <FooterContact/>
+  }else if(pathname.startsWith("/dashboard")){
+    return <div></div>
   }
   return (
     <div className="relative min-h-screen">

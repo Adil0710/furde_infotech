@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronDown, Headphones, BarChart3, Laptop, Menu, X, ChevronUp } from 'lucide-react';
 import logomain from '@/assets/fitlogo.png';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
+import { usePathname } from 'next/navigation';
 
 const navbar = [
   { title: 'Home', link: '/' },
@@ -26,6 +27,8 @@ export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const pathname = usePathname()
+
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
   const closeSidebar = () => setSidebarOpen(false);
@@ -43,6 +46,10 @@ export default function Navbar() {
       document.body.classList.remove('overflow-hidden');
     };
   }, [sidebarOpen]);
+
+if(pathname.startsWith("/dashboard")){
+  return <div></div>
+}
 
   return (
     <>

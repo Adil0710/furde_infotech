@@ -19,8 +19,11 @@
     "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.2",
+    "@radix-ui/react-tooltip": "^1.1.4",
     "@react-email/components": "^0.0.28",
     "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
@@ -30,6 +33,7 @@
     "lucide-react": "^0.453.0",
     "mongoose": "^8.8.1",
     "next": "14.2.15",
+    "next-auth": "^4.24.10",
     "next-videos": "^1.4.1",
     "pdf-lib": "^1.17.1",
     "react": "^18",
@@ -48,6 +52,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

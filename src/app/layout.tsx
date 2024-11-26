@@ -3,7 +3,9 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Toaster } from "react-hot-toast";
+import { Toaster as Toast } from "react-hot-toast";
+import { Toaster } from "@/components/ui/toaster";
+import AuthProvider from "@/context/AuthProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
@@ -19,12 +21,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <Toaster position="top-center" reverseOrder={false} />
-      </body>
+      <AuthProvider>
+        <body className={`${montserrat.className} antialiased`}>
+          <Navbar />
+          {children}
+          <Footer />
+          <Toast position="top-center" reverseOrder={false} />
+          <Toaster />
+        </body>
+      </AuthProvider>
     </html>
   );
 }
