@@ -60,13 +60,13 @@ export async function PUT(
       }),
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error:", error);
     return new Response(
       JSON.stringify({
         success: false,
         message: "Server Error",
-        error: error.message,
+        error: error,
       }),
       { status: 500 }
     );

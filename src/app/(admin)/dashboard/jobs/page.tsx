@@ -17,7 +17,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -52,7 +51,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { IoIosSearch } from "react-icons/io";
 import Image from "next/image";
 import NoResultIcon from "@/assets/noresult.svg";
-import { Skeleton } from "@/components/ui/skeleton";
+import DashboardLoading from "@/components/DashboardLoading";
 
 // Job Type
 type Job = {
@@ -100,9 +99,10 @@ function Page() {
       setJobs(response.data.jobs);
       console.log("data", response.data.jobs);
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error",
-        description: "Failed to load jobs.",
+        description: `Failed to load jobs:- ${error}`,
         variant: "destructive",
       });
     } finally {
@@ -159,9 +159,10 @@ function Page() {
       toast({ title: "Success", description: "Job deleted successfully." });
       fetchJobs();
     } catch (error) {
+      console.log(error)
       toast({
         title: "Error",
-        description: "Failed to delete job.",
+        description: `Failed to delete job:- ${error}`,
         variant: "destructive",
       });
     } finally {
@@ -201,7 +202,7 @@ function Page() {
 
   return (
     <section className="py-5 pt-0 px-5 h-auto w-auto flex flex-col items-center">
-      <div className="relative md:w-1/2 w-full">
+      <div className="relative md:w-1/2 w-[60%]">
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <Input
           className="bg-neutral-50 pl-10 shadow-none"
@@ -215,37 +216,7 @@ function Page() {
         {loading ? (
           <>
             {Array.from({ length: 6 }).map((_, index) => (
-              <Skeleton
-                className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col"
-                key={index}
-              >
-                <div className="py-5 px-5">
-                  <Skeleton className=" h-8 w-full" />
-                  <Skeleton className=" mt-2 h-6 w-1/2" />
-                  <Skeleton className=" mt-6 w-full h-4" />
-                  <Skeleton className=" mt-2 w-full h-4" />
-                  <Skeleton className=" mt-2 w-[75%] h-4" />
-                  <div className="mt-6 flex flex-row items-center gap-3">
-                    {" "}
-                    <Skeleton className="rounded-full w-6 h-6" />{" "}
-                    <Skeleton className="  w-[60%] h-6" />
-                  </div>
-                  <div className="mt-2 flex flex-row items-center gap-3">
-                    {" "}
-                    <Skeleton className="rounded-full w-6 h-6" />{" "}
-                    <Skeleton className="  w-[60%] h-6" />
-                  </div>
-                </div>
-                <div className="absolute bottom-0 w-full py-5 px-5 flex justify-between items-center">
-                  <div>
-                    <Skeleton className=" h-3 w-28" />
-                  </div>
-                  <div className=" flex flex-row justify-center items-center gap-6">
-                    <Skeleton className=" h-8 w-8" />
-                    <Skeleton className=" h-8 w-8" />
-                  </div>
-                </div>
-              </Skeleton>
+              <DashboardLoading key={index}/>
             ))}
           </>
         ) : filteredJobs.length === 0 ? (
@@ -262,61 +233,66 @@ function Page() {
           filteredJobs.map((job, index) => (
             <div
               key={index}
-              className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg text-[#111827] flex flex-col max-w-full"
+              className="cardShadow relative bg-white overflow-hidden min-h-[350px] max-h-[400px] rounded-lg text-[#111827] flex flex-col max-w-full"
             >
               <div className="py-5 px-5">
-                <p className="font-semibold text-2xl">{job.designation}</p>
-                <p className="text-xl font-semibold mt-2 text-[#374151]">
+                <p className="font-semibold text-xl">{job.designation}</p>
+                <p className="text-base font-semibold mt-2 text-[#374151]">
                   {job.department}
                 </p>
-                <p className="mt-4 break-words">{job.description}</p>
-                <p className="mt-4 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
-                  <FaLocationDot size={20} />
-                  {job.location}
-                </p>
-                <p className="mt-3 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
-                  <MdAccessTimeFilled size={20} />
-                  {job.type}
-                </p>
+                <p className="mt-4 break-words text-base">{job.description}</p>
               </div>
-              <div className="absolute bottom-0 w-full flex justify-between items-center pb-5 px-5 text-[#6B7280]">
-                <div className="text-xs font-semibold">
-                  Created: {formatDate(job.createdAt || "")}
+              <div className="absolute bottom-0 w-full flex flex-col gap-5 justify-between pb-5 px-5 text-[#6B7280]">
+                <div>
+                  {" "}
+                  <p className="mt-4 font-semibold text-[#6B7280] flex text-base flex-row items-center gap-2">
+                    <FaLocationDot size={20} />
+                    {job.location}
+                  </p>
+                  <p className="mt-3 font-semibold text-[#6B7280] flex text-base flex-row items-center gap-2">
+                    <MdAccessTimeFilled size={20} />
+                    {job.type}
+                  </p>
                 </div>
-                <div className="flex flex-row items-center justify-center">
-                  <Edit
-                    className="text-blue-500 cursor-pointer hover:text-blue-600 duration-200 mr-3"
-                    onClick={() => handleEdit(job)}
-                  />
-                  <Separator orientation="vertical" className="h-5 mr-3" />
-                  <AlertDialog>
-                    <AlertDialogTrigger asChild>
-                      <Trash2
-                        className="text-red-500 cursor-pointer hover:text-red-600 duration-200"
-                        onClick={() => setDeleteJobId(job._id)}
-                      />
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
-                        <AlertDialogDescription>
-                          Are you sure you want to delete this job? This action
-                          cannot be undone.
-                        </AlertDialogDescription>
-                      </AlertDialogHeader>
-                      <AlertDialogFooter>
-                        <AlertDialogCancel
-                          className="border border-neutral-200"
-                          onClick={() => setDeleteJobId(null)}
-                        >
-                          Cancel
-                        </AlertDialogCancel>
-                        <AlertDialogAction onClick={handleDelete}>
-                          Delete
-                        </AlertDialogAction>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
+                <div className=" flex-row flex justify-between items-center">
+                  <div className="text-xs font-semibold">
+                    Created: {formatDate(job.createdAt || "")}
+                  </div>
+                  <div className="flex flex-row items-center justify-center">
+                    <Edit
+                      className="text-blue-500 cursor-pointer hover:text-blue-600 duration-200 mr-3"
+                      onClick={() => handleEdit(job)}
+                    />
+                    <Separator orientation="vertical" className="h-5 mr-3" />
+                    <AlertDialog>
+                      <AlertDialogTrigger asChild>
+                        <Trash2
+                          className="text-red-500 cursor-pointer hover:text-red-600 duration-200"
+                          onClick={() => setDeleteJobId(job._id)}
+                        />
+                      </AlertDialogTrigger>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
+                          <AlertDialogDescription>
+                            Are you sure you want to delete this job? This
+                            action cannot be undone.
+                          </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel
+                            className="border border-neutral-200"
+                            onClick={() => setDeleteJobId(null)}
+                          >
+                            Cancel
+                          </AlertDialogCancel>
+                          <AlertDialogAction onClick={handleDelete}>
+                            Delete
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  </div>
                 </div>
               </div>
             </div>
