@@ -96,7 +96,7 @@ export default function LogIn() {
       <div className="w-full lg:grid lg:min-h-screen lg:grid-cols-2 sm:px-0 px-2">
         <div className="flex items-center justify-center py-12">
           <div className="mx-auto grid w-[350px] gap-6">
-            <div className="grid gap-2 text-center sm:mt-0 mt-10">
+            <div className="grid gap-2 text-center sm:mt-0 mt-24">
               <h1 className="text-3xl font-bold z-10">Login</h1>
               {/* <p className="text-balance text-muted-foreground">
                 Enter your email below to login to your account
