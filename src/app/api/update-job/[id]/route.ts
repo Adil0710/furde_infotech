@@ -1,56 +1,48 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/options";
+import { authOptions } from "../../auth/[...nextauth]/options";
 import dbConnect from "@/lib/dbConnect";
 import JobModel from "@/models/Job";
 import mongoose from "mongoose";
 
-export async function PUT(request: Request) {
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   try {
-    // Connect to the database
     await dbConnect();
 
-    // Get session details
+    // Authenticate user
     const session = await getServerSession(authOptions);
-    const admin = session?.admin;
-
-    if (!session || !admin) {
+    if (!session || !session.admin) {
       return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Not Authenticated",
-        }),
+        JSON.stringify({ success: false, message: "Not Authenticated" }),
         { status: 401 }
       );
     }
 
-    // Parse the request body
-    const { id, designation, department, description, location, type, level } =
-      await request.json();
+    const { id } = params;
 
-    // Validate the job ID
+    // Validate the ID
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Invalid Job ID",
-        }),
+        JSON.stringify({ success: false, message: "Invalid Job ID" }),
         { status: 400 }
       );
     }
 
-    // Find the job by ID
+    const body = await request.json();
+    const { designation, department, description, location, type, level } =
+      body;
+
+    // Find and update job
     const job = await JobModel.findById(id);
     if (!job) {
       return new Response(
-        JSON.stringify({
-          success: false,
-          message: "Job not found",
-        }),
+        JSON.stringify({ success: false, message: "Job not found" }),
         { status: 404 }
       );
     }
 
-    // Update job details
     job.designation = designation || job.designation;
     job.department = department || job.department;
     job.description = description || job.description;
@@ -58,22 +50,23 @@ export async function PUT(request: Request) {
     job.type = type || job.type;
     job.level = level || job.level;
 
-    await job.save();
+    const updatedJob = await job.save();
 
     return new Response(
       JSON.stringify({
         success: true,
         message: "Job updated successfully",
-        job,
+        job: updatedJob,
       }),
       { status: 200 }
     );
-  } catch (error) {
-    console.error("Error updating job:", error);
+  } catch (error: any) {
+    console.error("Error:", error);
     return new Response(
       JSON.stringify({
         success: false,
-        message: "An error occurred while updating the job",
+        message: "Server Error",
+        error: error.message,
       }),
       { status: 500 }
     );

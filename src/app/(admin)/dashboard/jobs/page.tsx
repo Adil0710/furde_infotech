@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Edit, Loader2, Trash2 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import {
@@ -14,6 +14,22 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { jobSchema } from "@/schemas/jobSchema";
+import * as z from "zod";
+import { useToast } from "@/hooks/use-toast";
+import axios from "axios";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -21,55 +37,44 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { formatDate } from "@/helpers/formatDateToDDMMYYYY";
+import { Textarea } from "@/components/ui/textarea";
+import { IoIosSearch } from "react-icons/io";
+import Image from "next/image";
+import NoResultIcon from "@/assets/noresult.svg";
+import { Skeleton } from "@/components/ui/skeleton";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { jobSchema } from "@/schemas/jobSchema";
-import * as z from "zod";
-import { useToast } from "@/hooks/use-toast";
-
-const jobs = [
-  {
-    id: 1,
-    designation: "Software Developer",
-    department: "Development",
-    description:
-      "Develop and maintain high-quality software applications while collaborating with cross-functional departments to deliver innovative solutions.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 2,
-    designation: "Data Entry Specialist",
-    department: "Information Management department",
-    description:
-      "Accurately transcribe documents and data, ensuring high standards of quality and efficiency in all written communications.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 3,
-    designation: "Web Designer",
-    department: "Design department",
-    description:
-      "Assist the design department in creating compelling visual content and innovative solutions while gaining hands-on experience in a collaborative environment.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-];
+// Job Type
+type Job = {
+  _id: number;
+  designation: string;
+  department: string;
+  description: string;
+  location: string;
+  type: "Full Time" | "Part Time" | "Internship";
+  level: "Entry" | "Experienced";
+  createdAt: string;
+};
 
 function Page() {
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [editJob, setEditJob] = useState<Job | null>(null);
+  const [deleteJobId, setDeleteJobId] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof jobSchema>>({
@@ -84,69 +89,261 @@ function Page() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof jobSchema>) => {
-    console.log(data);
-    setIsSubmitting(true); // Start submitting
-    setTimeout(() => {
-      setIsSubmitting(false); // Simulate successful submission
-      setDialogOpen(false); // Close the dialog
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get<{ jobs: Job[] }>("/api/get-job");
+      setJobs(response.data.jobs);
+      console.log("data", response.data.jobs);
+    } catch (error) {
       toast({
-        title: "Job Added",
-        description: "Your job listing has been successfully added.",
-        variant: "default",
+        title: "Error",
+        description: "Failed to load jobs.",
+        variant: "destructive",
       });
-    }, 2000); // Simulate a delay
+    } finally {
+      setLoading(false);
+    }
   };
+
+  const onSubmit = async (data: z.infer<typeof jobSchema>) => {
+    setIsSubmitting(true);
+    try {
+      if (editJob) {
+        try {
+          await axios.put(`/api/update-job/${editJob._id}`, data);
+          toast({ title: "Success", description: "Job updated successfully." });
+        } catch (error) {
+          console.log(error);
+          toast({
+            title: "Error",
+            description: `Error occured while updating the job :- ${error}`,
+            variant: "destructive",
+          });
+        }
+      } else {
+        try {
+          await axios.post("/api/add-job", data);
+          toast({ title: "Success", description: "Job added successfully." });
+        } catch (error) {
+          console.log(error);
+          toast({
+            title: "Error",
+            description: `Error occured while adding the job :- ${error}`,
+            variant: "destructive",
+          });
+        }
+      }
+      fetchJobs();
+      setDialogOpen(false);
+    } catch (error) {
+      console.error("Error in onSubmit:", error);
+      toast({
+        title: "Error",
+        description: `Error occured while adding or updating job :- ${error}`,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!deleteJobId) return;
+    try {
+      await axios.delete(`/api/delete-job/${deleteJobId}`);
+      toast({ title: "Success", description: "Job deleted successfully." });
+      fetchJobs();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to delete job.",
+        variant: "destructive",
+      });
+    } finally {
+      setDeleteJobId(null);
+    }
+  };
+
+  const handleAdd = () => {
+    setEditJob(null);
+    form.reset({
+      designation: "",
+      department: "",
+      description: "",
+      location: "",
+      type: undefined,
+      level: undefined,
+    });
+    setDialogOpen(true);
+  };
+
+  const handleEdit = (job: Job) => {
+    setEditJob(job);
+    form.reset(job);
+    setDialogOpen(true);
+  };
+
+  // Filtered job arrays based on search term
+  const filteredJobs = jobs.filter(
+    (job) =>
+      job.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.level.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      formatDate(job.createdAt).toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <section className="py-5 px-5 h-auto w-auto flex items-center justify-center">
-      <div className="grid gap-6 bg-neutral-50 min-w-[81vw] max-w-[80vw] rounded-2xl px-5 py-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-10">
-        {jobs.map((job, index) => (
-          <div
-            className="cardShadow bg-white overflow-hidden min-h-[350px] rounded-lg text-[#111827] flex justify-between flex-col"
-            key={index}
-          >
-            <div className="py-5 px-5">
-              <p className="font-semibold text-2xl">{job.designation}</p>
-              <p className="text-xl font-semibold mt-2 text-[#374151]">
-                {job.department}
-              </p>
-              <p className="mt-4">{job.description}</p>
-              <p className="mt-4 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
-                <FaLocationDot size={20} />
-                {job.location}
-              </p>
-              <p className="mt-3 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
-                <MdAccessTimeFilled size={20} />
-                {job.type}
-              </p>
-            </div>
-            <div className="flex justify-end items-center pb-5 px-5 text-[#6B7280]">
-              <Edit className="text-blue-500 cursor-pointer hover:text-blue-600 duration-200 mr-3" />
-              <Separator orientation="vertical" className="mr-3" />
-              <Trash2 className="text-red-500 cursor-pointer hover:text-red-600 duration-200" />
-            </div>
+    <section className="py-5 pt-0 px-5 h-auto w-auto flex flex-col items-center">
+      <div className="relative md:w-1/2 w-full">
+        <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+        <Input
+          className="bg-neutral-50 pl-10 shadow-none"
+          placeholder="Search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+      {/* Job Cards */}
+      <div className="grid gap-6 bg-neutral-50 min-w-[80vw] max-w-[80vw] rounded-2xl px-5 py-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-10">
+        {loading ? (
+          <>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <Skeleton
+                className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col"
+                key={index}
+              >
+                <div className="py-5 px-5">
+                  <Skeleton className=" h-8 w-full" />
+                  <Skeleton className=" mt-2 h-6 w-1/2" />
+                  <Skeleton className=" mt-6 w-full h-4" />
+                  <Skeleton className=" mt-2 w-full h-4" />
+                  <Skeleton className=" mt-2 w-[75%] h-4" />
+                  <div className="mt-6 flex flex-row items-center gap-3">
+                    {" "}
+                    <Skeleton className="rounded-full w-6 h-6" />{" "}
+                    <Skeleton className="  w-[60%] h-6" />
+                  </div>
+                  <div className="mt-2 flex flex-row items-center gap-3">
+                    {" "}
+                    <Skeleton className="rounded-full w-6 h-6" />{" "}
+                    <Skeleton className="  w-[60%] h-6" />
+                  </div>
+                </div>
+                <div className="absolute bottom-0 w-full py-5 px-5 flex justify-between items-center">
+                  <div>
+                    <Skeleton className=" h-3 w-28" />
+                  </div>
+                  <div className=" flex flex-row justify-center items-center gap-6">
+                    <Skeleton className=" h-8 w-8" />
+                    <Skeleton className=" h-8 w-8" />
+                  </div>
+                </div>
+              </Skeleton>
+            ))}
+          </>
+        ) : filteredJobs.length === 0 ? (
+          <div className="col-span-full flex items-center justify-center flex-col">
+            {" "}
+            <Image src={NoResultIcon} alt="No Results Found" width={300} />
+            <p className="text-center text-lg text-gray-500">
+              {searchTerm.length > 0
+                ? `No results found for "${searchTerm}"`
+                : "No jobs found"}
+            </p>
           </div>
-        ))}
+        ) : (
+          filteredJobs.map((job, index) => (
+            <div
+              key={index}
+              className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg text-[#111827] flex flex-col max-w-full"
+            >
+              <div className="py-5 px-5">
+                <p className="font-semibold text-2xl">{job.designation}</p>
+                <p className="text-xl font-semibold mt-2 text-[#374151]">
+                  {job.department}
+                </p>
+                <p className="mt-4 break-words">{job.description}</p>
+                <p className="mt-4 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
+                  <FaLocationDot size={20} />
+                  {job.location}
+                </p>
+                <p className="mt-3 font-semibold text-[#6B7280] flex flex-row items-center gap-2">
+                  <MdAccessTimeFilled size={20} />
+                  {job.type}
+                </p>
+              </div>
+              <div className="absolute bottom-0 w-full flex justify-between items-center pb-5 px-5 text-[#6B7280]">
+                <div className="text-xs font-semibold">
+                  Created: {formatDate(job.createdAt || "")}
+                </div>
+                <div className="flex flex-row items-center justify-center">
+                  <Edit
+                    className="text-blue-500 cursor-pointer hover:text-blue-600 duration-200 mr-3"
+                    onClick={() => handleEdit(job)}
+                  />
+                  <Separator orientation="vertical" className="h-5 mr-3" />
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Trash2
+                        className="text-red-500 cursor-pointer hover:text-red-600 duration-200"
+                        onClick={() => setDeleteJobId(job._id)}
+                      />
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Confirm Deletion</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Are you sure you want to delete this job? This action
+                          cannot be undone.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel
+                          className="border border-neutral-200"
+                          onClick={() => setDeleteJobId(null)}
+                        >
+                          Cancel
+                        </AlertDialogCancel>
+                        <AlertDialogAction onClick={handleDelete}>
+                          Delete
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
 
-      {/* Dialog for Adding a Job */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogTrigger asChild>
-          <Button
-            size="sm"
-            className="absolute right-5 top-5 bg-[#1d4ed8] hover:bg-[#1E3A8A]"
-          >
-            Add Job
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
+      {/* Add/Edit Job Dialog */}
+      <Button
+        size="sm"
+        className="absolute right-8 top-8 bg-blue-500 hover:bg-blue-600 duration-200"
+        onClick={handleAdd}
+      >
+        Add Job
+      </Button>
+      <Dialog
+        open={dialogOpen}
+        onOpenChange={(open) => !isSubmitting && setDialogOpen(open)}
+      >
+        <DialogContent>
           <DialogHeader>
-            <DialogTitle>Add Job</DialogTitle>
-            <DialogDescription>Click save when you&apos;re done.</DialogDescription>
+            <DialogTitle>{editJob ? "Update Job" : "Add Job"}</DialogTitle>
           </DialogHeader>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               {/* Designation */}
+
               <FormField
                 control={form.control}
                 name="designation"
@@ -184,7 +381,12 @@ function Page() {
                   <FormItem>
                     <FormLabel>Description</FormLabel>
                     <FormControl>
-                      <Input placeholder="Description" {...field} />
+                      <Textarea
+                        rows={3}
+                        className="resize-none"
+                        placeholder="Description"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -224,7 +426,7 @@ function Page() {
                 )}
               />
 
-              {/* Type Dropdown */}
+              {/* Type */}
               <FormField
                 control={form.control}
                 name="type"
@@ -235,11 +437,9 @@ function Page() {
                       onValueChange={field.onChange}
                       defaultValue={field.value || ""}
                     >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Job Type" />
-                        </SelectTrigger>
-                      </FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select Job Type" />
+                      </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="Full Time">Full Time</SelectItem>
                         <SelectItem value="Part Time">Part Time</SelectItem>
@@ -251,22 +451,20 @@ function Page() {
                 )}
               />
 
-              {/* Level Dropdown */}
+              {/* Level */}
               <FormField
                 control={form.control}
                 name="level"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Experience Level*</FormLabel>
+                    <FormLabel>Level</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value || ""}
                     >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select Experience Level" />
-                        </SelectTrigger>
-                      </FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select Level" />
+                      </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="Entry">Entry</SelectItem>
                         <SelectItem value="Experienced">Experienced</SelectItem>
@@ -277,9 +475,17 @@ function Page() {
                 )}
               />
 
-              <DialogFooter>
+              <DialogFooter className=" pt-3">
+                <DialogClose asChild>
+                  <Button size="sm" variant="outline" className=" mr-2">
+                    {" "}
+                    Cancel
+                  </Button>
+                </DialogClose>
+
                 <Button
                   type="submit"
+                  size="sm"
                   className="bg-[#1d4ed8] hover:bg-[#1E3A8A]"
                   disabled={isSubmitting}
                 >
@@ -288,10 +494,11 @@ function Page() {
                       <Loader2 className=" mr-2 h-4 w-4 animate-spin" />
                       Please wait
                     </>
+                  ) : editJob ? (
+                    "Update Job"
                   ) : (
-                    "Save"
+                    "Add Job"
                   )}
-                  
                 </Button>
               </DialogFooter>
             </form>

@@ -9,8 +9,8 @@ export async function GET(request: Request) {
     // Extract query parameters
     const { level, limit } = Object.fromEntries(new URL(request.url).searchParams);
 
-    // Build the filter for level
-    const filter: any = {};
+    // Define the filter for level
+    const filter: Record<string, string> = {}; // Using a specific type for filter
     if (level) {
       filter.level = level; // Filter by level if provided
     }

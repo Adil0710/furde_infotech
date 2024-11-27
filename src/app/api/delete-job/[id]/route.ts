@@ -1,10 +1,13 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../auth/[...nextauth]/options";
+import { authOptions } from "../../auth/[...nextauth]/options";
 import dbConnect from "@/lib/dbConnect";
 import JobModel from "@/models/Job";
 import mongoose from "mongoose";
 
-export async function DELETE(request: Request) {
+export async function DELETE(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
   try {
     // Connect to the database
     await dbConnect();
@@ -23,8 +26,8 @@ export async function DELETE(request: Request) {
       );
     }
 
-    // Parse the request body
-    const { id } = await request.json();
+    // Parse the url params
+    const { id } = params;
 
     // Validate the job ID
     if (!mongoose.Types.ObjectId.isValid(id)) {
