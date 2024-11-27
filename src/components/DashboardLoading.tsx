@@ -4,7 +4,7 @@ import { Skeleton } from "./ui/skeleton";
 function DashboardLoading() {
   return (
     <Skeleton
-      className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col"
+      className="cardShadow relative bg-white overflow-hidden min-h-[350px] rounded-lg flex justify-between flex-col max-w-full"
     >
       <div className="py-5 px-5">
         <Skeleton className=" h-8 w-full" />

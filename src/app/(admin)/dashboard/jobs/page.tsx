@@ -201,8 +201,8 @@ function Page() {
   );
 
   return (
-    <section className="py-5 pt-0 px-5 h-auto w-auto flex flex-col items-center">
-      <div className="relative md:w-1/2 w-[60%]">
+    <section className="py-5 sm:pt-0 pt-5 sm:px-5 px-0 h-auto w-auto flex flex-col sm:items-center items-start">
+      <div className="relative md:w-1/2 w-[63%] sm:ml-0 ml-5">
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <Input
           className="bg-neutral-50 pl-10 shadow-none"
@@ -212,7 +212,7 @@ function Page() {
         />
       </div>
       {/* Job Cards */}
-      <div className="grid gap-6 bg-neutral-50 min-w-[80vw] max-w-[80vw] rounded-2xl px-5 py-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-10">
+      <div className="grid gap-6 bg-neutral-50 sm:min-w-[80vw] sm:max-w-[80vw] w-screen sm:rounded-2xl rounded-none px-5 py-10 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-12 mt-10">
         {loading ? (
           <>
             {Array.from({ length: 6 }).map((_, index) => (
@@ -233,14 +233,14 @@ function Page() {
           filteredJobs.map((job, index) => (
             <div
               key={index}
-              className="cardShadow relative bg-white overflow-hidden min-h-[350px] max-h-[400px] rounded-lg text-[#111827] flex flex-col max-w-full"
+              className="cardShadow relative bg-white overflow-hidden min-h-[350px] max-h-[450px] rounded-lg text-[#111827] flex flex-col max-w-full"
             >
               <div className="py-5 px-5">
                 <p className="font-semibold text-xl">{job.designation}</p>
                 <p className="text-base font-semibold mt-2 text-[#374151]">
                   {job.department}
                 </p>
-                <p className="mt-4 break-words text-base">{job.description}</p>
+                <p className="mt-4 break-words sm:text-base text-sm">{job.description}</p>
               </div>
               <div className="absolute bottom-0 w-full flex flex-col gap-5 justify-between pb-5 px-5 text-[#6B7280]">
                 <div>
@@ -303,7 +303,7 @@ function Page() {
       {/* Add/Edit Job Dialog */}
       <Button
         size="sm"
-        className="absolute right-8 top-8 bg-blue-500 hover:bg-blue-600 duration-200"
+        className="absolute right-8 sm:top-8 top-[51px] bg-blue-500 hover:bg-blue-600 duration-200"
         onClick={handleAdd}
       >
         Add Job
@@ -452,7 +452,7 @@ function Page() {
               />
 
               <DialogFooter className=" pt-3">
-                <DialogClose asChild>
+                <DialogClose asChild className="sm:mt-0 mt-3 sm:w-auto w-full">
                   <Button size="sm" variant="outline" className=" mr-2">
                     {" "}
                     Cancel
@@ -462,7 +462,7 @@ function Page() {
                 <Button
                   type="submit"
                   size="sm"
-                  className="bg-[#1d4ed8] hover:bg-[#1E3A8A]"
+                  className="bg-blue-500 duration-200 hover:bg-blue-600"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

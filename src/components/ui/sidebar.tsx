@@ -279,7 +279,7 @@ const SidebarTrigger = React.forwardRef<
     >
       
       <p className="text-sm font-medium ">
-        {state === "expanded" ? <span className=" flex items-center gap-2"><PanelRightOpen/> Close</span> : <span className=" flex items-center gap-2"><PanelRightClose/> Open</span>}
+        {state === "expanded" ? (<> <span className="hidden sm:flex items-center gap-2"><PanelRightOpen/> Close</span> <span className=" flex sm:hidden items-center gap-2"><PanelRightClose/> Open</span> </>): <span className=" flex items-center gap-2"><PanelRightClose/> Open</span>}
       </p>
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
