@@ -79,7 +79,7 @@ export default function CareersCard() {
         </Link>
       </div>
 
-      <div className="grid mt-12 grid-cols-1 sm:grid-cols-3 gap-10">
+      <div className="grid mt-12 grid-cols-1 md:grid-cols-3 gap-10">
         {jobs.map((job) => {
           return (
             <CareerCard
@@ -104,7 +104,7 @@ export default function CareersCard() {
         </Link>
       </div>
 
-      <div className="grid mt-12 grid-cols-1 sm:grid-cols-3 gap-10">
+      <div className="grid mt-12 grid-cols-1 md:grid-cols-3 gap-10">
         {experiencedJobs.map((experiencedjob, index) => {
           return (
             <CareerCard
