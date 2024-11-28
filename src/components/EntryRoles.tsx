@@ -1,90 +1,80 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import NoResultIcon from "@/assets/noresult.svg";
 import Image from "next/image";
 import CareerCard from "./CareerCard";
-
-// Data for the jobs
-const jobs = [
-  {
-    id: 1,
-    designation: "Software Developer",
-    department: "Development",
-    description:
-      "Develop and maintain high-quality software applications while collaborating with cross-functional departments to deliver innovative solutions.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 2,
-    designation: "Data Entry Specialist",
-    department: "Information Management department",
-    description:
-      "Accurately transcribe documents and data, ensuring high standards of quality and efficiency in all written communications.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 3,
-    designation: "Web Designer",
-    department: "Design department",
-    description:
-      "Assist the design department in creating compelling visual content and innovative solutions while gaining hands-on experience in a collaborative environment.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 4,
-    designation: "Software Developer",
-    department: "Development",
-    description:
-      "Develop and maintain high-quality software applications while collaborating with cross-functional departments to deliver innovative solutions.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 5,
-    designation: "Data Entry Specialist",
-    department: "Information Management department",
-    description:
-      "Accurately transcribe documents and data, ensuring high standards of quality and efficiency in all written communications.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-  {
-    id: 6,
-    designation: "Web Designer",
-    department: "Design department",
-    description:
-      "Assist the design department in creating compelling visual content and innovative solutions while gaining hands-on experience in a collaborative environment.",
-    location: "Solapur, Maharashtra",
-    type: "Full Time",
-  },
-];
+import { useToast } from "@/hooks/use-toast";
+import axios from "axios";
+import JobCardLoading from "./JobCardLoading";
 
 
+type Job = {
+  id: string;
+  designation: string;
+  department: string;
+  description: string;
+  location: string;
+  type: "Full Time" | "Part Time" | "Internship";
+};
 
 export default function EntryRoles() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [entryjobs, setEntryJobs] = useState<Job[]>([]);
+  const [entryLoading, setEntryLoading] = useState(true);
+
+  const { toast } = useToast();
+
+  useEffect(() => {
+    fetchEntryJobs();
+  }, []);
+
+  const fetchEntryJobs = async () => {
+    setEntryLoading(true);
+    try {
+      const response = await axios.get<{ jobs: Job[] }>(
+        "/api/get-job?level=Entry"
+      );
+      setEntryJobs(response.data.jobs);
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Try Refreshing",
+        description: `Failed to load jobs:- ${error}`,
+        variant: "destructive",
+      });
+    } finally {
+      setEntryLoading(false);
+    }
+  };
 
   // Filtered job arrays based on search term
-  const filteredJobs = jobs.filter((job) =>
-    job.designation.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredJobs = entryjobs.filter(
+    (job) =>
+      job.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.department.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div>
       {/* Search */}
-      <div className="relative mt-10 md:w-1/2 w-full">
-        <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-        <Input
-          className="bg-[#D9D9D9] pl-10 shadow-none"
-          placeholder="Search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <div className=" flex flex-col md:flex-row md:gap-0 gap-10 justify-between items-start md:items-center">
+        <h1 className=" text-4xl font-bold leading-tight uppercase">
+          explore careers
+        </h1>
+        {/* Search */}
+        <div className="relative md:w-1/2 w-full">
+          <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+          <Input
+            className="bg-[#D9D9D9] pl-10 shadow-none"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
       <h2 className="mt-14 text-2xl font-bold text-gray-800 leading-tight">
         Current Open Roles
@@ -95,31 +85,37 @@ export default function EntryRoles() {
         <h3 className="text-xl font-semibold text-gray-800">
           Entry Level Roles
         </h3>
-        
       </div>
-      <div
-        className={`${
-          filteredJobs.length > 0 ? "grid" : "block"
-        } mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}
-      >
-        {filteredJobs.length > 0 ? (
-          filteredJobs.map((job) => (
-            <CareerCard
-              key={job.id}
-              designation={job.designation}
-              department={job.department}
-              description={job.description}
-              location={job.location}
-              type={job.type}
-            />
-          ))
-        ) : (
-          <div className=" h-[350px] w-full flex flex-col justify-between items-center">
+      <div className="grid mt-12 grid-cols-1 md:grid-cols-3 gap-10">
+        {entryLoading ? (
+          <>
+            {Array.from({ length: 6 }).map((_, index) => (
+              <JobCardLoading key={index} />
+            ))}
+          </>
+        ) : filteredJobs.length === 0 ? (
+          <div className="col-span-full flex items-center justify-center flex-col">
+            {" "}
             <Image src={NoResultIcon} alt="No Results Found" width={300} />
             <p className="text-center text-lg text-gray-500">
-              No results found for &quot;{searchTerm}&quot;
+              {searchTerm.length > 0
+                ? `No results found for "${searchTerm}"`
+                : "No jobs posted"}
             </p>
           </div>
+        ) : (
+          filteredJobs.map((job) => {
+            return (
+              <CareerCard
+                key={job.id}
+                designation={job.designation}
+                department={job.department}
+                description={job.description}
+                location={job.location}
+                type={job.type}
+              />
+            );
+          })
         )}
       </div>
     </div>

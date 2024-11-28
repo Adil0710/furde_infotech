@@ -18,66 +18,6 @@ type Job = {
   type: "Full Time" | "Part Time" | "Internship";
 };
 
-// Data for the jobs
-// const jobs = [
-//   {
-//     id: 1,
-//     designation: "Software Developer",
-//     department: "Development",
-//     description:
-//       "Develop and maintain high-quality software applications while collaborating with cross-functional departments to deliver innovative solutions.",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-//   {
-//     id: 2,
-//     designation: "Data Entry Specialist",
-//     department: "Information Management department",
-//     description:
-//       "Accurately transcribe documents and data, ensuring high standards of quality and efficiency in all written communications.",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-//   {
-//     id: 3,
-//     designation: "Web Designer",
-//     department: "Design department",
-//     description:
-//       "Assist the design department in creating compelling visual content and innovative solutions while gaining hands-on experience in a collaborative environment.",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-// ];
-
-// const experiencedJobs = [
-//   {
-//     id: 1,
-//     designation: "Operations department Lead",
-//     department: "Operations Excellence department",
-//     description:
-//       "Assist the design department in creating compelling visual content and innovative solutions while gaining hands-on experience in a collaborative environment.",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-//   {
-//     id: 2,
-//     designation: "HR Executive",
-//     department: "Human Resources",
-//     description:
-//       "Manage recruitment, employee relations, and performance management to foster a positive workplace culture and ensure organizational effectiveness",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-//   {
-//     id: 3,
-//     designation: "Front Desk Executive",
-//     department: "Front Desk department",
-//     description:
-//       "Provide exceptional service by addressing customer inquiries, resolving issues, and ensuring a positive experience with our products.",
-//     location: "Solapur, Maharashtra",
-//     type: "Full Time",
-//   },
-// ];
 
 export default function CareersCard() {
   const [entryjobs, setEntryJobs] = useState<Job[]>([]);
@@ -186,16 +126,20 @@ export default function CareersCard() {
           Bring Your Expertise to Our department.
         </p>
 
-        <Link
-            href="/entry-level-roles"
+        {experiencedLoading ? (
+          <Skeleton className="sm:w-20 w-14 sm:h-5 h-3" />
+        ) : (
+          <Link
+            href="/experienced-level-roles"
             className={` ${
               experiencedjobs.length === 0
                 ? "hidden"
                 : "block text-[#1D4ED8] hover:text-[#1E3A8A] duration-200"
             }`}
           >
-          View More
-        </Link>
+            View More
+          </Link>
+        )}
       </div>
 
       <div className="grid mt-12 grid-cols-1 md:grid-cols-3 gap-10">
