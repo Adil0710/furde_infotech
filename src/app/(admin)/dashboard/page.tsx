@@ -142,7 +142,7 @@ const OpinionCards = () => {
   ];
 
   return (
-    <section className="py-5 sm:px-5 px-0 h-auto w-auto flex flex-col items-center justify-center">
+    <section className="py-5 sm:px-5 px-0 h-auto w-auto flex flex-col items-start sm:items-center justify-center">
       <div className="grid gap-6 sm:min-w-[80vw] sm:max-w-[80vw] w-screen bg-neutral-50 sm:rounded-2xl rounded-none p-5 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {loading ? (
           Array.from({ length: 8 }).map((_, index) => (
@@ -199,22 +199,23 @@ const OpinionCards = () => {
       </div>
 
       {/* Chart Section */}
-      <Card className="w-full sm:w-[80vw] h-auto mt-10 bg-neutral-50">
+     <div className=" px-5 sm:px-0 w-full sm:w-[80vw]">
+     <Card className=" h-auto mt-10 bg-neutral-50">
         <CardHeader>
           <CardTitle>Opinions and Job</CardTitle>
           <CardDescription>Opinions and Job Data Overview</CardDescription>
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className=" w-full h-[90vh] flex justify-between items-center flex-row">
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
-              <Skeleton className=" w-32 h-[90vh]" />
+            <div className=" w-full sm:h-[90vh] h-40 flex justify-between items-center flex-row">
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
             </div>
           ) : (
             <ChartContainer config={chartConfig} className="h-auto w-full">
@@ -238,6 +239,7 @@ const OpinionCards = () => {
           )}
         </CardContent>
       </Card>
+     </div>
     </section>
   );
 };

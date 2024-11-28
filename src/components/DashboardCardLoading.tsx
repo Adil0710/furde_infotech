@@ -3,7 +3,7 @@ import { Skeleton } from './ui/skeleton'
 
 function DashboardCardLoading() {
   return (
-    <Skeleton className="rounded-xl bg-card shadow">
+    <Skeleton className="rounded-xl bg-card shadow ">
     <div className="flex flex-col space-y-1.5 p-6">
       <div className="flex sm:flex-row flex-col-reverse gap-5 justify-between items-start sm:items-center">
         <Skeleton className="w-28 h-6" />
