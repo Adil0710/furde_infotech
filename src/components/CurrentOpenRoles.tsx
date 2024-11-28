@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import  NoResultIcon from '@/assets/noresult.svg';
+import NoResultIcon from "@/assets/noresult.svg";
 import Image from "next/image";
 import CareerCard from "./CareerCard";
 
@@ -68,7 +68,6 @@ const experiencedJobs = [
   },
 ];
 
-
 export default function CurrentOpenRoles() {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -82,8 +81,12 @@ export default function CurrentOpenRoles() {
 
   return (
     <div>
+      <div className=" flex flex-col md:flex-row md:gap-0 gap-10 justify-between items-start md:items-center">
+      <h1 className=" text-4xl font-bold leading-tight uppercase">
+        explore careers
+      </h1>
       {/* Search */}
-      <div className="relative mt-10 md:w-1/2 w-full">
+      <div className="relative md:w-1/2 w-full">
         <IoIosSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
         <Input
           className="bg-[#D9D9D9] pl-10 shadow-none"
@@ -91,6 +94,7 @@ export default function CurrentOpenRoles() {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+      </div>
       </div>
       <h2 className="mt-14 text-2xl font-bold text-gray-800 leading-tight">
         Current Open Roles
@@ -101,11 +105,18 @@ export default function CurrentOpenRoles() {
         <h3 className="md:text-xl text-base font-semibold text-gray-800">
           Entry Level Roles
         </h3>
-        <Link href="/entry-level-roles" className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
+        <Link
+          href="/entry-level-roles"
+          className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200"
+        >
           View More
         </Link>
       </div>
-      <div className={`${filteredJobs.length > 0 ? "grid" : "block"} mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}>
+      <div
+        className={`${
+          filteredJobs.length > 0 ? "grid" : "block"
+        } mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}
+      >
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job) => (
             <CareerCard
@@ -119,12 +130,11 @@ export default function CurrentOpenRoles() {
           ))
         ) : (
           <div className=" h-[350px] w-full flex flex-col justify-between items-center">
-              <Image src={NoResultIcon} alt="No Results Found" width={300}/>
+            <Image src={NoResultIcon} alt="No Results Found" width={300} />
             <p className="text-center text-lg text-gray-500">
               No experienced jobs found for &quot;{searchTerm}&quot;
             </p>
           </div>
-
         )}
       </div>
 
@@ -133,11 +143,18 @@ export default function CurrentOpenRoles() {
         <h3 className="md:text-xl text-base font-semibold text-gray-800">
           Experienced Opportunities
         </h3>
-        <Link href="/experienced-level-roles" className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200">
+        <Link
+          href="/experienced-level-roles"
+          className="text-[#1D4ED8] hover:text-[#1E3A8A] duration-200"
+        >
           View More
         </Link>
       </div>
-      <div className={`${filteredExperiencedJobs.length > 0 ? "grid" : "block"} mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}>
+      <div
+        className={`${
+          filteredExperiencedJobs.length > 0 ? "grid" : "block"
+        } mt-8 grid-cols-1 sm:grid-cols-3 gap-10`}
+      >
         {filteredExperiencedJobs.length > 0 ? (
           filteredExperiencedJobs.map((job) => (
             <CareerCard
@@ -151,7 +168,7 @@ export default function CurrentOpenRoles() {
           ))
         ) : (
           <div className=" h-[350px] w-full flex-col flex justify-between items-center">
-               <Image src={NoResultIcon} alt="No Results Found" width={300}/>
+            <Image src={NoResultIcon} alt="No Results Found" width={300} />
             <p className="text-center text-lg text-gray-500">
               No experienced jobs found for &quot;{searchTerm}&quot;
             </p>
