@@ -3,7 +3,7 @@ import dbConnect from "@/lib/dbConnect";
 import { authOptions } from "../auth/[...nextauth]/options";
 import Opinion from "@/models/Opinion";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     await dbConnect();
 
