@@ -207,15 +207,15 @@ const OpinionCards = () => {
         </CardHeader>
         <CardContent>
           {loading ? (
-            <div className=" w-full sm:h-[90vh] h-40 flex justify-between items-center flex-row">
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
-              <Skeleton className=" w-32 sm:h-[90vh] h-40" />
+            <div className="sm:w-full max-w-screen sm:h-[90vh] h-40 flex justify-between items-center flex-row">
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
+              <Skeleton className=" w-8 sm:w-32 sm:h-[90vh] h-40" />
             </div>
           ) : (
             <ChartContainer config={chartConfig} className="h-auto w-full">
