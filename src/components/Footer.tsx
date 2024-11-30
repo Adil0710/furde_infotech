@@ -66,13 +66,14 @@ const Links = [
 ];
 
 export default function Footer() {
+  const year = new Date().getFullYear();
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  if ( pathname === "/contact-us"){
-    return <FooterContact/>
-  }else if(pathname.startsWith("/dashboard")){
-    return <div></div>
+  if (pathname === "/contact-us") {
+    return <FooterContact />;
+  } else if (pathname.startsWith("/dashboard")) {
+    return <div></div>;
   }
   return (
     <div className="relative min-h-screen">
@@ -156,7 +157,9 @@ export default function Footer() {
                     // Render regular nav items
                     return (
                       <Link href={nav.link} key={index}>
-                        <li className="cursor-pointer hover:text-white duration-200">{nav.title}</li>
+                        <li className="cursor-pointer hover:text-white duration-200">
+                          {nav.title}
+                        </li>
                       </Link>
                     );
                   }
@@ -189,15 +192,27 @@ export default function Footer() {
                   <RiFacebookCircleFill className=" text-2xl group-hover:text-blue-500 duration-200" />
                 </Link> */}
 
-                <Link href="https://www.instagram.com/furdeinfotech" target="_blank" className="group">
+                <Link
+                  href="https://www.instagram.com/furdeinfotech"
+                  target="_blank"
+                  className="group"
+                >
                   <AiFillInstagram className=" text-2xl group-hover:text-rose-600 duration-200" />
                 </Link>
 
-                <Link href="https://x.com/FurdeInfotech" target="_blank" className="group">
+                <Link
+                  href="https://x.com/FurdeInfotech"
+                  target="_blank"
+                  className="group"
+                >
                   <FaXTwitter className=" text-2xl group-hover:text-gray-400 duration-200" />
                 </Link>
 
-                <Link href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead" target="_blank" className="group">
+                <Link
+                  href="https://www.linkedin.com/company/furde-infotech-pvt-ltd?trk=blended-typeahead"
+                  target="_blank"
+                  className="group"
+                >
                   <FaLinkedin className=" text-2xl group-hover:text-blue-600 duration-200" />
                 </Link>
 
@@ -217,6 +232,13 @@ export default function Footer() {
           </h1>
           <ContactForm />
         </div>
+      </div>
+      <div className=" text-[#9ca3af] flex justify-center items-center text-xs sm:text-base pb-3">
+        <p>
+          Copyright &copy; <span>{year}</span>{" "}
+          <span className=" text-white">Furde Infotech</span> | All Rights
+          Reserved.
+        </p>
       </div>
     </div>
   );

@@ -68,26 +68,26 @@ export default function OurStory() {
               <li
           
                 onClick={() => setSelectedYear(item.year)}
-                className={`cursor-pointer flex flex-row justify-between items-center w-[90%] hover:font-bold duration-200 ${
+                className={`cursor-pointer flex flex-row justify-between md:text-base text-xs items-center w-[90%] hover:font-bold duration-200 ${
                   selectedYear === item.year ? "font-bold" : ""
                 }`}
               >
                 {item.year}
                 <FaArrowRightLong
-                    className={`transition-transform duration-500 ${
+                    className={`transition-transform duration-500 md:block hidden ${
                       selectedYear === item.year
                         ? "translate-x-0 opacity-100"
                         : "-translate-x-5 opacity-0"
                     }`}
                   />
               </li>
-              <div className="h-[0.6px] bg-[#9CA3AF] w-[90%] rounded-full"></div>
+              <div className="h-[0.6px] bg-[#9CA3AF] w-0 md:w-[90%] rounded-full"></div>
               </React.Fragment>
             ))}
           </ul>
 
           {/* Right Side - Story Content */}
-          <div className="w-1/2 flex flex-col items-center justify-center">
+          <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
             {currentStory && (
               <motion.div
                 key={currentStory.year}
@@ -96,8 +96,8 @@ export default function OurStory() {
                 transition={{ duration: 0.5 }}
                 
               >
-                <h1 className="font-semibold text-5xl">{currentStory.title}</h1>
-                <p className="mt-5 text-lg text-[#4B5563]">
+                <h1 className="font-semibold text-2xl md:text-5xl">{currentStory.title}</h1>
+                <p className="mt-5 text-sm md:text-lg text-[#4B5563]">
                   {currentStory.description}
                 </p>
               </motion.div>

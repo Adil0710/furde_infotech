@@ -10,24 +10,24 @@ export default function SteeringOurMission() {
     <div className="bg-white md:pl-20 md:pr-20 px-5 py-10 text-[#111827]">
       <h1 className="text-4xl font-bold leading-tight">STEERING OUR MISSION</h1>
 
-      <div className="flex flex-row justify-between mt-14">
-        <div className="w-[63%] pt-10">
+      <div className="flex sm:flex-row flex-col-reverse justify-between mt-14">
+        <div className="sm:w-[63%] w-full pt-10">
           <h2 className="mt-2 font-semibold text-2xl">Managing Director</h2>
           <h3 className="mt-5 font-semibold text-3xl">Rohan Furde</h3>
           <p className="mt-5">
             Rohan Furde, a graduate in Software Engineering from Walchand Institute of Technology, Solapur, is a dynamic entrepreneur and technology enthusiast. Currently serving as Director at Furde Constructions, he has embarked on a new journey as the Founder & Director of Furde Infotech Pvt Ltd. Here, he focuses on developing advanced applications designed to foster business growth and enhance monitoring capabilities. Rohan brings a blend of technical expertise and strategic vision to drive innovation and deliver impactful solutions in the tech industry.
           </p>
         </div>
-        <div className="w-[35%] h-[500px] relative overflow-hidden rounded-lg cardShadow">
-          <Image src={RohanFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-12"/>
+        <div className="sm:w-[35%] w-full sm:h-[500px] relative overflow-hidden rounded-lg cardShadow">
+          <Image src={RohanFurde} alt="Rohan Furde" objectFit="cover" className=" sm:-translate-y-12 translate-y-0"/>
         </div>
       </div>
 
-      <div className="flex flex-row justify-between mt-14">
-      <div className="w-[35%] h-[500px] relative overflow-hidden rounded-lg cardShadow">
-          <Image src={SunilFurde} alt="Rohan Furde" objectFit="cover" className=" -translate-y-24"/>
+      <div className="flex sm:flex-row flex-col justify-between sm:mt-14 mt-20">
+      <div className="sM:w-[35%] w-full sm:h-[500px] relative overflow-hidden rounded-lg cardShadow">
+          <Image src={SunilFurde} alt="Rohan Furde" objectFit="cover" className=" sm:-translate-y-24 translate-y-0"/>
         </div>
-        <div className="w-[63%] pt-10">
+        <div className="sm:w-[63%] w-full pt-10">
           <h2 className="mt-2 font-semibold text-2xl">Director</h2>
           <h3 className="mt-5 font-semibold text-3xl">Sunil Furde</h3>
           <p className="mt-5">

@@ -21,6 +21,7 @@ const navbar = [
   { title: 'Careers', link: '/careers' },
   { title: 'About Us', link: '/about-us' },
   { title: 'Contact Us', link: '/contact-us' },
+  { title: 'Gallery', link: '/gallery' },
 ];
 
 export default function Navbar() {

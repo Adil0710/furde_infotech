@@ -63,6 +63,7 @@ const Links = [
 ];
 
 export default function FooterContact() {
+  const year = new Date().getFullYear()
   return (
     <div className="relative min-h-screen">
       <Image
@@ -204,6 +205,7 @@ export default function FooterContact() {
           
         </div>
       </div>
+      <div className=" text-[#9ca3af] flex justify-center items-center text-xs sm:text-base pb-3"><p>Copyright &copy; <span>{year}</span> <span className=" text-white">Furde Infotech</span> | All Rights Reserved.</p></div>
     </div>
   );
 }
