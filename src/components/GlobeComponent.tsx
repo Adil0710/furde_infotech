@@ -414,7 +414,7 @@ export function GlobeComponent() {
           
         </motion.div>
        
-        <div className="absolute w-full top-10 -right-[50%] h-72 md:h-[80%] z-10">
+        <div className="absolute w-full top-10 -right-[50%] h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
