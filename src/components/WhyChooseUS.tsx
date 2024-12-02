@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import bgin from "@/assets/staticbginverted.jpg";
+// import bgin from "@/assets/staticbginverted.jpg";
 import who1 from "@/assets/who1.png";
 import who2 from "@/assets/who2.png";
 import who3 from "@/assets/who3.png";

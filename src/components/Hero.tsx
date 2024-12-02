@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import Image from "next/image";
-import bg from "@/assets/staticbg.jpg";
+// import Image from "next/image";
+// import bg from "@/assets/staticbg.jpg";
 import Link from "next/link";
 import WordRotate from "./ui/word-rotate";
 import { FaUserFriends } from "react-icons/fa";
