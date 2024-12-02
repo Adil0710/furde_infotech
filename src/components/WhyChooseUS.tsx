@@ -65,15 +65,15 @@ const FeatureCard = ({ img, title, description }: FeatureCardProps) => (
 
 export default function WhyChooseUS() {
   return (
-    <div className="relative min-h-screen">
-      <Image
+    <div className="relative min-h-screen bg-black">
+      {/* <Image
         src={bgin}
         alt="Background Image"
         fill
         quality={100}
         className="-z-[10] object-cover"
         priority // Optimizes the background image loading
-      />
+      /> */}
       <div className="md:pl-20 md:pt-10 pt-0 px-5 w-full">
         <h1 className="text-white text-4xl md:mt-0  font-bold leading-tight">
           WHY CHOOSE US?

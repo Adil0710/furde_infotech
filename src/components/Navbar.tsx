@@ -60,6 +60,11 @@ export default function Navbar() {
 
   const closeSidebar = () => setSidebarOpen(false);
 
+  const handleClick = () => {
+    closeSidebar()
+    setServicesOpen(false)
+  }
+
   useEffect(() => {
     // Disable scrolling when the sidebar is open
     if (sidebarOpen) {
@@ -98,67 +103,74 @@ export default function Navbar() {
           />
         </div>
         <ul className="hidden md:flex text-gray-200 justify-center items-center gap-14">
-        {navbar.map((nav, index) => {
-          const isActive =
-          pathname === nav.link || pathname.startsWith(nav.link + "/");
-          return (
-            <motion.li
-              key={index}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: index * 0.1 }}
-              className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative py-1.5 px-4 ${
-                isActive ? "text-black" : ""
-              }`}
-            >
-              {nav.title === "Services" && nav.subLinks ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <div className="cursor-pointer flex flex-row items-center gap-2 hover:text-white">
-                      {nav.title} <ChevronDown size={18} />
-                      {isActive && (
-              <motion.span
-                className="absolute inset-0 -z-10 rounded-full bg-white"
-                layoutId="navbarActiveFilter"
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 30,
-                }}
-              ></motion.span>
-            )}
-                    </div>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="center" sideOffset={8} className="glass-effect text-white w-40">
-                    {nav.subLinks.map((subLink, subIndex) => (
-                      <DropdownMenuItem asChild key={subIndex}>
-                        <Link href={subLink.link} className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded">
-                          {subLink.icon}
-                          <span>{subLink.title}</span>
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link href={nav.link} key={index}>
-                  <span className="cursor-pointer">{nav.title}</span>
-                  {isActive && (
-              <motion.span
-                className="absolute inset-0 -z-10 rounded-full bg-white"
-                layoutId="navbarActiveFilter"
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 30,
-                }}
-              ></motion.span>
-            )}
-                </Link>
-              )}
-            </motion.li>
-          )
-        })}
+          {navbar.map((nav, index) => {
+            const isActive =
+              pathname === nav.link || pathname.startsWith(nav.link + "/");
+            return (
+              <motion.li
+                key={index}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+                className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative py-1.5 px-4 ${
+                  isActive ? "text-black" : ""
+                }`}
+              >
+                {nav.title === "Services" && nav.subLinks ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <div className="cursor-pointer flex flex-row items-center gap-2">
+                        {nav.title} <ChevronDown size={18} />
+                        {isActive && (
+                          <motion.span
+                            className="absolute inset-0 -z-10 rounded-full bg-white"
+                            layoutId="navbarActiveFilter"
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 30,
+                            }}
+                          ></motion.span>
+                        )}
+                      </div>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      align="center"
+                      sideOffset={8}
+                      className="glass-effect text-white w-40"
+                    >
+                      {nav.subLinks.map((subLink, subIndex) => (
+                        <DropdownMenuItem asChild key={subIndex}>
+                          <Link
+                            href={subLink.link}
+                            className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded"
+                          >
+                            {subLink.icon}
+                            <span>{subLink.title}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link href={nav.link} key={index}>
+                    <span className="cursor-pointer">{nav.title}</span>
+                    {isActive && (
+                      <motion.span
+                        className="absolute inset-0 -z-10 rounded-full bg-white"
+                        layoutId="navbarActiveFilter"
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 30,
+                        }}
+                      ></motion.span>
+                    )}
+                  </Link>
+                )}
+              </motion.li>
+            );
+          })}
         </ul>
       </motion.nav>
 
@@ -207,29 +219,39 @@ export default function Navbar() {
                       servicesOpen ? "max-h-40 mt-2" : "max-h-0 overflow-hidden"
                     }`}
                   >
-                    {nav.subLinks.map((subLink, subIndex) => (
-                      <Link
-                        href={subLink.link}
-                        key={subIndex}
-                        onClick={closeSidebar}
-                        className="flex items-center gap-2"
-                      >
-                        {subLink.icon}
-                        {subLink.title}
-                      </Link>
-                    ))}
+                    {nav.subLinks.map((subLink, subIndex) => {
+                      const isSubLinkActive = pathname === subLink.link;
+                      return (
+                        <Link
+                          href={subLink.link}
+                          key={subIndex}
+                          onClick={closeSidebar}
+                          className={`flex items-center gap-2 py-1 pl-2 relative ${
+                            isSubLinkActive ? "text-black" : " text-white"
+                          }`}
+                        >
+                          {subLink.icon}
+                          {subLink.title}
+                          {isSubLinkActive && (
+                            <span className="absolute inset-0 bg-white rounded-md z-[-1]"></span>
+                          )}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               );
             }
+
             const isSidebarActive =
               pathname === nav.link || pathname.startsWith(nav.link + "/");
+
             return (
               <Link
                 href={nav.link}
                 key={index}
-                onClick={closeSidebar}
-                className={` py-2 pl-2 relative ${
+                onClick={handleClick}
+                className={`py-2 pl-2 relative ${
                   isSidebarActive ? "text-black" : "text-white"
                 }`}
               >

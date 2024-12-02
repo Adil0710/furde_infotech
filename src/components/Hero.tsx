@@ -5,6 +5,7 @@ import bg from "@/assets/staticbg.jpg";
 import Link from "next/link";
 import WordRotate from "./ui/word-rotate";
 import { FaUserFriends } from "react-icons/fa";
+import { GlobeComponent } from "./GlobeComponent";
 
 export default function Hero() {
   useEffect(() => {
@@ -21,8 +22,9 @@ export default function Hero() {
   };
   return (
     <>
-      <div className="relative min-h-screen">
-        <Image
+      <div className="relative min-h-screen bg-black">
+        <GlobeComponent/>
+        {/* <Image
           src={bg}
           alt="Background Image"
           layout="fill"
@@ -30,7 +32,7 @@ export default function Hero() {
           quality={100}
           className="-z-[10]" // Ensure the image is behind other content
           priority
-        />
+        /> */}
         <div className="absolute md:top-[25%] top-[20%] md:pl-20 px-5 w-full">
           <h1 className="text-[#9CA3AF] md:text-7xl text-3xl font-bold ">
             Welcome to{" "}
