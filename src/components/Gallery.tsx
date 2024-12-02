@@ -45,3 +45,77 @@ function Gallery() {
 }
 
 export default Gallery;
+
+
+// {navbar.map((nav, index) => {
+//   const isActive =
+//     pathname === nav.link || pathname.startsWith(nav.link + "/");
+
+//   if (nav.title === "Services" && nav.subLinks) {
+//     return (
+//       <DropdownMenu key={index}>
+//         <DropdownMenuTrigger asChild>
+//           <li
+//             className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative py-1.5 px-4 ${
+//               isActive ? "text-black" : ""
+//             }`}
+//           >
+//             {nav.title}
+//             <ChevronDown size={18} />
+//             {isActive && (
+//               <motion.span
+//                 className="absolute inset-0 -z-10 rounded-full bg-white"
+//                 layoutId="navbarActiveFilter"
+//                 transition={{
+//                   type: "spring",
+//                   stiffness: 400,
+//                   damping: 30,
+//                 }}
+//               ></motion.span>
+//             )}
+//           </li>
+//         </DropdownMenuTrigger>
+//         <DropdownMenuContent
+//           align="center"
+//           sideOffset={8}
+//           className="glass-effect text-white w-40"
+//         >
+//           {nav.subLinks.map((subLink, subIndex) => (
+//             <DropdownMenuItem asChild key={subIndex}>
+//               <Link
+//                 href={subLink.link}
+//                 className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded"
+//               >
+//                 {subLink.icon}
+//                 <span>{subLink.title}</span>
+//               </Link>
+//             </DropdownMenuItem>
+//           ))}
+//         </DropdownMenuContent>
+//       </DropdownMenu>
+//     );
+//   } else {
+//     return (
+//       <Link href={nav.link} key={index}>
+//         <li
+//           className={`cursor-pointer duration-200 relative px-4 py-1.5 ${
+//             isActive ? "text-black" : ""
+//           }`}
+//         >
+//           {nav.title}
+//           {isActive && (
+//             <motion.span
+//             className="absolute inset-0 -z-10 rounded-full bg-white"
+//             layoutId="navbarActiveFilter"
+//             transition={{
+//               type: "spring",
+//               stiffness: 400,
+//               damping: 30,
+//             }}
+//           ></motion.span>
+//           )}
+//         </li>
+//       </Link>
+//     );
+//   }
+// })}

@@ -81,7 +81,12 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar */}
-      <nav className="glass-effect fixed w-full z-50 md:pl-20 px-5 py-5 md:pr-20 flex items-center justify-between">
+      <motion.nav
+        className="glass-effect fixed w-full z-50 md:pl-20 px-5 py-5 md:pr-20 flex items-center justify-between"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      >
         <Link href="/">
           <Image src={logomain} alt="FIT logo" className="md:w-36 w-28" />
         </Link>
@@ -93,45 +98,41 @@ export default function Navbar() {
           />
         </div>
         <ul className="hidden md:flex text-gray-200 justify-center items-center gap-14">
-          {navbar.map((nav, index) => {
-            const isActive =
-              pathname === nav.link || pathname.startsWith(nav.link + "/");
-
-            if (nav.title === "Services" && nav.subLinks) {
-              return (
-                <DropdownMenu key={index}>
+        {navbar.map((nav, index) => {
+          const isActive =
+          pathname === nav.link || pathname.startsWith(nav.link + "/");
+          return (
+            <motion.li
+              key={index}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: index * 0.1 }}
+              className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative py-1.5 px-4 ${
+                isActive ? "text-black" : ""
+              }`}
+            >
+              {nav.title === "Services" && nav.subLinks ? (
+                <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <li
-                      className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative ${
-                        isActive ? "text-black" : ""
-                      }`}
-                    >
-                      {nav.title}
-                      <ChevronDown size={18} />
+                    <div className="cursor-pointer flex flex-row items-center gap-2 hover:text-white">
+                      {nav.title} <ChevronDown size={18} />
                       {isActive && (
-                        <motion.span
-                          className="absolute inset-0 -z-10 rounded-full bg-white"
-                          layoutId="navbarActiveFilter"
-                          transition={{
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 30,
-                          }}
-                        ></motion.span>
-                      )}
-                    </li>
+              <motion.span
+                className="absolute inset-0 -z-10 rounded-full bg-white"
+                layoutId="navbarActiveFilter"
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 30,
+                }}
+              ></motion.span>
+            )}
+                    </div>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent
-                    align="center"
-                    sideOffset={8}
-                    className="glass-effect text-white w-40"
-                  >
+                  <DropdownMenuContent align="center" sideOffset={8} className="glass-effect text-white w-40">
                     {nav.subLinks.map((subLink, subIndex) => (
                       <DropdownMenuItem asChild key={subIndex}>
-                        <Link
-                          href={subLink.link}
-                          className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded"
-                        >
+                        <Link href={subLink.link} className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded">
                           {subLink.icon}
                           <span>{subLink.title}</span>
                         </Link>
@@ -139,34 +140,27 @@ export default function Navbar() {
                     ))}
                   </DropdownMenuContent>
                 </DropdownMenu>
-              );
-            } else {
-              return (
+              ) : (
                 <Link href={nav.link} key={index}>
-                  <li
-                    className={`cursor-pointer duration-200 relative px-4 py-1.5 ${
-                      isActive ? "text-black" : ""
-                    }`}
-                  >
-                    {nav.title}
-                    {isActive && (
-                      <motion.span
-                      className="absolute inset-0 -z-10 rounded-full bg-white"
-                      layoutId="navbarActiveFilter"
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 30,
-                      }}
-                    ></motion.span>
-                    )}
-                  </li>
+                  <span className="cursor-pointer">{nav.title}</span>
+                  {isActive && (
+              <motion.span
+                className="absolute inset-0 -z-10 rounded-full bg-white"
+                layoutId="navbarActiveFilter"
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 30,
+                }}
+              ></motion.span>
+            )}
                 </Link>
-              );
-            }
-          })}
+              )}
+            </motion.li>
+          )
+        })}
         </ul>
-      </nav>
+      </motion.nav>
 
       {/* Overlay */}
       <div
