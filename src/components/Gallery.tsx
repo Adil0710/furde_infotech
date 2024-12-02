@@ -30,7 +30,7 @@ function Gallery() {
           {filter === filterValue && (
             <motion.span
               className="absolute inset-0 -z-10 rounded-full bg-white"
-              layoutId="activeFilter"
+              layoutId="galleryAtiveFilter"
               transition={{
                 type: "spring",
                 stiffness: 400,
