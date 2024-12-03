@@ -47,9 +47,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Loader2, Trash2 } from "lucide-react";
-import { DialogTrigger } from "@/components/ui/dialog";
+
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+
 
 type Gallery = {
   id: number;
@@ -244,7 +244,7 @@ function page() {
                 name="title"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Title</FormLabel>
+                    <FormLabel>Title*</FormLabel>
                     <FormControl>
                       <Input placeholder="Title" {...field} />
                     </FormControl>
