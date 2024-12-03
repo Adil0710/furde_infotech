@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
-import floor3 from "@/assets/floor3.JPG";
-import floor5 from "@/assets/floor5.JPG";
-import floor6 from "@/assets/floor6.JPG";
-import reception from "@/assets/reception.JPG";
+import floor3 from "@/assets/floor3.jpeg";
+import floor5 from "@/assets/floor5.jpeg";
+import floor6 from "@/assets/floor6.jpeg";
+import reception from "@/assets/reception.jpeg";
 import Image from "next/image";
 
 const Filters = ["All", "Office", "Events", "Client Visits"];
