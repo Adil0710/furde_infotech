@@ -14,9 +14,8 @@ function page() {
           className="-z-[10] sm:object-cover object-contain top-0 left-0 h-96" // Ensure the image is behind other content
           priority
         />
-        <Gallery/>
     </div>
-    
+    <Gallery/>
    </section>
   )
 }
