@@ -3,17 +3,22 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import floor3 from "@/assets/floor3.jpg";
+import floor5 from "@/assets/floor5.jpg";
+import floor6 from "@/assets/floor6.jpg";
+import reception from "@/assets/reception.jpg";
+import Image from "next/image";
 
 const Filters = ["All", "Office", "Events", "Client Visits"];
 
 // Sample data to populate the grid
 const items = [
-  { id: 1, category: "Office", title: "Office Meeting" },
-  { id: 2, category: "Events", title: "Annual Party" },
-  { id: 3, category: "Client Visits", title: "Client Presentation" },
-  { id: 4, category: "Office", title: "Workspace Setup" },
-  { id: 5, category: "Events", title: "Team Outing" },
-  { id: 6, category: "Client Visits", title: "New Client Visit" },
+  { id: 1, category: "Office", title: "Office Meeting", img: floor3 },
+  { id: 2, category: "Events", title: "Annual Party", img: floor3 },
+  { id: 3, category: "Client Visits", title: "Client Presentation", img: floor5 },
+  { id: 4, category: "Office", title: "Workspace Setup", img: reception },
+  { id: 5, category: "Events", title: "Team Outing", img: floor6 },
+  { id: 6, category: "Client Visits", title: "New Client Visit", img: floor5 },
 ];
 
 function Gallery() {
@@ -61,16 +66,35 @@ function Gallery() {
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20 pb-12">
         {filteredItems.map((item) => (
           <motion.div
             key={item.id}
-            className="p-5 bg-white shadow-lg rounded-lg flex items-center justify-center"
+            className={clsx(
+              "relative bg-white shadow-lg rounded-lg overflow-hidden",
+              "flex flex-col items-center justify-center",
+              // Adjust grid span dynamically based on the image orientation
+              {
+                "col-span-2 row-span-2": item.img.width < item.img.height, // Vertical image
+                "col-span-1 row-span-1": item.img.width >= item.img.height, // Horizontal image
+              }
+            )}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {item.title}
+            <Image
+              src={item.img}
+              alt={item.title}
+              layout="responsive"
+              objectFit="cover"
+              className="w-full h-full"
+            />
+            <div className="p-4">
+              <h3 className="font-semibold text-center text-gray-800">
+                {item.title}
+              </h3>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -79,77 +103,3 @@ function Gallery() {
 }
 
 export default Gallery;
-
-
-// {navbar.map((nav, index) => {
-//   const isActive =
-//     pathname === nav.link || pathname.startsWith(nav.link + "/");
-
-//   if (nav.title === "Services" && nav.subLinks) {
-//     return (
-//       <DropdownMenu key={index}>
-//         <DropdownMenuTrigger asChild>
-//           <li
-//             className={`cursor-pointer flex flex-row items-center gap-2 duration-200 relative py-1.5 px-4 ${
-//               isActive ? "text-black" : ""
-//             }`}
-//           >
-//             {nav.title}
-//             <ChevronDown size={18} />
-//             {isActive && (
-//               <motion.span
-//                 className="absolute inset-0 -z-10 rounded-full bg-white"
-//                 layoutId="navbarActiveFilter"
-//                 transition={{
-//                   type: "spring",
-//                   stiffness: 400,
-//                   damping: 30,
-//                 }}
-//               ></motion.span>
-//             )}
-//           </li>
-//         </DropdownMenuTrigger>
-//         <DropdownMenuContent
-//           align="center"
-//           sideOffset={8}
-//           className="glass-effect text-white w-40"
-//         >
-//           {nav.subLinks.map((subLink, subIndex) => (
-//             <DropdownMenuItem asChild key={subIndex}>
-//               <Link
-//                 href={subLink.link}
-//                 className="flex items-center gap-2 px-2 py-1 hover:bg-gray-700 rounded"
-//               >
-//                 {subLink.icon}
-//                 <span>{subLink.title}</span>
-//               </Link>
-//             </DropdownMenuItem>
-//           ))}
-//         </DropdownMenuContent>
-//       </DropdownMenu>
-//     );
-//   } else {
-//     return (
-//       <Link href={nav.link} key={index}>
-//         <li
-//           className={`cursor-pointer duration-200 relative px-4 py-1.5 ${
-//             isActive ? "text-black" : ""
-//           }`}
-//         >
-//           {nav.title}
-//           {isActive && (
-//             <motion.span
-//             className="absolute inset-0 -z-10 rounded-full bg-white"
-//             layoutId="navbarActiveFilter"
-//             transition={{
-//               type: "spring",
-//               stiffness: 400,
-//               damping: 30,
-//             }}
-//           ></motion.span>
-//           )}
-//         </li>
-//       </Link>
-//     );
-//   }
-// })}
