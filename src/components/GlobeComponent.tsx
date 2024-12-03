@@ -395,7 +395,7 @@ export function GlobeComponent() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-black relative w-full">
+    <div className="hidden sm:flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-black relative w-full">
       <div className=" mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-0">
         <motion.div
           initial={{
