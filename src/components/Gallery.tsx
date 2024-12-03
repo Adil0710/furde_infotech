@@ -67,9 +67,9 @@ function Gallery() {
       : items.filter((item) => item.category === filterValue);
 
   return (
-    <div className="relative w-full min-h-screen bg-gray-100">
+    <div className="relative w-full h-auto">
       {/* Filter Buttons */}
-      <div className="glass-effect z-20 w-full absolute -top-14 md:pl-[30%] px-5 py-5 md:pr-[30%] flex items-center justify-between">
+      <div className="glass-effect z-20 w-full absolute -top-20 sm:-top-14 md:pl-[30%] px-5 py-5 md:pr-[30%] flex items-center justify-between">
         {Filters.map((filter) => (
           <motion.button
             className={clsx(
@@ -104,7 +104,7 @@ function Gallery() {
       {/* Grid Container */}
       {/* Wrap grid with AnimatePresence */}
       <AnimatePresence>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:px-20 px-5 lg:grid-cols-4 sm:gap-8 gap-4 pt-20 pb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:px-20 px-5 lg:grid-cols-4 sm:gap-8 gap-4 pt-10 sm:pt-20 pb-10 sm:pb-12">
           {filteredItems.map((item) => (
             <motion.div
               key={`${filterValue}-${item.id}`}
