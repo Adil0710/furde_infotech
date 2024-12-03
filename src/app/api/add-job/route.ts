@@ -56,7 +56,6 @@ export async function POST(request: Request) {
       { status: 201 }
     );
   } catch (error) {
-    console.error("Error adding job:", error);
     return new Response(
       JSON.stringify({
         success: false,

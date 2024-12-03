@@ -1,5 +1,5 @@
 "use client"
-import { Home, BriefcaseBusiness, LogOut } from "lucide-react";
+import { Home, BriefcaseBusiness, LogOut, Image as ImageIcon } from "lucide-react";
 import logo from "@/assets/fitmain.png"
 import {
   Sidebar,
@@ -15,7 +15,7 @@ import {
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import Image from "next/image";
-import { useSession, signOut } from "next-auth/react";
+import {signOut } from "next-auth/react";
 
 // Menu items.
 const items = [
@@ -29,11 +29,15 @@ const items = [
     url: "/dashboard/jobs",
     icon: BriefcaseBusiness,
   },
+  {
+    title: "Gallery",
+    url: "/dashboard/gallery",
+    icon: ImageIcon,
+  },
 ];
 
 export function AppSidebar() {
-    const { data: session } = useSession();
-    console.log(session)
+
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>

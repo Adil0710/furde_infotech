@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import floor3 from "@/assets/floor3.jpeg";
@@ -8,63 +8,56 @@ import floor5 from "@/assets/floor5.jpeg";
 import floor6 from "@/assets/floor6.jpeg";
 import reception from "@/assets/reception.jpeg";
 import Image from "next/image";
+import { useToast } from "@/hooks/use-toast";
+import axios from "axios";
+import { Skeleton } from "./ui/skeleton";
+
+type Gallery = {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  orientation: string;
+};
 
 const Filters = ["All", "Office", "Events", "Client Visits"];
 
-// Sample data to populate the grid
-const items = [
-  {
-    id: 1,
-    category: "Office",
-    title: "Office Meeting",
-    img: floor3,
-    orientation: "horizontal",
-  },
-  {
-    id: 2,
-    category: "Events",
-    title: "Annual Party",
-    img: floor3,
-    orientation: "horizontal",
-  },
-  {
-    id: 3,
-    category: "Client Visits",
-    title: "Client Presentation",
-    img: floor5,
-    orientation: "horizontal",
-  },
-  {
-    id: 4,
-    category: "Office",
-    title: "Workspace Setup",
-    img: reception,
-    orientation: "vertical",
-  },
-  {
-    id: 5,
-    category: "Events",
-    title: "Team Outing",
-    img: floor6,
-    orientation: "horizontal",
-  },
-  {
-    id: 6,
-    category: "Client Visits",
-    title: "New Client Visit",
-    img: floor5,
-    orientation: "horizontal",
-  },
-];
-
 function Gallery() {
   const [filterValue, setFilterValue] = useState("All");
+  const [galleryItems, setGalleryItems] = useState<Gallery[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const { toast } = useToast();
+
+  useEffect(() => {
+    fetchGalleryItems();
+  }, []);
+
+  const fetchGalleryItems = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get<{ gallery: Gallery[] }>(
+        "/api/get-photo"
+      );
+      setGalleryItems(response.data.gallery);
+      console.log(response.data.gallery);
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Try Refreshing",
+        description: `Failed to load Gallery:- ${error}`,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Filtered items based on the selected filter value
   const filteredItems =
     filterValue === "All"
-      ? items
-      : items.filter((item) => item.category === filterValue);
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === filterValue);
 
   return (
     <div className="relative w-full h-auto">
@@ -103,41 +96,52 @@ function Gallery() {
 
       {/* Grid Container */}
       {/* Wrap grid with AnimatePresence */}
-      <AnimatePresence>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:px-20 px-5 lg:grid-cols-4 sm:gap-8 gap-4 pt-10 sm:pt-20 pb-10 sm:pb-12">
-          {filteredItems.map((item) => (
-            <motion.div
-              key={`${filterValue}-${item.id}`}
-              className={clsx(
-                "relative group overflow-hidden flex items-center justify-center rounded-lg",
-                item.orientation === "vertical"
-                  ? "col-span-1 row-span-2 sm:pt-3 pt-0"
-                  : "col-span-1 row-span-1"
-              )}
-              initial={{ opacity: 0, scale: 0.5, y: 200 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.5, y: 200 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-              <Image
-                src={item.img}
-                alt={item.title}
-                layout="responsive"
-                objectFit="cover"
-                className="rounded-lg group-hover:blur-sm transition"
-              />
+
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:px-20 px-5 lg:grid-cols-4 sm:gap-8 gap-4 pt-10 sm:pt-20 pb-10 sm:pb-12">
+        {loading ? (
+          <>
+            {Array.from({ length: 8 }).map((_, index) => (
+              <Skeleton className=" bg-gray-100 w-64 h-80" key={index} />
+            ))}
+          </>
+        ) : (
+          <AnimatePresence>
+            {filteredItems.map((item) => (
               <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.1, ease: "easeOut" }}
-                className="absolute z-40 hidden bg-black/50 h-full w-full px-2 transition group-hover:flex rounded-lg items-center justify-center"
+                key={`${item.id}`}
+                className={clsx(
+                  "relative group overflow-hidden flex items-center justify-center rounded-lg",
+                  item.orientation === "vertical"
+                    ? "col-span-1 row-span-2"
+                    : "col-span-1 row-span-1"
+                )}
+                initial={{ opacity: 0, scale: 0.5, y: 200 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.5, y: 200 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <p className=" font-semibold text-white">{item.title}</p>
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  layout="responsive"
+                  objectFit="cover"
+                  width={100}
+                  height={100}
+                  className="rounded-lg transition group-hover:blur-sm"
+                />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.1, ease: "easeOut" }}
+                  className="absolute z-40 hidden bg-black/50 h-full w-full px-2 transition group-hover:flex rounded-lg items-center justify-center"
+                >
+                  <p className=" font-semibold text-white">{item.title}</p>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </AnimatePresence>
+            ))}
+          </AnimatePresence>
+        )}
+      </div>
     </div>
   );
 }
