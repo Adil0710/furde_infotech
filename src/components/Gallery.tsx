@@ -72,7 +72,7 @@ function Gallery() {
           <motion.div
             key={item.id}
             className={clsx(
-              "relative overflow-hidden flex flex-col items-center justify-center rounded-lg",
+              " overflow-hidden flex items-center justify-center rounded-lg",
               item.orientation === "vertical" ? "col-span-1 row-span-2 sm:pt-3 pt-0" : "col-span-1 row-span-1"
             )}
             initial={{ opacity: 0, scale: 0.5 , y: 200 }}
