@@ -24,7 +24,7 @@ export default function SteeringOurMission() {
       </div>
 
       <div className="flex sm:flex-row flex-col justify-between sm:mt-14 mt-20">
-      <div className="sM:w-[35%] w-full sm:h-[500px] relative overflow-hidden rounded-lg cardShadow">
+      <div className="sm:w-[35%] w-full sm:h-[500px] relative overflow-hidden rounded-lg cardShadow">
           <Image src={SunilFurde} alt="Rohan Furde" objectFit="cover" className=" sm:-translate-y-24 translate-y-0"/>
         </div>
         <div className="sm:w-[63%] w-full pt-10">

@@ -13,18 +13,14 @@ const Filters = ["All", "Office", "Events", "Client Visits"];
 
 // Sample data to populate the grid
 const items = [
-  { id: 1, category: "Office", title: "Office Meeting", img: floor3 },
-  { id: 2, category: "Events", title: "Annual Party", img: floor3 },
-  {
-    id: 3,
-    category: "Client Visits",
-    title: "Client Presentation",
-    img: floor5,
-  },
-  { id: 4, category: "Office", title: "Workspace Setup", img: reception },
-  { id: 5, category: "Events", title: "Team Outing", img: floor6 },
-  { id: 6, category: "Client Visits", title: "New Client Visit", img: floor5 },
+  { id: 1, category: "Office", title: "Office Meeting", img: floor3, orientation: "horizontal" },
+  { id: 2, category: "Events", title: "Annual Party", img: floor3, orientation: "horizontal" },
+  { id: 3, category: "Client Visits", title: "Client Presentation", img: floor5, orientation: "horizontal" },
+  { id: 4, category: "Office", title: "Workspace Setup", img: reception, orientation: "vertical" },
+  { id: 5, category: "Events", title: "Team Outing", img: floor6, orientation: "horizontal" },
+  { id: 6, category: "Client Visits", title: "New Client Visit", img: floor5, orientation: "horizontal" },
 ];
+
 
 function Gallery() {
   const [filterValue, setFilterValue] = useState("All");
@@ -71,34 +67,31 @@ function Gallery() {
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-5 py-5 md:pl-20 md:pr-20 space-x-10 space-y-0 pt-20 pb-12" style={{ gridAutoRows: "1fr" }}>
-  {filteredItems.map((item) => (
-    <motion.div
-      key={item.id}
-      className={clsx(
-        "relative rounded-lg overflow-hidden",
-        "flex flex-col items-center justify-center"
-      )}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-    >
-      <Image
-        src={item.img}
-        alt={item.title}
-        layout="responsive"
-        className="rounded-2xl object-cover"
-      />
-      <div className="p-4">
-        <h3 className="font-semibold text-center text-gray-800">
-          {item.title}
-        </h3>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:px-20 px-5 lg:grid-cols-4 sm:gap-8 gap-4 pt-20 pb-12">
+        {filteredItems.map((item) => (
+          <motion.div
+            key={item.id}
+            className={clsx(
+              "relative overflow-hidden flex flex-col items-center justify-center rounded-lg",
+              item.orientation === "vertical" ? "col-span-1 row-span-2 sm:pt-3 pt-0" : "col-span-1 row-span-1"
+            )}
+            initial={{ opacity: 0, scale: 0.5 , y: 200 }}
+            animate={{ opacity: 1, scale: 1 , y: 0}}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <Image
+              src={item.img}
+              alt={item.title}
+              layout="responsive"
+              objectFit="cover"
+              className="rounded-lg"
+            />
+            
+          </motion.div>
+        ))}
       </div>
-    </motion.div>
-  ))}
-</div>
-
     </div>
+    
   );
 }
 
