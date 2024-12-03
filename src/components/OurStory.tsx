@@ -16,7 +16,7 @@ export default function OurStory() {
         "The foundation of Furde Group was laid in 1989, with a vision to build more than the structures we aimed to create a legacy of trust and quality. Since its inception, we have been synonymous with reliability and excellence in every venture we take.",
     },
     {
-      year: "1987",
+      year: "1997",
       title: "Amar Constructions",
       description:
         "In 1997, we expanded our horizons with the establishment of Amar constructions. This marked our foray into large-scale construction projects, where we delivered numerous iconic structures contributing to the skyline of our city.",

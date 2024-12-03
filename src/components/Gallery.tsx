@@ -3,10 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
-import floor3 from "@/assets/floor3.jpeg";
-import floor5 from "@/assets/floor5.jpeg";
-import floor6 from "@/assets/floor6.jpeg";
-import reception from "@/assets/reception.jpeg";
 import Image from "next/image";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
@@ -101,7 +97,7 @@ function Gallery() {
         {loading ? (
           <>
             {Array.from({ length: 8 }).map((_, index) => (
-              <Skeleton className=" bg-gray-100 w-64 h-80" key={index} />
+              <Skeleton className=" bg-gray-100 w-72 h-80" key={index} />
             ))}
           </>
         ) : (
@@ -110,7 +106,7 @@ function Gallery() {
               <motion.div
                 key={`${item.id}`}
                 className={clsx(
-                  "relative group overflow-hidden flex items-center justify-center rounded-lg",
+                  "relative group overflow-hidden flex rounded-lg",
                   item.orientation === "vertical"
                     ? "col-span-1 row-span-2"
                     : "col-span-1 row-span-1"

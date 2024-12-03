@@ -56,6 +56,7 @@ export async function POST(request: Request) {
       { status: 201 }
     );
   } catch (error) {
+    console.log(error)
     return new Response(
       JSON.stringify({
         success: false,

@@ -42,19 +42,18 @@ export async function POST(request: Request) {
 
     // Upload image to Cloudinary
     const uploadResult = await new Promise((resolve, reject) => {
-      cloudinary.uploader.upload_stream(
-        { folder: "gallery" },
-        (error, result) => {
+      cloudinary.uploader
+        .upload_stream({ folder: "gallery" }, (error, result) => {
           if (error) {
             return reject(new Error("Failed to upload image to Cloudinary"));
           }
           resolve(result);
-        }
-      ).end(buffer);
+        })
+        .end(buffer);
     });
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { secure_url: secureUrl, width, height } = uploadResult as any;
-    console.log(uploadResult)
+    console.log(uploadResult);
 
     // Determine orientation based on dimensions
     const orientation = width >= height ? "horizontal" : "vertical";
@@ -75,12 +74,14 @@ export async function POST(request: Request) {
       }),
       { status: 201 }
     );
-  } catch (error:any) {
+  } catch (error: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     console.error("Error adding Gallery Image:", error.message);
     return new Response(
       JSON.stringify({
         success: false,
-        message: error.message || "An error occurred while adding Gallery Image",
+        message:
+          error.message || "An error occurred while adding Gallery Image",
       }),
       { status: 500 }
     );
