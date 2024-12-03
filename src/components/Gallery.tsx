@@ -15,7 +15,12 @@ const Filters = ["All", "Office", "Events", "Client Visits"];
 const items = [
   { id: 1, category: "Office", title: "Office Meeting", img: floor3 },
   { id: 2, category: "Events", title: "Annual Party", img: floor3 },
-  { id: 3, category: "Client Visits", title: "Client Presentation", img: floor5 },
+  {
+    id: 3,
+    category: "Client Visits",
+    title: "Client Presentation",
+    img: floor5,
+  },
   { id: 4, category: "Office", title: "Workspace Setup", img: reception },
   { id: 5, category: "Events", title: "Team Outing", img: floor6 },
   { id: 6, category: "Client Visits", title: "New Client Visit", img: floor5 },
@@ -66,38 +71,33 @@ function Gallery() {
       </div>
 
       {/* Grid Container */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-20 pb-12">
-        {filteredItems.map((item) => (
-          <motion.div
-            key={item.id}
-            className={clsx(
-              "relative bg-white shadow-lg rounded-lg overflow-hidden",
-              "flex flex-col items-center justify-center",
-              // Adjust grid span dynamically based on the image orientation
-              {
-                "col-span-2 row-span-2": item.img.width < item.img.height, // Vertical image
-                "col-span-1 row-span-1": item.img.width >= item.img.height, // Horizontal image
-              }
-            )}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <Image
-              src={item.img}
-              alt={item.title}
-              layout="responsive"
-              objectFit="cover"
-              className="w-full h-full"
-            />
-            <div className="p-4">
-              <h3 className="font-semibold text-center text-gray-800">
-                {item.title}
-              </h3>
-            </div>
-          </motion.div>
-        ))}
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-5 py-5 md:pl-20 md:pr-20 space-x-10 space-y-0 pt-20 pb-12" style={{ gridAutoRows: "1fr" }}>
+  {filteredItems.map((item) => (
+    <motion.div
+      key={item.id}
+      className={clsx(
+        "relative rounded-lg overflow-hidden",
+        "flex flex-col items-center justify-center"
+      )}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      <Image
+        src={item.img}
+        alt={item.title}
+        layout="responsive"
+        className="rounded-2xl object-cover"
+      />
+      <div className="p-4">
+        <h3 className="font-semibold text-center text-gray-800">
+          {item.title}
+        </h3>
       </div>
+    </motion.div>
+  ))}
+</div>
+
     </div>
   );
 }
