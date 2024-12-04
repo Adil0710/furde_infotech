@@ -74,13 +74,13 @@ export async function POST(request: Request) {
       }),
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error) {
    
     return new Response(
       JSON.stringify({
         success: false,
         message:
-          error.message || "An error occurred while adding Gallery Image",
+          error || "An error occurred while adding Gallery Image",
       }),
       { status: 500 }
     );

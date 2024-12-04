@@ -123,7 +123,7 @@ function Page() {
         formData.append("image", data.image);
       }
 
-      const response = await axios.post("/api/add-photo", formData, {
+      await axios.post("/api/add-photo", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
