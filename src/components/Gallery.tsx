@@ -120,10 +120,10 @@ function Gallery() {
                   src={item.image}
                   alt={item.title}
                   layout="responsive"
-                  objectFit="cover"
+                
                   width={100}
                   height={100}
-                  className="rounded-lg transition group-hover:blur-sm"
+                  className="rounded-lg object-cover transition group-hover:blur-sm"
                 />
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
