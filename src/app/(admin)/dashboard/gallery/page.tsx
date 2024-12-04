@@ -260,7 +260,7 @@ function Page() {
 
       <Button
         size="sm"
-        className="absolute right-8 sm:top-8 top-[51px] bg-blue-500 hover:bg-blue-600 duration-200"
+        className="absolute right-8 sm:top-14 top-[51px] bg-blue-500 hover:bg-blue-600 duration-200"
         onClick={() => setDialogOpen(true)}
       >
         Add Photo
