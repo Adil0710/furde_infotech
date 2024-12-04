@@ -11,7 +11,5 @@ export const gallerySchema = z.object({
   category: z.enum(["Office", "Events", "Client Visits"], {
     message: "Please select a category",
   }),
-  orientation: z.enum(["horizontal", "vertical"], {
-    message: "Invalid orientation level. Must be 'horizontal' or 'vertical'.",
-  }),
+  
 });

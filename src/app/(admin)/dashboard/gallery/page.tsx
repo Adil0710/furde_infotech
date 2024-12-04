@@ -52,14 +52,14 @@ import { Button } from "@/components/ui/button";
 
 
 type Gallery = {
-  id: number;
+  _id: number;
   title: string;
   category: string;
   image: string;
   orientation: string;
 };
 
-function page() {
+function Page() {
   const [searchTerm, setSearchTerm] = useState("");
   const [galleryItems, setGalleryItems] = useState<Gallery[]>([]);
   const [loading, setLoading] = useState(true);
@@ -69,6 +69,7 @@ function page() {
 
   const { toast } = useToast();
 
+  // Fetch gallery items on component mount
   useEffect(() => {
     fetchGalleryItems();
   }, []);
@@ -76,16 +77,13 @@ function page() {
   const fetchGalleryItems = async () => {
     setLoading(true);
     try {
-      const response = await axios.get<{ gallery: Gallery[] }>(
-        "/api/get-photo"
-      );
+      const response = await axios.get<{ gallery: Gallery[] }>("/api/get-photo");
       setGalleryItems(response.data.gallery);
-      console.log(response.data.gallery);
     } catch (error) {
-      console.log(error);
+      console.error("Failed to load gallery items:", error);
       toast({
-        title: "Try Refreshing",
-        description: `Failed to load Gallery:- ${error}`,
+        title: "Error",
+        description: `Failed to load gallery: ${error}`,
         variant: "destructive",
       });
     } finally {
@@ -97,27 +95,65 @@ function page() {
     if (!deleteGalleryId) return;
     try {
       await axios.delete(`/api/delete-photo/${deleteGalleryId}`);
-      toast({ title: "Success", description: "Job deleted successfully." });
-      fetchGalleryItems();
+      toast({ title: "Success", description: "Photo deleted successfully." });
+
+     
+      // Clear the delete ID
+      setDeleteGalleryId(null);
     } catch (error) {
-      console.log(error);
+      console.error("Failed to delete photo:", error);
       toast({
         title: "Error",
-        description: `Failed to delete gallery item:- ${error}`,
+        description: `Failed to delete photo: ${error}`,
         variant: "destructive",
       });
-    } finally {
-      setDeleteGalleryId(null);
+    }finally {
+      setLoading(false)
+      fetchGalleryItems()
     }
   };
 
-  const onSubmit = async (data: z.infer<typeof gallerySchema>) => {};
+  const onSubmit = async (data: z.infer<typeof gallerySchema>) => {
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      formData.append("title", data.title);
+      formData.append("category", data.category || "");
+      if (data.image) {
+        formData.append("image", data.image);
+      }
 
+      const response = await axios.post("/api/add-photo", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      toast({
+        title: "Success",
+        description: "Photo added to the gallery successfully!",
+      });
+
+     
+
+      // Close the dialog
+      setDialogOpen(false);
+    } catch (error) {
+      console.error("Failed to add photo:", error);
+      toast({
+        title: "Error",
+        description: `Failed to add photo: ${error}`,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+      fetchGalleryItems()
+    }
+  };
   const filteredItems = galleryItems.filter(
     (item) =>
-      item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+      (item.category?.toLowerCase()?.includes(searchTerm.toLowerCase()) || false) ||
+      (item.title?.toLowerCase()?.includes(searchTerm.toLowerCase()) || false)
   );
+  
 
   const form = useForm<z.infer<typeof gallerySchema>>({
     resolver: zodResolver(gallerySchema),
@@ -127,7 +163,6 @@ function page() {
       image: undefined,
     },
   });
-
   return (
     <section className="py-5 sm:px-5 px-0 h-auto w-auto flex flex-col items-start sm:items-center justify-center">
       <div className="relative md:w-1/2 w-[63%] sm:ml-0 ml-5">
@@ -157,9 +192,9 @@ function page() {
             </p>
           </div>
         ) : (
-          filteredItems.map((item) => (
+          filteredItems.map((item, index) => (
             <div
-              key={`${item.id}`}
+              key={item._id || index}
               className={clsx(
                 "relative overflow-hidden flex flex-col bg-neutral-100 rounded-lg",
                 item.orientation === "vertical"
@@ -186,7 +221,11 @@ function page() {
                     <AlertDialogTrigger asChild>
                       <Trash2
                         className="text-red-500 cursor-pointer hover:text-red-600 duration-200"
-                        onClick={() => setDeleteGalleryId(item.id)}
+                        onClick={() => {
+                          console.log("Deleting item ID:", item._id);
+                          setDeleteGalleryId(item._id);
+                        }}
+                        
                         size={18}
                       />
                     </AlertDialogTrigger>
@@ -224,7 +263,7 @@ function page() {
         className="absolute right-8 sm:top-8 top-[51px] bg-blue-500 hover:bg-blue-600 duration-200"
         onClick={() => setDialogOpen(true)}
       >
-        Add Job
+        Add Photo
       </Button>
 
       <Dialog
@@ -330,4 +369,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

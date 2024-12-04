@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const { secure_url: secureUrl, width, height } = uploadResult as any;
-    console.log(uploadResult);
+   
 
     // Determine orientation based on dimensions
     const orientation = width >= height ? "horizontal" : "vertical";
@@ -75,8 +75,7 @@ export async function POST(request: Request) {
       { status: 201 }
     );
   } catch (error: any) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    console.error("Error adding Gallery Image:", error.message);
+   
     return new Response(
       JSON.stringify({
         success: false,
